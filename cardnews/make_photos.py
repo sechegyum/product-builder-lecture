@@ -21,6 +21,9 @@ JOBS = [                       # (원본, 폭, 높이, 결과)  — 높이는 ge
     ("lab.jpg",          1000, 372, "photo-reason.jpg"),    # 3번 카드
 ]
 
+CHIP = ("moderna-mark.jpg", "logo-chip.png")   # 1번 카드 표지 원형 로고 (config 의 logo)
+CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
+
 
 def cover(im, w, h):
     r = max(w / im.width, h / im.height)
@@ -35,6 +38,41 @@ def rounded(im, rad):
     im = im.convert("RGBA")
     im.putalpha(mask)
     return im
+
+
+def trim(im, thr=238):
+    """흰 여백 잘라내기 — 파일마다 다른 로고 여백을 없애고 광학 크기를 맞춘다"""
+    px, (w, h) = im.load(), im.size
+    box = [w, h, 0, 0]
+    for y in range(h):
+        for x in range(w):
+            if min(px[x, y]) < thr:
+                box = [min(box[0], x), min(box[1], y), max(box[2], x), max(box[3], y)]
+    return im.crop((box[0], box[1], box[2] + 1, box[3] + 1))
+
+
+def logo_chip(src, dst, size=CHIP_PX, fill=CHIP_FILL):
+    """표지 원형 로고. 흰 배경을 라벤더로 치환해 카드 배경과 이어지게 만든다"""
+    mark = trim(Image.open(src).convert("RGB"))
+
+    # 흰색일수록 라벤더로 — 로고 색은 그대로 두고 여백만 갈아끼운다
+    shift = [l - 255 for l in LAV]
+    px = mark.load()
+    for y in range(mark.height):
+        for x in range(mark.width):
+            r, g, b = px[x, y]
+            k = min(r, g, b) / 255
+            px[x, y] = tuple(max(0, min(255, round(v + s * k)))
+                             for v, s in zip((r, g, b), shift))
+
+    mw = round(size * fill)
+    mh = round(mark.height * mw / mark.width)
+    mark = mark.resize((mw, mh), Image.LANCZOS)
+
+    chip = Image.new("RGB", (size, size), LAV)
+    chip.paste(mark, ((size - mw) // 2, (size - mh) // 2))
+    chip.save(dst, "PNG")
+    print(f"  ✓ {dst}  {size}×{size}  (마크 {mw}×{mh})")
 
 
 def build(src, w, h, dst, margin=22, rad=26):
@@ -66,6 +104,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     for name, w, h, out in JOBS:
         build(SRC / name, w, h, OUT / out)
+    logo_chip(SRC / CHIP[0], OUT / CHIP[1])
 
 
 if __name__ == "__main__":

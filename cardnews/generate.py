@@ -77,6 +77,20 @@ def img_block(spec, y, h, cid, note=""):
     return photo_slot(y, h, note)
 
 
+def logo_chip(spec, cx, cy, r):
+    """표지 원형 로고 (없으면 빈 원)"""
+    if not (spec and pathlib.Path(spec).exists()):
+        return f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{LAV}"/>'
+    b64 = base64.b64encode(pathlib.Path(spec).read_bytes()).decode()
+    ext = pathlib.Path(spec).suffix.lower().lstrip(".")
+    mime = "jpeg" if ext in ("jpg", "jpeg") else ext
+    return (f'<defs><clipPath id="logo"><circle cx="{cx}" cy="{cy}" r="{r}"/></clipPath></defs>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{LAV}"/>'
+            f'<image clip-path="url(#logo)" x="{cx - r}" y="{cy - r}" width="{r * 2}" '
+            f'height="{r * 2}" preserveAspectRatio="xMidYMid slice" '
+            f'href="data:image/{mime};base64,{b64}"/>')
+
+
 # ── 1. 표지 ────────────────────────────────────────
 def card1(c):
     return wrap(f'''{DEFS}
@@ -88,7 +102,7 @@ def card1(c):
   <rect x="80" y="596" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
-  <circle cx="176" cy="760" r="40" fill="{LAV}"/>
+  {logo_chip(c.get("logo"), 176, 760, 40)}
   <text x="244" y="752" font-size="32" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["company_en"])}</text>
   <text x="244" y="794" font-size="23" font-weight="600" letter-spacing="0.5" fill="{FAINT}">{esc(c["ticker"])} · {esc(c["exchange"])}</text>
   <text x="944" y="752" text-anchor="end" font-size="40" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["price"])}</text>
