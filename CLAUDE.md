@@ -1,0 +1,48 @@
+# product-builder-lecture
+
+## cardnews/ — 스냅베스트 카드뉴스
+
+인스타그램 캐러셀 5장 세트를 만드는 생성기. **디자인 고정, 값만 교체.**
+
+사용자가 **종목과 뉴스만** 주면 나머지 수치는 조사해서 채운다.
+→ `.claude/skills/snapvest-cardnews/SKILL.md` 를 따를 것. (`/snapvest-cardnews`)
+
+```
+cardnews/
+├── generate.py        디자인 코드. 수정 금지
+├── make_photos.py     photos/ -> assets/ 규격 맞춤 + 표지 원형 로고
+├── render.py          out/*.svg -> png/*.png (1080x1080, 헤드리스 크롬)
+├── archive.py         회차 보관. 새 회차 시작 전에 먼저 실행
+├── README.md          디자인 규칙 · config 필드 표 · 문구 원칙
+├── PROMPT.md          요청 양식
+├── SNS-TEMPLATE.md    인스타 캡션 · 쓰레드 체인 뼈대
+│
+├── config.json        이번 회차 값
+├── SOURCES.md         이번 회차 수치 출처 + 미검증 항목
+├── sns.md             이번 회차 글귀
+├── photos/ assets/ out/ png/
+└── archive/YYYY-MM-DD-TICKER/   지난 회차
+```
+
+### 손대면 안 되는 것
+
+- `generate.py` 의 색상 상수 · 좌표 · 폰트 크기
+- 5장 헤드라인 문형 (질문 → 배경 → 답 → 검증 → 답 안 준 질문)
+- 결론·매수 권유 금지, 확인 안 된 값은 `자료 없음` 으로 노출
+
+### 실행
+
+```
+cd cardnews
+python3 archive.py                      # 이전 회차 보관
+python3 make_photos.py                  # 사진 전처리
+python3 generate.py config.json out     # SVG 5장
+python3 render.py                       # PNG 5장
+```
+
+렌더에는 Pretendard 가 시스템 폰트로 필요하다 (`fc-list | grep -i pretendard`).
+없으면 `github.com/orioncactus/pretendard` 릴리스에서 받아 `~/.fonts` 에 넣고 `fc-cache -f`.
+
+### 커밋
+
+컨테이너는 세션이 끝나면 회수된다. **매 회차 커밋·푸시할 것.**
