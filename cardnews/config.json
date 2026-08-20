@@ -1,0 +1,58 @@
+{
+  "date": "08.20",
+
+  "ticker": "MRNA",
+  "exchange": "NASDAQ",
+  "company_ko": "모더나",
+  "company_en": "Moderna",
+  "price": "$174.38",
+  "change": "+176.97%",
+
+  "cover_line1": "모더나는 왜",
+  "cover_line2": "하루 만에",
+  "cover_line3": "177% 올랐을까?",
+  "cover_fact1": "맞춤형 암 백신 임상 3상, 목표 달성",
+  "cover_fact2": "거래량 평균 19배 · 공매도 비중은 13.5%였어요",
+
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "mRNA로 백신과 항암제를 만드는",
+  "desc_lead2": "미국 바이오 기업이에요",
+  "desc_sub": "2010년 설립 · 코로나 백신에 이어 mRNA 독감 백신도 승인받았어요",
+  "market_cap": "696억 달러",
+  "volume": "평균 19배",
+  "week52": "신고가",
+
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "머크와 함께 만든 맞춤형 암 백신이",
+  "reason_lead2": "임상 3상 목표를 달성했어요",
+  "reason_body": [
+    "흑색종 절제 환자 1,137명이 참여한 임상에서 재발까지의",
+    "기간과 전이 없는 기간, 두 목표를 모두 채웠어요.",
+    "mRNA 암 치료제로는 첫 3상 성공 · 세부 수치는 아직 미공개예요."
+  ],
+  "reason_source": "출처 · 모더나·머크 공동 발표(2026.08.19)",
+
+  "candle_count": 46,
+  "candle_start": 48.0,
+  "candle_end": 174.38,
+  "seed": 3221,
+  "candles": null,
+
+  "gauges": {
+    "mfi": 96,
+    "mfi_status": "거래량 19배 · 과열",
+    "rsi": 95,
+    "rsi_status": "과매수 구간",
+    "bb": 1.0,
+    "bb_status": "상단 밴드 돌파",
+    "_note": "실서비스 연동 시 백엔드 계산값으로 교체할 것"
+  },
+  "gauge_note": "8/19 종가 기준 · 캔들과 지표는 실데이터 연동 전 추정치예요",
+
+  "cta_items": [
+    "지분 구조 · 내부자 매매",
+    "유상증자 이력 · 최근 공시",
+    "AI 종합 해석"
+  ]
+}
