@@ -16,9 +16,12 @@ HERE = pathlib.Path(__file__).parent
 SRC, OUT = HERE / "photos", HERE / "assets"
 LAV = (239, 234, 252)          # #EFEAFC
 
-JOBS = [                       # (원본, 폭, 높이, 결과)  — 높이는 generate.py 슬롯 규격
-    ("moderna-logo.jpg", 1000, 340, "photo-company.jpg"),   # 2번 카드
-    ("lab.jpg",          1000, 372, "photo-reason.jpg"),    # 3번 카드
+# (원본, 폭, 높이, 결과, 크롭)  — 높이는 generate.py 슬롯 규격
+# 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
+# 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
+JOBS = [
+    ("board.jpg",    1000, 340, "photo-company.jpg", None),          # 2번 카드
+    ("ai-risk.jpg",  1000, 372, "photo-reason.jpg",  (32, 52, 181, 240)),   # 3번 카드
 ]
 
 CHIP = ("moderna-mark.jpg", "logo-chip.png")   # 1번 카드 표지 원형 로고 (config 의 logo)
@@ -53,6 +56,9 @@ def trim(im, thr=238):
 
 def logo_chip(src, dst, size=CHIP_PX, fill=CHIP_FILL):
     """표지 원형 로고. 흰 배경을 라벤더로 치환해 카드 배경과 이어지게 만든다"""
+    if not pathlib.Path(src).exists():
+        print(f"  · {pathlib.Path(src).name} 없음 → 표지 로고는 빈 원으로 둡니다")
+        return
     mark = trim(Image.open(src).convert("RGB"))
 
     # 흰색일수록 라벤더로 — 로고 색은 그대로 두고 여백만 갈아끼운다
@@ -75,8 +81,10 @@ def logo_chip(src, dst, size=CHIP_PX, fill=CHIP_FILL):
     print(f"  ✓ {dst}  {size}×{size}  (마크 {mw}×{mh})")
 
 
-def build(src, w, h, dst, margin=22, rad=26):
+def build(src, w, h, dst, crop=None, margin=22, rad=26):
     im = Image.open(src).convert("RGB")
+    if crop:
+        im = im.crop(crop)
 
     bg = cover(im, w, h).filter(ImageFilter.GaussianBlur(30))
     bg = Image.blend(bg, Image.new("RGB", (w, h), LAV), 0.52)
@@ -102,8 +110,8 @@ def build(src, w, h, dst, margin=22, rad=26):
 
 def main():
     OUT.mkdir(exist_ok=True)
-    for name, w, h, out in JOBS:
-        build(SRC / name, w, h, OUT / out)
+    for name, w, h, out, crop in JOBS:
+        build(SRC / name, w, h, OUT / out, crop)
     logo_chip(SRC / CHIP[0], OUT / CHIP[1])
 
 
