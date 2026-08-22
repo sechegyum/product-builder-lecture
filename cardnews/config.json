@@ -1,0 +1,60 @@
+{
+  "_TODO": "8/21 정규장 종가 확인 후 price · change · cover_line3 · market_cap · candles 마지막 봉을 채울 것",
+
+  "date": "08.22",
+  "year": 2026,
+
+  "ticker": "RFAI",
+  "exchange": "NASDAQ",
+  "company_ko": "RFAI",
+  "company_en": "RF Acquisition II",
+  "price": "TODO",
+  "change": "TODO",
+
+  "logo": "",
+
+  "cover_line1": "RFAI는 왜",
+  "cover_line2": "하루 만에",
+  "cover_line3": "TODO% 올랐을까?",
+  "cover_fact1": "AI 신약 회사와 합병 승인 · 찬성 93.9%",
+  "cover_fact2": "합병 후 티커는 NYB로 바뀌어요",
+
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "합병할 회사를 찾으려고 만든",
+  "desc_lead2": "상장 껍데기 회사예요",
+  "desc_sub": "신탁에 5,353만 달러를 넣어두고 대상을 찾던 SPAC이에요",
+  "market_cap": "TODO",
+  "volume": "평균 11배",
+  "week52": "신고가",
+
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "AI 신약 회사와의 합병이",
+  "reason_lead2": "주주총회를 통과했어요",
+  "reason_body": [
+    "싱가포르 AI 신약 개발사 난양 바이오로직스와의 합병이",
+    "찬성 93.9%로 승인됐어요. 거래 규모는 15억 달러입니다.",
+    "상환 청구 395만 주 · 합병 완료일은 아직 안 나왔어요."
+  ],
+  "reason_source": "출처 · RFAI 임시주주총회 결과 공시(2026.08.19)",
+
+  "candle_count": 46,
+  "candles": null,
+
+  "gauges": {
+    "mfi": 97,
+    "mfi_status": "거래량 11배 · 과열",
+    "rsi": 96,
+    "rsi_status": "과매수 구간",
+    "bb": 1.0,
+    "bb_status": "상단 밴드 돌파",
+    "_note": "출처 없는 추정치. 백엔드 계산값으로 교체할 것"
+  },
+  "gauge_note": "8/21 종가 기준 · 캔들과 지표는 실데이터 연동 전 추정치예요",
+
+  "cta_items": [
+    "상환 청구 규모 · 신탁 잔액",
+    "스폰서 지분 · 락업 조건",
+    "AI 종합 해석"
+  ]
+}
