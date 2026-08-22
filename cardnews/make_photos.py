@@ -10,7 +10,7 @@ photos/ 원본 사진 -> assets/ 카드 슬롯 규격 이미지
     python3 make_photos.py
 """
 import pathlib
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 HERE = pathlib.Path(__file__).parent
 SRC, OUT = HERE / "photos", HERE / "assets"
@@ -24,8 +24,15 @@ JOBS = [
     ("ai-risk.jpg",  1000, 372, "photo-reason.jpg",  (32, 52, 181, 240)),   # 3번 카드
 ]
 
-CHIP = ("moderna-mark.jpg", "logo-chip.png")   # 1번 카드 표지 원형 로고 (config 의 logo)
+# 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
+#   {"src": 파일명}                  로고 원본을 그대로
+#   {"src": 파일명, "crop": (l,t,r,b)}  로고에서 심볼만 잘라서
+#   {"text": "R"}                    로고가 없는 티커용 레터마크
+# SPAC 처럼 쓸 로고가 아예 없으면 None 으로 두면 빈 원이 나온다.
+CHIP = {"text": "R", "out": "logo-chip.png"}
 CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
+PURPLE = (139, 91, 214)                        # #8B5BD6
+FONT_BOLD = "/root/.fonts/Pretendard-Bold.otf"
 
 
 def cover(im, w, h):
@@ -54,12 +61,26 @@ def trim(im, thr=238):
     return im.crop((box[0], box[1], box[2] + 1, box[3] + 1))
 
 
-def logo_chip(src, dst, size=CHIP_PX, fill=CHIP_FILL):
+def lettermark(text, dst, size=CHIP_PX):
+    """로고가 없는 티커용. 토스처럼 첫 글자만 원 안에 박는다"""
+    chip = Image.new("RGB", (size, size), LAV)
+    d = ImageDraw.Draw(chip)
+    f = ImageFont.truetype(FONT_BOLD, round(size * 0.52))
+    l, t_, r, b = d.textbbox((0, 0), text, font=f)
+    d.text(((size - (r - l)) / 2 - l, (size - (b - t_)) / 2 - t_), text, font=f, fill=PURPLE)
+    chip.save(dst, "PNG")
+    print(f"  ✓ {dst}  레터마크 '{text}'")
+
+
+def logo_chip(src, dst, size=CHIP_PX, fill=CHIP_FILL, crop=None):
     """표지 원형 로고. 흰 배경을 라벤더로 치환해 카드 배경과 이어지게 만든다"""
     if not pathlib.Path(src).exists():
         print(f"  · {pathlib.Path(src).name} 없음 → 표지 로고는 빈 원으로 둡니다")
         return
-    mark = trim(Image.open(src).convert("RGB"))
+    mark = Image.open(src).convert("RGB")
+    if crop:
+        mark = mark.crop(crop)
+    mark = trim(mark)
 
     # 흰색일수록 라벤더로 — 로고 색은 그대로 두고 여백만 갈아끼운다
     shift = [l - 255 for l in LAV]
@@ -112,7 +133,12 @@ def main():
     OUT.mkdir(exist_ok=True)
     for name, w, h, out, crop in JOBS:
         build(SRC / name, w, h, OUT / out, crop)
-    logo_chip(SRC / CHIP[0], OUT / CHIP[1])
+    if CHIP is None:
+        print("  · 표지 로고 설정 없음 → 빈 원")
+    elif "text" in CHIP:
+        lettermark(CHIP["text"], OUT / CHIP["out"])
+    else:
+        logo_chip(SRC / CHIP["src"], OUT / CHIP["out"], crop=CHIP.get("crop"))
 
 
 if __name__ == "__main__":

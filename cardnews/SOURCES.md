@@ -53,7 +53,12 @@
 | `photos/board.jpg` | 2번 카드 | 그대로 |
 | `photos/ai-risk.jpg` | 3번 카드 | **크롭 (32,52,181,240)** — 원본에 `CAUTION: VOLTALLITY` 오탈자와 순서가 뒤엉킨 축 라벨(500·500·300·600…)이 박혀 있어 잘라냄 |
 
-표지 원형 로고는 비워뒀다. SPAC 껍데기라 쓸 만한 공식 로고가 없다.
+표지 원형 로고는 **레터마크 `R`** 로 넣었다.
+RFAI 는 SPAC 껍데기라 공식 로고가 없다 (Brandfetch 에도 등재돼 있지 않다).
+합병 상대인 난양 바이오로직스 로고(`photos/nanyang-icon.jpg`)는 받아뒀지만,
+카드에 적힌 회사명이 `RF Acquisition II` 라 다른 회사 로고를 붙이면 오해를 준다.
+쓰려면 `make_photos.py` 의 `CHIP` 을
+`{"src": "nanyang-icon.jpg", "crop": (30, 134, 126, 266), "out": "logo-chip.png"}` 로 바꾸면 된다.
 
 ## ⚠ 아직 실데이터가 아닌 값
 
