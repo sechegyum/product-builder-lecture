@@ -170,6 +170,15 @@ python3 render.py           # out/*.svg -> png/*.png
 헤드리스 크롬으로 렌더한다. `render.py` 의 `CHROME` 경로만 환경에 맞게 고치면 된다.
 Pretendard 는 시스템 폰트로 설치돼 있어야 한다 (`fc-list | grep -i pretendard`).
 
+사진 슬롯에 일봉 차트를 넣고 싶으면 `config.json` 에 실제 `candles` 를 채운 뒤
+
+```
+python3 make_chart.py 1000 340 chart-company.png   # 2번 카드 슬롯
+python3 make_chart.py 1000 372 chart-reason.png    # 3번 카드 슬롯
+```
+
+카드 색상 토큰을 그대로 쓰기 때문에 사진 자리에 넣어도 톤이 어긋나지 않는다.
+
 ### 전체 흐름
 
 ```
