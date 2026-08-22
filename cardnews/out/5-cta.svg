@@ -23,7 +23,7 @@
 
   <rect x="80" y="428" width="920" height="330" rx="52" fill="#FFFFFF"/>
   <text x="146" y="508" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">두나무 지분율 · 장부가</text>
-  <text x="146" y="570" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">자사주 처분 이력 · 최근 공시</text>
+  <text x="146" y="570" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">공매도 잔고 · 대차 추이</text>
   <text x="146" y="632" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">AI 종합 해석</text>
   <line x1="146" y1="670" x2="934" y2="670" stroke="#F1EDFA" stroke-width="3"/>
   <text x="146" y="722" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">티커 하나로 한 번에 확인해요</text>

@@ -27,10 +27,10 @@
   <text x="244" y="752" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">Woori Technology Investment</text>
   <text x="244" y="794" font-size="23" font-weight="600" letter-spacing="0.5" fill="#9691B8">041190 · KOSDAQ</text>
   <text x="944" y="752" text-anchor="end" font-size="40" font-weight="700" letter-spacing="-1" fill="#2B2B3A">5,920원</text>
-  <text x="944" y="794" text-anchor="end" font-size="26" font-weight="700" fill="#E0568A">+19.96%</text>
+  <text x="944" y="794" text-anchor="end" font-size="26" font-weight="700" fill="#E0568A">+19.95%</text>
   <line x1="136" y1="832" x2="944" y2="832" stroke="#F1EDFA" stroke-width="3"/>
   <text x="136" y="890" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">비트코인이 두 달 만에 1억원을 넘었어요</text>
-  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2015년에 56억원 주고 산 두나무 지분이 있어요</text>
+  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">거래량 평균 41배 · 공매도 과열 종목이에요</text>
 
   <text x="80" y="1046" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#B9B3D6">밀어서 보기 →</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>

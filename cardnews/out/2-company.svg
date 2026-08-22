@@ -32,10 +32,10 @@
 
   <rect x="80" y="852" width="920" height="176" rx="52" fill="#FFFFFF"/>
   <text x="233" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">시가총액</text>
-  <text x="233" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">자료 없음</text>
+  <text x="233" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">4,973억원</text>
   <line x1="387" y1="896" x2="387" y2="984" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">거래량</text>
-  <text x="540" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">자료 없음</text>
+  <text x="540" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 41배</text>
   <line x1="693" y1="896" x2="693" y2="984" stroke="#F1EDFA" stroke-width="3"/>
   <text x="847" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">52주 위치</text>
   <text x="847" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하위 23%</text>
