@@ -19,14 +19,18 @@ LAV = (239, 234, 252)          # #EFEAFC
 # (원본, 폭, 높이, 결과, 크롭)  — 높이는 generate.py 슬롯 규격
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
-JOBS = []      # 이번 회차는 사진 원본이 아직 없다
+JOBS = [
+    ("woori-logo.jpg", 1000, 340, "photo-company.jpg", None),                  # 2번 카드
+    ("btc-news.jpg",   1000, 372, "photo-reason.jpg",  (846, 219, 1158, 531)),  # 3번 카드 · 기사 화면에서 사진만
+]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
 #   {"src": 파일명}                  로고 원본을 그대로
 #   {"src": 파일명, "crop": (l,t,r,b)}  로고에서 심볼만 잘라서
 #   {"text": "R"}                    로고가 없는 티커용 레터마크
 # SPAC 처럼 쓸 로고가 아예 없으면 None 으로 두면 빈 원이 나온다.
-CHIP = {"text": "우", "out": "logo-chip.png"}
+CHIP = {"src": "woori-mark.jpg", "out": "logo-chip.png", "fill": 0.74}
+#   fill — 마크가 원 안에서 차지할 가로 비율. 가로로 넓은 마크는 키워야 읽힌다
 CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
 PURPLE = (139, 91, 214)                        # #8B5BD6
 FONT_BOLD = "/root/.fonts/Pretendard-Bold.otf"
@@ -135,7 +139,8 @@ def main():
     elif "text" in CHIP:
         lettermark(CHIP["text"], OUT / CHIP["out"])
     else:
-        logo_chip(SRC / CHIP["src"], OUT / CHIP["out"], crop=CHIP.get("crop"))
+        logo_chip(SRC / CHIP["src"], OUT / CHIP["out"],
+                  fill=CHIP.get("fill", CHIP_FILL), crop=CHIP.get("crop"))
 
 
 if __name__ == "__main__":
