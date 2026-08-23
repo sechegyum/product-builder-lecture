@@ -21,7 +21,7 @@ LAV = (239, 234, 252)          # #EFEAFC
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
 JOBS = [
     ("woori-logo.jpg", 1000, 340, "photo-company.jpg", None),                  # 2번 카드
-    ("btc-news.jpg",   1000, 372, "photo-reason.jpg",  (846, 219, 1158, 531)),  # 3번 카드 · 기사 화면에서 사진만
+    ("btc-news.jpg",   1000, 372, "photo-reason.jpg",  (0, 58, 1206, 545)),   # 3번 카드 · 기사 화면 통째로 (아래 잘린 줄만 제외)
 ]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
