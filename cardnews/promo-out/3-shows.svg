@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>스냅베스트 · 무엇이 나오나</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<circle cx="920" cy="180" r="200" fill="#B455C4" opacity="0.06"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">서비스 소개</text>
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">티커 하나에 <tspan fill="#B455C4">이게 다</tspan> 나와요</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+  <rect x="80" y="330" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="138" cy="388" r="16" fill="url(#line)"/>
+  <text x="118" y="448" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">지분 구조</text>
+  <text x="118" y="486" font-size="22" font-weight="500" fill="#9691B8">누가 얼마나 갖고 있나</text>
+  <rect x="550" y="330" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="608" cy="388" r="16" fill="url(#line)"/>
+  <text x="588" y="448" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">내부자 매매</text>
+  <text x="588" y="486" font-size="22" font-weight="500" fill="#9691B8">임원이 사고 있나 팔고 있나</text>
+  <rect x="80" y="540" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="138" cy="598" r="16" fill="url(#line)"/>
+  <text x="118" y="658" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">공매도 잔고</text>
+  <text x="118" y="696" font-size="22" font-weight="500" fill="#9691B8">얼마나 쌓였고 늘고 있나</text>
+  <rect x="550" y="540" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="608" cy="598" r="16" fill="url(#line)"/>
+  <text x="588" y="658" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">유상증자 이력</text>
+  <text x="588" y="696" font-size="22" font-weight="500" fill="#9691B8">주식 수가 늘어난 적 있나</text>
+  <rect x="80" y="750" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="138" cy="808" r="16" fill="url(#line)"/>
+  <text x="118" y="868" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">최근 공시</text>
+  <text x="118" y="906" font-size="22" font-weight="500" fill="#9691B8">놓친 발표가 있나</text>
+  <rect x="550" y="750" width="450" height="182" rx="40" fill="#FFFFFF"/>
+  <circle cx="608" cy="808" r="16" fill="url(#line)"/>
+  <text x="588" y="868" font-size="29" font-weight="700" letter-spacing="-1" fill="#2B2B3A">AI 종합 해석</text>
+  <text x="588" y="906" font-size="22" font-weight="500" fill="#9691B8">숫자를 한 문단으로</text>
+
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">숫자는 코드가, 해석은 AI가.</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>

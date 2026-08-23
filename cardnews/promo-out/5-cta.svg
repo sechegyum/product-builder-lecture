@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>스냅베스트 · 마무리</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<circle cx="920" cy="180" r="200" fill="#B455C4" opacity="0.06"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">서비스 소개</text>
+  <text x="80" y="252" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">궁금한 종목이</text>
+  <text x="80" y="330" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A"><tspan fill="#B455C4">지금</tspan> 있으신가요?</text>
+  <rect x="80" y="356" width="220" height="12" rx="6" fill="url(#line)"/>
+
+  <rect x="80" y="428" width="920" height="330" rx="52" fill="#FFFFFF"/>
+  <text x="146" y="508" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">왜 올랐는지 모르겠을 때</text>
+  <text x="146" y="570" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">공시를 놓친 것 같을 때</text>
+  <text x="146" y="632" font-size="30" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">남들이 뭘 보는지 궁금할 때</text>
+  <line x1="146" y1="670" x2="934" y2="670" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="146" y="722" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">티커 하나로 한 번에 확인해요</text>
+
+  <rect x="80" y="812" width="920" height="116" rx="58" fill="url(#line)"/>
+  <text x="540" y="884" text-anchor="middle" font-size="40" font-weight="700" letter-spacing="-0.5" fill="#FFFFFF">snapvestai.com</text>
+  <text x="540" y="972" text-anchor="middle" font-size="27" font-weight="600" letter-spacing="-0.5" fill="#8B5BD6">로그인 없이 하루 5회 무료</text>
+
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">숫자는 코드가, 해석은 AI가.</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">Snapvest</text>
+</g>
+</svg>
