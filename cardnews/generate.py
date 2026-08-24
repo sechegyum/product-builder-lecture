@@ -102,9 +102,9 @@ def strong_name(c, line):
 
 # ── 1. 표지 ────────────────────────────────────────
 def card1(c, align="end"):
-    """align="end" 우측 정렬(기본) · align="middle" 중간 정렬"""
-    tx = 1000 if align == "end" else 540
-    bx = 760 if align == "end" else 420
+    """align="end" 우측 정렬(기본) · align="start" 좌측 정렬"""
+    tx = 1000 if align == "end" else 80
+    bx = 760 if align == "end" else 80
     return wrap(f'''{DEFS}
 <g {FONT}>
 {hdr(c["date"])}
@@ -293,7 +293,7 @@ def main():
 
     files = {
         "1-cover.svg":        card1(c, "end"),      # 우측 정렬
-        "1-cover-center.svg": card1(c, "middle"),   # 중간 정렬
+        "1-cover-left.svg":   card1(c, "start"),    # 좌측 정렬
         "2-company.svg": card2(c),
         "3-reason.svg":  card3(c),
         "4-chart.svg":   card4(c),
