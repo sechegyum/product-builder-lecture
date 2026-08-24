@@ -118,26 +118,39 @@ def card1(c):
 
 # ── 2. 기업 설명 ───────────────────────────────────
 def card2(c):
+    """사진 · 설명 2줄 · 보조 2줄 · 사업 부문 칩 3개 · 하단 지표 3열
+    desc_sub2 와 segments 는 없으면 그 줄이 통째로 빠진다."""
+    sub2 = c.get("desc_sub2")
+    sub2_svg = (f'  <text x="80" y="768" font-size="27" font-weight="500" '
+                f'letter-spacing="-0.5" fill="{SUB}">{esc(sub2)}</text>\n') if sub2 else ""
+
+    segs, seg_svg = c.get("segments") or [], ""
+    for i, s in enumerate(segs[:3]):
+        x = 80 + i * 312
+        seg_svg += (f'  <rect x="{x}" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>\n'
+                    f'  <text x="{x + 148}" y="834" text-anchor="middle" font-size="24" '
+                    f'font-weight="700" letter-spacing="-0.5" fill="{PURPLE}">{esc(s)}</text>\n')
+
     return wrap(f'''{DEFS}
-{img_block(c.get("photo_company"), 280, 340, "pc")}
+{img_block(c.get("photo_company"), 280, 290, "pc")}
 <g {FONT}>
 {hdr(c["date"])}
   <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="{INK}">{esc(c["company_ko"])}는 <tspan fill="{ACCENT}">어떤 회사</tspan>일까?</text>
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
-  <text x="80" y="700" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead1"])}</text>
-  <text x="80" y="750" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead2"])}</text>
-  <text x="80" y="804" font-size="27" font-weight="500" letter-spacing="-0.5" fill="{SUB}">{esc(c["desc_sub"])}</text>
-
-  <rect x="80" y="852" width="920" height="176" rx="52" fill="#FFFFFF"/>
-  <text x="233" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">시가총액</text>
-  <text x="233" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["market_cap"])}</text>
-  <line x1="387" y1="896" x2="387" y2="984" stroke="{LINE_SOFT}" stroke-width="3"/>
-  <text x="540" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">거래량</text>
-  <text x="540" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["volume"])}</text>
-  <line x1="693" y1="896" x2="693" y2="984" stroke="{LINE_SOFT}" stroke-width="3"/>
-  <text x="847" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">52주 위치</text>
-  <text x="847" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["week52"])}</text>
+  <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead1"])}</text>
+  <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead2"])}</text>
+  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="{SUB}">{esc(c["desc_sub"])}</text>
+{sub2_svg}{seg_svg}
+  <rect x="80" y="880" width="920" height="172" rx="52" fill="#FFFFFF"/>
+  <text x="233" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">시가총액</text>
+  <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["market_cap"])}</text>
+  <line x1="387" y1="922" x2="387" y2="1010" stroke="{LINE_SOFT}" stroke-width="3"/>
+  <text x="540" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">거래량</text>
+  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["volume"])}</text>
+  <line x1="693" y1="922" x2="693" y2="1010" stroke="{LINE_SOFT}" stroke-width="3"/>
+  <text x="847" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">52주 위치</text>
+  <text x="847" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["week52"])}</text>
 </g>''', f'{c["company_ko"]} · 어떤 회사일까')
 
 

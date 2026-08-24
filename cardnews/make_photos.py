@@ -20,7 +20,7 @@ LAV = (239, 234, 252)          # #EFEAFC
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
 JOBS = [
-    ("lucas-building.jpg", 1000, 340, "photo-company.jpg", None),   # 2번 카드
+    ("lucas-building.jpg", 1000, 290, "photo-company.jpg", None),   # 2번 카드
     ("lucas-bm.jpg",       1000, 372, "photo-reason.jpg",  None),   # 3번 카드
 ]
 
