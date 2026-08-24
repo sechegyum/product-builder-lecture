@@ -22,13 +22,13 @@
   <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">루카스 GC는 <tspan fill="#B455C4">어떤 회사</tspan>일까?</text>
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
-  <text x="80" y="700" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">AI로 채용과 보험 영업을</text>
-  <text x="80" y="750" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">연결하는 플랫폼 회사예요</text>
-  <text x="80" y="804" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">회사 자료 기준 이용자 43만 명 · 나스닥 상장사예요</text>
+  <text x="80" y="700" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">지인을 소개하면 수수료를 주는</text>
+  <text x="80" y="750" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">크라우드소싱 채용 회사예요</text>
+  <text x="80" y="804" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">베이징 본사 · 채용 · IT 아웃소싱 · 교육이 사업 부문이에요</text>
 
   <rect x="80" y="852" width="920" height="176" rx="52" fill="#FFFFFF"/>
   <text x="233" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">시가총액</text>
-  <text x="233" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">자료 없음</text>
+  <text x="233" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">214만 달러</text>
   <line x1="387" y1="896" x2="387" y2="984" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="916" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">거래량</text>
   <text x="540" y="974" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 91배</text>
