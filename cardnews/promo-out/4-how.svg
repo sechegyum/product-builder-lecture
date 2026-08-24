@@ -36,7 +36,7 @@
   <text x="248" y="856" font-size="25" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그 숫자가 무슨 뜻인지 한 문단으로 알려줘요</text>
 
   <text x="80" y="1000" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">급등·급락 뉴스를 봤을 때 티커부터 넣어보세요</text>
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">로그인 없이 하루 5회 무료</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">로그인 없이도 10회 무료</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>

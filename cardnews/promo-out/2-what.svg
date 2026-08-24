@@ -44,7 +44,7 @@
   <text x="233" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">국내 · 미국</text>
   <line x1="387" y1="962" x2="387" y2="1022" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="982" text-anchor="middle" font-size="22" font-weight="600" fill="#9691B8">무료 조회</text>
-  <text x="540" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하루 5회</text>
+  <text x="540" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하루 10회</text>
   <line x1="693" y1="962" x2="693" y2="1022" stroke="#F1EDFA" stroke-width="3"/>
   <text x="847" y="982" text-anchor="middle" font-size="22" font-weight="600" fill="#9691B8">가입</text>
   <text x="847" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">필요 없음</text>

@@ -147,7 +147,7 @@ def card5(c):
   <text x="540" y="972" text-anchor="middle" font-size="27" font-weight="600" letter-spacing="-0.5" fill="{PURPLE}">{esc(a["free"])}</text>
 
   <text x="80" y="1046" font-size="25" font-weight="600" fill="{DIM}">숫자는 코드가, 해석은 AI가.</text>
-  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">Snapvest</text>
+  {dom(1046)}
 </g>''', '스냅베스트 · 마무리')
 
 

@@ -120,6 +120,9 @@ python3 generate.py config.json out
 |---|---|
 | `cta_items` | 흰 카드 안 3줄 |
 
+버튼 아래 **로그인 없이도 10회 무료**, 우측 하단 **snapvestai.com** 은
+`generate.py` 에 고정돼 있다. 바뀌면 `promo.json` · `SNS-TEMPLATE.md` 도 같이 고친다.
+
 ---
 
 ## 4. 사진 넣는 법
