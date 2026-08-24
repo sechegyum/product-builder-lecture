@@ -101,14 +101,17 @@ def strong_name(c, line):
 
 
 # ── 1. 표지 ────────────────────────────────────────
-def card1(c):
+def card1(c, align="end"):
+    """align="end" 우측 정렬(기본) · align="middle" 중간 정렬"""
+    tx = 1000 if align == "end" else 540
+    bx = 760 if align == "end" else 420
     return wrap(f'''{DEFS}
 <g {FONT}>
 {hdr(c["date"])}
-  <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="{INK}">{strong_name(c, c["cover_line1"])}</text>
-  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="{INK}">{esc(c["cover_line2"])}</text>
-  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="{ACCENT}">{esc(c["cover_line3"])}</text>
-  <rect x="760" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
+  <text x="{tx}" y="338" text-anchor="{align}" font-size="88" letter-spacing="-3" fill="{INK}">{strong_name(c, c["cover_line1"])}</text>
+  <text x="{tx}" y="442" text-anchor="{align}" font-size="88" font-weight="700" letter-spacing="-3" fill="{INK}">{esc(c["cover_line2"])}</text>
+  <text x="{tx}" y="546" text-anchor="{align}" font-size="88" font-weight="700" letter-spacing="-3" fill="{ACCENT}">{esc(c["cover_line3"])}</text>
+  <rect x="{bx}" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
   {logo_chip(c.get("logo"), 176, 760, 40)}
@@ -289,7 +292,8 @@ def main():
     c = json.loads(pathlib.Path(cfg_path).read_text(encoding="utf-8"))
 
     files = {
-        "1-cover.svg":   card1(c),
+        "1-cover.svg":        card1(c, "end"),      # 우측 정렬
+        "1-cover-center.svg": card1(c, "middle"),   # 중간 정렬
         "2-company.svg": card2(c),
         "3-reason.svg":  card3(c),
         "4-chart.svg":   card4(c),
