@@ -91,15 +91,24 @@ def logo_chip(spec, cx, cy, r):
             f'href="data:image/{mime};base64,{b64}"/>')
 
 
+def strong_name(c, line):
+    """표지 첫 줄에서 종목명만 더 굵게. 종목명으로 시작하지 않으면 그대로 둔다"""
+    name = str(c.get("company_ko", ""))
+    if name and line.startswith(name):
+        return (f'<tspan font-weight="900">{esc(name)}</tspan>'
+                f'<tspan font-weight="700">{esc(line[len(name):])}</tspan>')
+    return f'<tspan font-weight="700">{esc(line)}</tspan>'
+
+
 # ── 1. 표지 ────────────────────────────────────────
 def card1(c):
     return wrap(f'''{DEFS}
 <g {FONT}>
 {hdr(c["date"])}
-  <text x="80" y="342" font-size="82" font-weight="700" letter-spacing="-3" fill="{INK}">{esc(c["cover_line1"])}</text>
-  <text x="80" y="442" font-size="82" font-weight="700" letter-spacing="-3" fill="{INK}">{esc(c["cover_line2"])}</text>
-  <text x="80" y="542" font-size="82" font-weight="700" letter-spacing="-3" fill="{ACCENT}">{esc(c["cover_line3"])}</text>
-  <rect x="80" y="596" width="240" height="14" rx="7" fill="url(#line)"/>
+  <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="{INK}">{strong_name(c, c["cover_line1"])}</text>
+  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="{INK}">{esc(c["cover_line2"])}</text>
+  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="{ACCENT}">{esc(c["cover_line3"])}</text>
+  <rect x="760" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
   {logo_chip(c.get("logo"), 176, 760, 40)}
