@@ -26,9 +26,16 @@ DEFS = '''<defs>
   <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
   </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
 </defs>
 <rect width="1080" height="1080" fill="url(#bg)"/>
-<circle cx="920" cy="180" r="200" fill="#B455C4" opacity="0.06"/>'''
+<rect x="-200" y="-160" width="900" height="900" fill="url(#m1)"/>
+<rect x="440" y="500" width="940" height="940" fill="url(#m2)"/>'''
 
 
 def esc(s):
