@@ -88,7 +88,7 @@ python3 generate.py config.json out
 | `photo_company` | 이미지 경로 (**1000×290**). 비워두면 점선 플레이스홀더 |
 | `desc_lead1~2` | 굵은 설명 2줄 |
 | `desc_sub` | 흐린 보조 1줄 |
-| `desc_sub2` | 보조 2번째 줄. **없으면 그 줄이 통째로 빠진다** |
+| `desc_sub2` / `desc_sub3` | 보조 2·3번째 줄. **없으면 그 줄이 통째로 빠진다** |
 | `segments` | 사업 부문 칩 3개. **없으면 칩 줄이 통째로 빠진다** |
 | `market_cap` / `volume` / `week52` | 하단 3열 지표 |
 

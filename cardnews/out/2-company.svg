@@ -24,14 +24,9 @@
 
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">물류 현장의 자산 위치를</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">실시간으로 추적하는 회사예요</text>
-  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">라스베이거스 본사 · 자회사가 Dot Matrix 를 운영해요</text>
-  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">연매출 580만 달러 · 자본잠식 상태예요</text>
-  <rect x="80" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="228" y="834" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">자산추적 SaaS</text>
-  <rect x="392" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="540" y="834" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">IoT 태그 제조</text>
-  <rect x="704" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="852" y="834" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">물류 · 제조</text>
+  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">라스베이거스 본사 · 플랫폼 이름은 Dot Matrix 예요</text>
+  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">IoT 태그로 위치와 작업 흐름을 추적하는 구독 서비스입니다</text>
+  <text x="80" y="806" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">연매출 580만 달러 · 순이익률 -730% · 자본잠식 상태</text>
 
   <rect x="80" y="880" width="920" height="172" rx="52" fill="#FFFFFF"/>
   <text x="233" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">시가총액</text>

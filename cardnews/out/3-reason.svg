@@ -22,12 +22,12 @@
   <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">그래서 <tspan fill="#B455C4">왜 올랐을까</tspan>?</text>
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
-  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">새로 나온 호재는 없어요</text>
-  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">물량이 얇아서 튄 겁니다</text>
+  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">신규 공시나 호재 없이</text>
+  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">수급만으로 나온 반등입니다</text>
 
-  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">6월 25대 1 액면병합으로 유통 주식이 크게 줄었어요.</text>
-  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">8/18 악재로 $0.42까지 눌린 뒤 이틀 만에 튀었습니다.</text>
-  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">상폐 심사 · 채무불이행 · 10-Q 지연은 그대로예요.</text>
+  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">6월 25대 1 액면병합으로 유통 주식이 크게 감소했습니다.</text>
+  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">8/18 급락으로 $0.42까지 조정된 뒤 반등이 시작됐습니다.</text>
+  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">상장폐지 심사 · 채무불이행 · 10-Q 지연은 변동이 없습니다.</text>
 
   <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 나스닥 공시 · 시세는 8/25 장중 기준</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>

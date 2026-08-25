@@ -130,11 +130,13 @@ def card1(c, align="end"):
 
 # ── 2. 기업 설명 ───────────────────────────────────
 def card2(c):
-    """사진 · 설명 2줄 · 보조 2줄 · 사업 부문 칩 3개 · 하단 지표 3열
-    desc_sub2 와 segments 는 없으면 그 줄이 통째로 빠진다."""
-    sub2 = c.get("desc_sub2")
-    sub2_svg = (f'  <text x="80" y="768" font-size="27" font-weight="500" '
-                f'letter-spacing="-0.5" fill="{SUB}">{esc(sub2)}</text>\n') if sub2 else ""
+    """사진 · 설명 2줄 · 보조 최대 3줄 · 사업 부문 칩 3개 · 하단 지표 3열
+    desc_sub2 · desc_sub3 · segments 는 없으면 그 줄이 통째로 빠진다."""
+    subs = [s for s in (c.get("desc_sub"), c.get("desc_sub2"), c.get("desc_sub3")) if s]
+    sub_svg = "".join(
+        f'  <text x="80" y="{730 + i * 38}" font-size="27" font-weight="500" '
+        f'letter-spacing="-0.5" fill="{SUB}">{esc(s)}</text>\n'
+        for i, s in enumerate(subs[:3]))
 
     segs, seg_svg = c.get("segments") or [], ""
     for i, s in enumerate(segs[:3]):
@@ -152,8 +154,7 @@ def card2(c):
 
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead1"])}</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead2"])}</text>
-  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="{SUB}">{esc(c["desc_sub"])}</text>
-{sub2_svg}{seg_svg}
+{sub_svg}{seg_svg}
   <rect x="80" y="880" width="920" height="172" rx="52" fill="#FFFFFF"/>
   <text x="233" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">시가총액</text>
   <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["market_cap"])}</text>
