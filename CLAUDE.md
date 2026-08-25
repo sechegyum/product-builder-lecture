@@ -12,6 +12,10 @@ cardnews/
 ├── generate.py        디자인 코드. 수정 금지
 ├── make_photos.py     photos/ -> assets/ 규격 맞춤 + 표지 원형 로고
 ├── render.py          out/*.svg -> png/*.png (1080x1080, 헤드리스 크롬)
+├── svg_outline.py     글자를 패스로 변환 (Canva 업로드용)
+├── make_chart.py      candles -> 사진 슬롯용 일봉 차트
+├── make_graphic.py    쓸 사진이 없을 때 브랜드 톤 추상 그래픽
+├── fonts/             Pretendard 4종 (렌더 · Canva 업로드)
 ├── archive.py         회차 보관. 새 회차 시작 전에 먼저 실행
 ├── README.md          디자인 규칙 · config 필드 표 · 문구 원칙
 ├── PROMPT.md          요청 양식
@@ -40,8 +44,12 @@ python3 generate.py config.json out     # SVG 5장
 python3 render.py                       # PNG 5장
 ```
 
-렌더에는 Pretendard 가 시스템 폰트로 필요하다 (`fc-list | grep -i pretendard`).
-없으면 `github.com/orioncactus/pretendard` 릴리스에서 받아 `~/.fonts` 에 넣고 `fc-cache -f`.
+렌더에는 Pretendard 가 시스템 폰트로 필요하다. 컨테이너는 세션마다 초기화되므로
+**`cardnews/fonts/` 의 OTF 4개를 먼저 설치**하고 시작한다.
+
+```
+mkdir -p ~/.fonts && cp cardnews/fonts/*.otf ~/.fonts/ && fc-cache -f
+```
 
 ### 커밋
 
