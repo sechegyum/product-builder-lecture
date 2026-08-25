@@ -192,6 +192,23 @@ python3 make_chart.py 1000 372 chart-reason.png    # 3번 카드 슬롯
 
 카드 색상 토큰을 그대로 쓰기 때문에 사진 자리에 넣어도 톤이 어긋나지 않는다.
 
+### Canva 로 넘길 때
+
+```
+python3 svg_outline.py out svg-canva     # 글자를 패스로 변환
+```
+
+Canva 에는 Pretendard 가 없다. `out/*.svg` 를 그대로 올리면 폰트가 치환되면서
+글자 폭이 달라져 줄이 밀린다. `svg_outline.py` 는 글자를 도형으로 바꿔
+어디서 열어도 보이는 그대로 나오게 만든다. 대신 문구 수정은 안 된다.
+
+Pretendard 에 없는 글자(`✦` 등)는 DejaVu Sans 로 폴백한다.
+변환 뒤 `render.py` 로 다시 렌더해 원본 PNG 와 비교하면 차이는
+글자 테두리 안티에일리어싱뿐이다 (약 1%).
+
+문구를 Canva 에서 고쳐야 하면 `out/*.svg` 를 쓰되
+Canva 브랜드킷에 Pretendard 를 먼저 올려둘 것.
+
 ### 전체 흐름
 
 ```
