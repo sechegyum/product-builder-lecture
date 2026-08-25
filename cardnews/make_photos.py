@@ -19,7 +19,10 @@ LAV = (239, 234, 252)          # #EFEAFC
 # (원본, 폭, 높이, 결과, 크롭)  — 높이는 generate.py 슬롯 규격
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
-JOBS = []      # 이번 회차는 사진 대신 생성 그래픽과 차트를 쓴다
+JOBS = [
+    ("screens.png", 1000, 290, "photo-company.jpg", None),   # 2번 카드
+    ("arrow.png",   1000, 372, "photo-reason.jpg",  None),   # 3번 카드
+]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
 #   {"src": 파일명}                  로고 원본을 그대로
