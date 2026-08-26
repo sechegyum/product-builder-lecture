@@ -19,14 +19,17 @@ LAV = (239, 234, 252)          # #EFEAFC
 # (원본, 폭, 높이, 결과, 크롭)  — 높이는 generate.py 슬롯 규격
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
-JOBS = []      # 사진 대기 중 — 도착하면 여기 채운다
+JOBS = [
+    ("xpon1.jpg", 1000, 290, "photo-company.jpg", (0, 20, 340, 220)),  # 2번 카드 · 배터리 (가로로 잘라 크게)
+    ("xpon3.jpg", 1000, 372, "photo-reason.jpg",  None),   # 3번 카드 · RV 캠핑
+]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
 #   {"src": 파일명}                  로고 원본을 그대로
 #   {"src": 파일명, "crop": (l,t,r,b)}  로고에서 심볼만 잘라서
 #   {"text": "R"}                    로고가 없는 티커용 레터마크
 # SPAC 처럼 쓸 로고가 아예 없으면 None 으로 두면 빈 원이 나온다.
-CHIP = {"text": "E", "out": "logo-chip.png"}
+CHIP = {"src": "xponlogo.jpg", "out": "logo-chip.png", "fill": 1.0}
 #   fill — 마크가 원 안에서 차지할 가로 비율. 가로로 넓은 마크는 키워야 읽힌다
 CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
 PURPLE = (139, 91, 214)                        # #8B5BD6
