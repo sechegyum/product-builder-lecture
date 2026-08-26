@@ -154,8 +154,17 @@ python3 render.py
 
 ### 7. SNS 글귀
 
-`cardnews/SNS-TEMPLATE.md` 뼈대로 인스타 캡션 + 쓰레드 체인 5개를 쓰고
-`cardnews/sns.md` 에 저장한다. 카드뉴스와 한 세트다.
+`cardnews/SNS-TEMPLATE.md` 뼈대로 인스타 캡션 + 쓰레드 단일 포스트를 쓰고
+`cardnews/sns.md` 에 저장한다. 블로그는 `blog.md` · `blog.txt`. 카드뉴스와 한 세트다.
+
+**인스타와 블로그는 반드시 이 두 줄로 시작한다.**
+
+```
+안녕하세요. 스냅베스트(Snapvest)입니다.
+오늘 다루어볼 종목은 {회사명}({티커})입니다.
+```
+
+쓰레드는 인사 없이 `나스닥에 상장된 …` 으로 바로 들어간다.
 
 ### 8. 커밋
 
