@@ -89,7 +89,7 @@ python3 generate.py config.json out
 | 키 | 설명 |
 |---|---|
 | `cover_line1~3` | 헤드라인 3줄. **3번째 줄이 마젠타** |
-| `cover_fact1~2` | 카드 하단 요약 2줄 |
+| `cover_fact1~2` | 카드 하단 2줄. **회사 설명을 쓴다.** 주가·거래량 이야기는 금지 (등락률은 바로 위에 이미 있다) |
 | `logo` | 흰 카드 왼쪽 원형 로고. **비워두면 빈 원**. `make_photos.py` 가 만든 `assets/logo-chip.png` 를 쓴다 |
 
 ### 2번 기업 설명
