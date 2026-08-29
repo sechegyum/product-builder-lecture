@@ -32,7 +32,7 @@
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">중국에서 휴대폰 요금을</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">충전해주는 회사예요</text>
   <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">본사는 미국 플로리다 웨스트팜비치 · 나스닥 상장</text>
-  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">발행주식 6,131만 주 · 섹터는 무선통신 서비스로 분류돼요</text>
+  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">발행주식 6,131만 주 · 하루에 그 20배가 거래됐어요</text>
   <rect x="80" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
   <text x="228" y="834" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">모바일 충전</text>
   <rect x="392" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
@@ -42,12 +42,12 @@
 
   <rect x="80" y="880" width="920" height="172" rx="52" fill="#FFFFFF"/>
   <text x="233" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">시가총액</text>
-  <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">3,500만 달러</text>
+  <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">2,400만 달러</text>
   <line x1="387" y1="922" x2="387" y2="1010" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">거래량</text>
-  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 800배</text>
+  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 3,600배</text>
   <line x1="693" y1="922" x2="693" y2="1010" stroke="#F1EDFA" stroke-width="3"/>
   <text x="847" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">52주 위치</text>
-  <text x="847" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하위 20%</text>
+  <text x="847" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하위 11%</text>
 </g>
 </svg>
