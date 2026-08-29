@@ -10,7 +10,8 @@ config.json 의 date · ticker 로 폴더 이름을 만든다 → archive/2026-0
 import json, pathlib, shutil, sys
 
 HERE = pathlib.Path(__file__).parent
-MOVE = ["config.json", "SOURCES.md", "sns.md", "photos", "assets", "out", "png"]
+MOVE = ["config.json", "SOURCES.md", "sns.md", "blog.md", "blog.txt",
+        "photos", "assets", "out", "png"]
 
 
 def main():
