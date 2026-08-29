@@ -100,6 +100,10 @@ python3 generate.py config.json out
 | `desc_sub` | 흐린 보조 1줄 |
 | `desc_sub2` / `desc_sub3` | 보조 2·3번째 줄. **없으면 그 줄이 통째로 빠진다** |
 | `segments` | 사업 부문 칩 3개. **없으면 칩 줄이 통째로 빠진다** |
+
+> ⚠ 2번 카드는 **보조 2줄 + 칩 3개**가 상한이다.
+> `desc_sub3`(y=806) 와 `segments`(칩 rect y=800) 를 같이 쓰면 글자가 칩에 깔린다.
+> 셋째 줄이 꼭 필요하면 `segments` 를 빼고, 사업 부문을 보여주려면 `desc_sub3` 를 뺀다.
 | `market_cap` / `volume` / `week52` | 하단 3열 지표 |
 
 ### 3번 급등 이유
