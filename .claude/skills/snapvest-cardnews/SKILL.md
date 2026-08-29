@@ -16,12 +16,13 @@ description: 스냅베스트 인스타그램 카드뉴스 5장 세트를 만든�
 
 | 위치 | 문구 |
 |---|---|
-| 5번 카드 버튼 아래 | **로그인 없이도 10회 무료** |
+| 5번 카드 버튼 아래 | **로그인 없이도 10회 무료** (카드 전용 · 글귀에는 쓰지 않는다) |
 | 5번 카드 우측 하단 | **snapvestai.com** (`dom()` · `Snapvest` 아님) |
 | 5번 카드 좌측 하단 | 숫자는 코드가, 해석은 AI가. |
 
 `generate.py` 에 박혀 있어 config 로 바꿀 필요가 없다.
-무료 횟수가 또 바뀌면 `generate.py` · `promo.json` · `SNS-TEMPLATE.md` 세 곳을 같이 고친다.
+무료 횟수가 또 바뀌면 `generate.py` 와 `promo.json` 을 같이 고친다.
+**인스타·쓰레드·블로그 글귀에는 무료 횟수 홍보 문구를 넣지 않는다.** 링크는 `snapvestai.com` 만.
 
 ## 표지 흰 카드 두 줄 (`cover_fact1` · `cover_fact2`)
 
