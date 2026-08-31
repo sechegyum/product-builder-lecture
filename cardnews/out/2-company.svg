@@ -31,8 +31,8 @@
 
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">액션캠 '히어로'로</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">한 시대를 만든 회사예요</text>
-  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2014년 나스닥 상장 · 52주 고점 3.05달러에서 71% 내려왔어요</text>
-  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2분기 매출 1억 500만 달러로 31% 줄고 순손실은 5,100만 달러예요</text>
+  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2014년 나스닥 상장 · 그해 고점은 94달러였어요</text>
+  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2분기 매출 1억 500만 달러 −31% · 카메라 판매 29만 대 −38%</text>
   <rect x="80" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
   <text x="228" y="834" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">액션캠 히어로</text>
   <rect x="392" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>
@@ -45,7 +45,7 @@
   <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">1억 6천만 달러</text>
   <line x1="387" y1="922" x2="387" y2="1010" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">거래량</text>
-  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 4배</text>
+  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">평균 10배</text>
   <line x1="693" y1="922" x2="693" y2="1010" stroke="#F1EDFA" stroke-width="3"/>
   <text x="847" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="#9691B8">52주 위치</text>
   <text x="847" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="#2B2B3A">고점 대비 -71%</text>
