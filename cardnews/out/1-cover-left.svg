@@ -26,7 +26,7 @@
   <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">08.31</text>
   <text x="80" y="338" text-anchor="start" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">금호전기</tspan><tspan font-weight="700">는 왜</tspan></text>
   <text x="80" y="442" text-anchor="start" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">3주 만에</text>
-  <text x="80" y="546" text-anchor="start" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">4배 올랐을까?</text>
+  <text x="80" y="546" text-anchor="start" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">308% 올랐을까?</text>
   <rect x="80" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
