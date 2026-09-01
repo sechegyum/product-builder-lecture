@@ -303,9 +303,14 @@ def main():
         "1-cover-left.svg":   card1(c, "start"),    # 좌측 정렬
         "2-company.svg": card2(c),
         "3-reason.svg":  card3(c),
-        "4-chart.svg":   card4(c),
         "5-cta.svg":     card5(c),
     }
+    # 신규 상장처럼 시세 이력이 아예 없는 회차는 4번(지표)을 건너뛴다.
+    # 지어낸 봉을 내보내느니 4장으로 나가는 게 낫다.
+    if c.get("candles") and c.get("gauges"):
+        files["4-chart.svg"] = card4(c)
+    else:
+        print("  · candles/gauges 없음 → 4번 지표 카드는 건너뜁니다")
     for name, svg in files.items():
         (outdir / name).write_text(svg, encoding="utf-8")
         print(f"  ✓ {outdir/name}")
