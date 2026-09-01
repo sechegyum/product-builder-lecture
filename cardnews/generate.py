@@ -148,8 +148,8 @@ def card2(c):
     segs, seg_svg = c.get("segments") or [], ""
     for i, s in enumerate(segs[:3]):
         x = 80 + i * 312
-        seg_svg += (f'  <rect x="{x}" y="800" width="296" height="54" rx="27" fill="#FFFFFF"/>\n'
-                    f'  <text x="{x + 148}" y="834" text-anchor="middle" font-size="24" '
+        seg_svg += (f'  <rect x="{x}" y="846" width="296" height="54" rx="27" fill="#FFFFFF"/>\n'
+                    f'  <text x="{x + 148}" y="880" text-anchor="middle" font-size="24" '
                     f'font-weight="700" letter-spacing="-0.5" fill="{PURPLE}">{esc(s)}</text>\n')
 
     return wrap(f'''{DEFS}
