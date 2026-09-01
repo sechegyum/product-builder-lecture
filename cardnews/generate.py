@@ -162,15 +162,15 @@ def card2(c):
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead1"])}</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(c["desc_lead2"])}</text>
 {sub_svg}{seg_svg}
-  <rect x="80" y="880" width="920" height="172" rx="52" fill="#FFFFFF"/>
-  <text x="233" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">시가총액</text>
-  <text x="233" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["market_cap"])}</text>
-  <line x1="387" y1="922" x2="387" y2="1010" stroke="{LINE_SOFT}" stroke-width="3"/>
-  <text x="540" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">거래량</text>
-  <text x="540" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["volume"])}</text>
-  <line x1="693" y1="922" x2="693" y2="1010" stroke="{LINE_SOFT}" stroke-width="3"/>
-  <text x="847" y="942" text-anchor="middle" font-size="24" font-weight="600" fill="{FAINT}">52주 위치</text>
-  <text x="847" y="998" text-anchor="middle" font-size="42" font-weight="700" letter-spacing="-1" fill="{INK}">{esc(c["week52"])}</text>
+  <rect x="80" y="920" width="920" height="132" rx="40" fill="#FFFFFF"/>
+  <text x="233" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="{FAINT}">시가총액</text>
+  <text x="233" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="{INK}">{esc(c["market_cap"])}</text>
+  <line x1="387" y1="946" x2="387" y2="1026" stroke="{LINE_SOFT}" stroke-width="3"/>
+  <text x="540" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="{FAINT}">거래량</text>
+  <text x="540" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="{INK}">{esc(c["volume"])}</text>
+  <line x1="693" y1="946" x2="693" y2="1026" stroke="{LINE_SOFT}" stroke-width="3"/>
+  <text x="847" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="{FAINT}">52주 위치</text>
+  <text x="847" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="{INK}">{esc(c["week52"])}</text>
 </g>''', f'{c["company_ko"]} · 어떤 회사일까')
 
 
