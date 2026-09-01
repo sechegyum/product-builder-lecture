@@ -268,6 +268,31 @@ def card4(c):
 </g>''', f'{c["company_ko"]} · 지표')
 
 
+def card4_photo(c):
+    """일별 시세 이력이 없어 봉을 못 그리는 회차용. 시세 캡처 + 핵심 수치 3열.
+    지어낸 봉 대신 실제 화면을 그대로 보여준다."""
+    st = c.get("chart_stats", [])[:3]
+    cols = ""
+    for i, (label, value) in enumerate(st):
+        x = (233, 540, 847)[i]
+        cols += (f'  <text x="{x}" y="922" text-anchor="middle" font-size="21" font-weight="600" fill="{FAINT}">{esc(label)}</text>\n'
+                 f'  <text x="{x}" y="972" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="{INK}">{esc(value)}</text>\n')
+    divs = "".join(f'  <line x1="{x}" y1="906" x2="{x}" y2="986" stroke="{LINE_SOFT}" stroke-width="3"/>\n'
+                   for x in (387, 693)[:max(0, len(st) - 1)])
+    return wrap(f'''{DEFS}
+{img_block(c.get("photo_chart"), 300, 500, "pch")}
+<g {FONT}>
+{hdr(c["date"])}
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="{INK}">시세는 <tspan fill="{ACCENT}">지금 어디쯤</tspan>일까?</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+
+  <rect x="80" y="880" width="920" height="132" rx="40" fill="#FFFFFF"/>
+{cols}{divs}
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="{DIM}">{esc(c.get("chart_note", ""))}</text>
+  {dom(1046)}
+</g>''', f'{c["company_ko"]} · 시세')
+
+
 # ── 5. 마무리 ──────────────────────────────────────
 def card5(c):
     items = "".join(
@@ -309,8 +334,11 @@ def main():
     # 지어낸 봉을 내보내느니 4장으로 나가는 게 낫다.
     if c.get("candles") and c.get("gauges"):
         files["4-chart.svg"] = card4(c)
+    elif c.get("photo_chart"):
+        files["4-chart.svg"] = card4_photo(c)
+        print("  · 봉 데이터 없음 → 4번은 시세 캡처판으로 만듭니다")
     else:
-        print("  · candles/gauges 없음 → 4번 지표 카드는 건너뜁니다")
+        print("  · candles/gauges/photo_chart 없음 → 4번 카드는 건너뜁니다")
     for name, svg in files.items():
         (outdir / name).write_text(svg, encoding="utf-8")
         print(f"  ✓ {outdir/name}")

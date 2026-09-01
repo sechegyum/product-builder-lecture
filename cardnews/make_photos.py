@@ -20,8 +20,9 @@ LAV = (239, 234, 252)          # #EFEAFC
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
 JOBS = [
-    ("sgld1.jpg",    1000, 290, "photo-company.jpg", None),                 # 2번 카드 · 골드웨지 밀 항공사진
-    ("sgld-5min.jpg", 1000, 372, "photo-reason.jpg", (0, 25, 1130, 625)),  # 3번 카드 · 시간외 5분봉
+    ("sgld1.jpg",     1000, 290, "photo-company.jpg", None),                  # 2번 카드 · 골드웨지 밀 항공사진
+    ("sgld2.jpg",     1000, 372, "photo-reason.jpg",  (0, 120, 1206, 790)),   # 3번 카드 · 잔지바르 트렌드 시추도
+    ("sgld-5min.jpg", 1000, 500, "photo-chart.jpg",   (0, 28, 1130, 620)),    # 4번 카드 · 시간외 5분봉 (위아래 라벨 온전히)
 ]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
