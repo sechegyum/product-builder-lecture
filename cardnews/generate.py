@@ -338,7 +338,10 @@ def main():
         files["4-chart.svg"] = card4_photo(c)
         print("  · 봉 데이터 없음 → 4번은 시세 캡처판으로 만듭니다")
     else:
-        print("  · candles/gauges/photo_chart 없음 → 4번 카드는 건너뜁니다")
+        print("\n  !! 4번 카드를 만들 수 없습니다. 카드뉴스는 5장이 기본입니다.")
+        print("     일별 시세가 있으면 candles + gauges 를,")
+        print("     없으면 시세 캡처를 photo_chart + chart_stats 로 넣으세요.")
+        print("     4장으로 내보내는 건 최후의 수단입니다.\n")
     for name, svg in files.items():
         (outdir / name).write_text(svg, encoding="utf-8")
         print(f"  ✓ {outdir/name}")
