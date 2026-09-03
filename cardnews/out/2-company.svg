@@ -31,14 +31,14 @@
 
   <text x="80" y="634" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">흩어진 기업 데이터를</text>
   <text x="80" y="684" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">한곳에 모아주는 회사예요</text>
-  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2020년 뉴욕증권거래소 상장 · 쓴 만큼 내는 과금 구조예요</text>
-  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">연 100만 달러 넘게 쓰는 고객이 828곳 · 1년 새 27% 늘었어요</text>
+  <text x="80" y="730" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2020년 뉴욕증권거래소 상장 · 본사는 캘리포니아 멘로파크예요</text>
+  <text x="80" y="768" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">쓴 만큼 내는 과금이라 고객이 AI를 돌릴수록 매출이 늘어납니다</text>
   <rect x="80" y="846" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="228" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">데이터 웨어하우스</text>
+  <text x="228" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">데이터 클라우드</text>
   <rect x="392" y="846" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="540" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">데이터 공유</text>
+  <text x="540" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">AI 에이전트</text>
   <rect x="704" y="846" width="296" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="852" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">AI 제품</text>
+  <text x="852" y="880" text-anchor="middle" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">데이터 공유</text>
 
   <rect x="80" y="920" width="920" height="132" rx="40" fill="#FFFFFF"/>
   <text x="233" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="#9691B8">시가총액</text>

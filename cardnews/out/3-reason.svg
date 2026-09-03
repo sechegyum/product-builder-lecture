@@ -29,14 +29,14 @@
   <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">그래서 <tspan fill="#B455C4">왜 올랐을까</tspan>?</text>
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
-  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">실적이 예상을</text>
-  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">크게 넘었어요</text>
+  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">실적도 전망도</text>
+  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">예상을 넘겼어요</text>
 
-  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">2분기 매출 15억 5천만 달러로 전년보다 35% 늘었습니다.</text>
-  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">조정 주당순이익 0.62달러, 예상치 0.45달러를 크게 넘겼어요.</text>
-  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">연간 제품 매출 전망도 60억 7천만 달러로 올렸습니다.</text>
+  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">조정 주당순이익 0.62달러로 예상치 0.45달러를 38% 넘겼습니다.</text>
+  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">제품 매출은 37% 늘어 3분기 연속으로 성장이 빨라졌어요.</text>
+  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">영업이익률도 11%에서 15.3%로 함께 올랐습니다.</text>
 
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 실적 발표 · 시세는 9/3 프리마켓 기준</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · FY2027 2분기 실적 발표 · 시세는 9/3 프리마켓 기준</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>
