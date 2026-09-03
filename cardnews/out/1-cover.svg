@@ -24,9 +24,9 @@
   <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
   <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
   <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">09.03</text>
-  <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">스노우플레이크</tspan><tspan font-weight="700">는 왜</tspan></text>
-  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">하루 만에</text>
-  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">24% 올랐을까?</text>
+  <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">스노우플레이크</tspan><tspan font-weight="700">는</tspan></text>
+  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">실적발표 후</text>
+  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">왜 24% 올랐을까?</text>
   <rect x="760" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
