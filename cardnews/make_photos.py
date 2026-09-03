@@ -20,8 +20,8 @@ LAV = (239, 234, 252)          # #EFEAFC
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
 JOBS = [
-    ("gygy1.jpg", 1000, 290, "photo-company.jpg", (0, 80, 1197, 610)),  # 2번 카드 · KZN AI 제품 구성
-    ("gygy2.jpg", 1000, 372, "photo-reason.jpg",  (0, 40, 1197, 640)),  # 3번 카드 · 라운드 분석 대시보드
+    ("snow1.jpg", 1000, 290, "photo-company.jpg", None),  # 2번 카드 · 월드투어 서울 키노트
+    ("snow2.jpg", 1000, 372, "photo-reason.jpg",  None),  # 3번 카드 · 펄스애드 파트너 선정
 ]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
@@ -29,7 +29,7 @@ JOBS = [
 #   {"src": 파일명, "crop": (l,t,r,b)}  로고에서 심볼만 잘라서
 #   {"text": "R"}                    로고가 없는 티커용 레터마크
 # SPAC 처럼 쓸 로고가 아예 없으면 None 으로 두면 빈 원이 나온다.
-CHIP = {"src": "gygy-logo.jpg", "out": "logo-chip.png", "fill": 0.60}
+CHIP = {"src": "snow-logo.jpg", "out": "logo-chip.png", "fill": 0.66}
 #   fill — 마크가 원 안에서 차지할 가로 비율. 가로로 넓은 마크는 키워야 읽힌다
 CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
 PURPLE = (139, 91, 214)                        # #8B5BD6
