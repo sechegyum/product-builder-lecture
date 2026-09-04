@@ -42,10 +42,10 @@
 
   <rect x="80" y="920" width="920" height="132" rx="40" fill="#FFFFFF"/>
   <text x="233" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="#9691B8">시가총액</text>
-  <text x="233" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">1,317억 달러</text>
+  <text x="233" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">1,236억 달러</text>
   <line x1="387" y1="946" x2="387" y2="1026" stroke="#F1EDFA" stroke-width="3"/>
   <text x="540" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="#9691B8">거래량</text>
-  <text x="540" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">평균 3.2배</text>
+  <text x="540" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">평균 5.2배</text>
   <line x1="693" y1="946" x2="693" y2="1026" stroke="#F1EDFA" stroke-width="3"/>
   <text x="847" y="962" text-anchor="middle" font-size="21" font-weight="600" fill="#9691B8">52주 위치</text>
   <text x="847" y="1012" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">최고가 경신</text>
