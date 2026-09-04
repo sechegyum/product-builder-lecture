@@ -17,6 +17,7 @@ cardnews/
 ├── make_graphic.py    쓸 사진이 없을 때 브랜드 톤 추상 그래픽
 ├── fonts/             Pretendard 4종 (렌더 · Canva 업로드)
 ├── archive.py         회차 보관. 새 회차 시작 전에 먼저 실행
+├── pack.py            회차를 dist/TICKER-날짜.zip 으로 묶음 (대표님 PC 로 보낼 것)
 ├── README.md          디자인 규칙 · config 필드 표 · 문구 원칙
 ├── PROMPT.md          요청 양식
 ├── SNS-TEMPLATE.md    인스타 캡션 · 쓰레드 체인 뼈대
@@ -42,7 +43,17 @@ python3 archive.py                      # 이전 회차 보관
 python3 make_photos.py                  # 사진 전처리
 python3 generate.py config.json out     # SVG 5장
 python3 render.py                       # PNG 5장
+python3 pack.py                         # dist/TICKER-날짜.zip 으로 묶기
 ```
+
+### 회차를 끝내면 zip 을 보낸다
+
+카드가 다 나오면 `pack.py` 로 묶어 **파일로 보낸다.** 컨테이너는 대표님
+컴퓨터가 아니라서 직접 저장해 드릴 수 없다 — 받아서 푸는 것이 유일한 길이다.
+풀면 `SNOW/` 처럼 **티커 이름의 폴더 하나**가 나온다 (png · out · photos ·
+assets · 글귀 전부 들어 있음).
+
+낱개로 보내면 스무 개가 넘고 받는 쪽에서 폴더를 손으로 나눠 담아야 한다.
 
 렌더에는 Pretendard 가 시스템 폰트로 필요하다. 컨테이너는 세션마다 초기화되므로
 **`cardnews/fonts/` 의 OTF 4개를 먼저 설치**하고 시작한다.
