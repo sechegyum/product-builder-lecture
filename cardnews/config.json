@@ -1,0 +1,45 @@
+{
+  "date": "09.04",
+  "year": 2026,
+  "ticker": "386380",
+  "exchange": "KOSDAQ",
+  "company_ko": "스카이랩스",
+  "company_en": "SkyLabs",
+
+  "price": "17,830원",
+  "change": "+78.3%",
+
+  "logo": "assets/logo-chip.png",
+  "cover_line1": "스카이랩스는",
+  "cover_line2": "상장 첫날",
+  "cover_line3": "왜 78% 올랐을까?",
+  "cover_fact1": "손가락에 끼는 반지로 24시간 혈압을 재요",
+  "cover_fact2": "9월 4일 코스닥 상장, 기술특례 300호 기업입니다",
+
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "팔에 커프를 감지 않고",
+  "desc_lead2": "반지로 혈압을 재요",
+  "desc_sub": "2015년 설립 · 세계 최초 반지형 커프리스 혈압계예요",
+  "desc_sub2": "전국 2,000여 병·의원이 쓰고 건강보험 급여도 적용됩니다",
+  "segments": ["반지형 혈압계", "의료데이터", "원격 모니터링"],
+  "market_cap": "3,345억 원",
+  "volume": "자료 없음",
+  "week52": "상장 첫날",
+
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "공모는 부진했는데",
+  "reason_lead2": "장이 열리자 뒤집혔어요",
+  "reason_body": [
+    "공모가는 희망 밴드 하단보다 23% 낮은 1만원이었어요.",
+    "그런데 상반기 매출 절반이 이미 해외에서 나왔고,",
+    "미국 FDA 임상도 2027년 승인을 목표로 가고 있습니다."
+  ],
+  "reason_source": "출처 · 증권신고서 · 시세는 9/4 오전 10시 기준",
+
+  "cta_items": [
+    "2025년 순손실 630억",
+    "대웅제약 유통 의존 98%",
+    "의무보유확약 10.9%"
+  ]
+}
