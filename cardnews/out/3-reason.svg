@@ -36,7 +36,7 @@
   <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그런데 상반기 매출 절반이 이미 해외에서 나왔고,</text>
   <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">미국 FDA 임상도 2027년 승인을 목표로 가고 있습니다.</text>
 
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 증권신고서 · 시세는 9/4 오전 10시 기준</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 증권신고서 · 시세는 9/4 종가 기준</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>
