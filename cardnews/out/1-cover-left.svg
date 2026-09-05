@@ -24,7 +24,7 @@
   <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
   <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
   <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">09.04</text>
-  <text x="80" y="338" text-anchor="start" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">스카이랩스</tspan><tspan font-weight="700">는</tspan></text>
+  <text x="80" y="338" text-anchor="start" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">스카이랩스</tspan><tspan font-weight="700"></tspan></text>
   <text x="80" y="442" text-anchor="start" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">상장 첫날</text>
   <text x="80" y="546" text-anchor="start" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">왜 135% 올랐을까?</text>
   <rect x="80" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
