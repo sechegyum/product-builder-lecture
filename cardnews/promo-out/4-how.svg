@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>스냅베스트 · 어떻게 쓰나</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<rect x="-200" y="-160" width="900" height="900" fill="url(#m1)"/>
+<rect x="440" y="500" width="940" height="940" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">서비스 소개</text>
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A"><tspan fill="#B455C4">어떻게</tspan> 쓰면 될까?</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+  <rect x="80" y="310" width="920" height="182" rx="44" fill="#FFFFFF"/>
+  <circle cx="170" cy="401" r="44" fill="url(#line)"/>
+  <text x="170" y="416" text-anchor="middle" font-size="42" font-weight="700" fill="#FFFFFF">1</text>
+  <text x="248" y="390" font-size="34" font-weight="700" letter-spacing="-1.2" fill="#2B2B3A">티커를 입력해요</text>
+  <text x="248" y="436" font-size="25" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">MRNA · 041190 처럼 종목 코드만 넣으면 됩니다</text>
+  <rect x="80" y="520" width="920" height="182" rx="44" fill="#FFFFFF"/>
+  <circle cx="170" cy="611" r="44" fill="url(#line)"/>
+  <text x="170" y="626" text-anchor="middle" font-size="42" font-weight="700" fill="#FFFFFF">2</text>
+  <text x="248" y="600" font-size="34" font-weight="700" letter-spacing="-1.2" fill="#2B2B3A">숫자를 확인해요</text>
+  <text x="248" y="646" font-size="25" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">지분 · 공매도 · 공시가 한 화면에 정리돼요</text>
+  <rect x="80" y="730" width="920" height="182" rx="44" fill="#FFFFFF"/>
+  <circle cx="170" cy="821" r="44" fill="url(#line)"/>
+  <text x="170" y="836" text-anchor="middle" font-size="42" font-weight="700" fill="#FFFFFF">3</text>
+  <text x="248" y="810" font-size="34" font-weight="700" letter-spacing="-1.2" fill="#2B2B3A">AI 해석을 읽어요</text>
+  <text x="248" y="856" font-size="25" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그 숫자가 무슨 뜻인지 한 문단으로 알려줘요</text>
+
+  <text x="80" y="1000" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#8B5BD6">급등·급락 뉴스를 봤을 때 티커부터 넣어보세요</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">로그인 없이도 10회 무료</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>
