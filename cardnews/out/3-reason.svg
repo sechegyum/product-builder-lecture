@@ -36,7 +36,7 @@
   <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">AI 데이터센터 전력 수요를 겨냥한다고 밝혔고,</text>
   <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">헝가리에 첫 통합 에너지 센터 부지를 샀습니다.</text>
 
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 시세는 9/8 종가 기준</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 시세는 9/8 프리마켓 기준</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>
