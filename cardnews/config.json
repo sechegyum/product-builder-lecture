@@ -5,38 +5,37 @@
   "exchange": "NASDAQ",
   "company_ko": "브렌엑스",
   "company_en": "BrenX",
-
   "price": "$2.75",
   "change": "+22.76%",
-
   "logo": "assets/logo-chip.png",
   "cover_line1": "브렌엑스",
   "cover_line2": "99% 빠진 뒤",
   "cover_line3": "왜 22% 올랐을까?",
-  "cover_fact1": "전기와 남는 열을 모아뒀다 꺼내 쓰는 회사예요",
+  "cover_fact1": "전기와 남는 열을 저장했다가 필요할 때 써요",
   "cover_fact2": "8월에 사명을 바꾸고 티커도 BRNX로 갈았습니다",
-
   "photo_company": "assets/photo-company.jpg",
   "desc_lead1": "전기와 남는 열을",
-  "desc_lead2": "모아뒀다 꺼내 써요",
+  "desc_lead2": "저장해두었다가 필요시 사용해요",
   "desc_sub": "2012년 이스라엘에서 설립 · 직원 43명이에요",
   "desc_sub2": "장비를 팔던 회사에서 직접 짓고 운영하는 쪽으로 틀었습니다",
-  "segments": ["열에너지 저장", "태양광", "데이터센터"],
+  "segments": [
+    "열에너지 저장",
+    "태양광",
+    "데이터센터"
+  ],
   "market_cap": "약 197만 달러",
   "volume": "자료 없음",
   "week52": "고점 대비 -99%",
-
   "photo_reason": "assets/photo-reason.jpg",
   "reason_verb": "올랐을까",
   "reason_lead1": "사명을 바꾸고",
-  "reason_lead2": "사업을 갈아탔어요",
+  "reason_lead2": "사업구조 방향성도 변경했어요",
   "reason_body": [
     "브렌밀러에너지에서 브렌엑스로 이름을 바꿨어요.",
     "AI 데이터센터 전력 수요를 겨냥한다고 밝혔고,",
     "헝가리에 첫 통합 에너지 센터 부지를 샀습니다."
   ],
   "reason_source": "출처 · 회사 공시 · 시세는 9/8 종가 기준",
-
   "cta_items": [
     "상장 이후 -99.99%",
     "6대1 병합 · 유통 72만주",
