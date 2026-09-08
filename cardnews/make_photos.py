@@ -22,6 +22,9 @@ LAV = (239, 234, 252)          # #EFEAFC
 JOBS = [
     ("integrated-energy-hub.webp",  1000, 290, "photo-company.jpg", None),  # 2번 · 통합 에너지 허브
     ("integrated-energy-hub1.webp", 1000, 372, "photo-reason.jpg",  None),  # 3번 · 실제 설치된 bGen
+    # 4번 · 일봉 캡처 자리. 이미지를 받으면 여기 넣는다.
+    # 원본이 가로로 납작하면(비 2.0 초과) 위아래에 흰 여백을 붙여 2.0 으로
+    # 맞춘 뒤 넣는다 — 안 그러면 build() 가 높이에 맞추며 좌우 봉을 잘라 낸다.
 ]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
