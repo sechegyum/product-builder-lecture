@@ -30,13 +30,13 @@
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
   <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">회사 발표는 없었고</text>
-  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">거래량만 200배 늘었어요</text>
+  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">거래량만 141배 늘었어요</text>
 
   <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">9월 8일 거래량이 5,918만주였어요.</text>
-  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">평소 10만~30만주니까 200배가 넘습니다.</text>
-  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그날 주가는 4.59% 오르는 데 그쳤습니다.</text>
+  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">직전 14일 평균 42만주의 141배입니다.</text>
+  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그런데 그날 주가는 4.59% 올랐어요.</text>
 
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 거래량은 9/8 · 시세는 9/9 기준</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 거래량은 9/8 · 9/9 는 프리마켓</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>
