@@ -29,14 +29,14 @@
   <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">그래서 <tspan fill="#B455C4">왜 올랐을까</tspan>?</text>
   <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
 
-  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">회사 발표는 없었고</text>
-  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">거래량만 141배 늘었어요</text>
+  <text x="80" y="740" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">회사 발표는 없었지만</text>
+  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">비트코인 채굴주가 다 올랐어요</text>
 
-  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">9월 8일 거래량이 5,918만주였어요.</text>
-  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">직전 14일 평균 42만주의 141배입니다.</text>
-  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">그런데 그날 주가는 4.59% 올랐어요.</text>
+  <text x="80" y="856" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">비트코인이 한 달 만에 22% 올랐고,</text>
+  <text x="80" y="898" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">9월 8일엔 사이퍼 +8%, 마라 +6%였어요.</text>
+  <text x="80" y="940" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">OLB는 채굴 자회사 디민트를 분사하는 중입니다.</text>
 
-  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 거래량은 9/8 · 9/9 는 프리마켓</text>
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">출처 · 회사 공시 · 시장 시세 · 9/9 는 프리마켓</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
 </g>
 </svg>
