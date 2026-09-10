@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>RFAI · 표지</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<circle cx="920" cy="180" r="200" fill="#B455C4" opacity="0.06"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">08.22</text>
+  <text x="80" y="342" font-size="82" font-weight="700" letter-spacing="-3" fill="#2B2B3A">RFAI는 왜</text>
+  <text x="80" y="442" font-size="82" font-weight="700" letter-spacing="-3" fill="#2B2B3A">하루 만에</text>
+  <text x="80" y="542" font-size="82" font-weight="700" letter-spacing="-3" fill="#B455C4">392% 올랐을까?</text>
+  <rect x="80" y="596" width="240" height="14" rx="7" fill="url(#line)"/>
+
+  <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
+  <defs><clipPath id="logo"><circle cx="176" cy="760" r="40"/></clipPath></defs><circle cx="176" cy="760" r="40" fill="#EFEAFC"/><image clip-path="url(#logo)" x="136" y="720" width="80" height="80" preserveAspectRatio="xMidYMid slice" href="data:image/png;base64,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"/>
+  <text x="244" y="752" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">RF Acquisition II</text>
+  <text x="244" y="794" font-size="23" font-weight="600" letter-spacing="0.5" fill="#9691B8">RFAI · NASDAQ</text>
+  <text x="944" y="752" text-anchor="end" font-size="40" font-weight="700" letter-spacing="-1" fill="#2B2B3A">$62.70</text>
+  <text x="944" y="794" text-anchor="end" font-size="26" font-weight="700" fill="#E0568A">+392.53%</text>
+  <line x1="136" y1="832" x2="944" y2="832" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="136" y="890" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">AI 신약 회사와 합병 승인 · 찬성 93.9%</text>
+  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">거래량 평균 11배 · 합병 후 티커는 NYB예요</text>
+
+  <text x="80" y="1046" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#B9B3D6">밀어서 보기 →</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>
