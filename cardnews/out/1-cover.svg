@@ -25,8 +25,8 @@
   <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
   <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">09.10</text>
   <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">메건홀딩스</tspan><tspan font-weight="700"></tspan></text>
-  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">하루 175% 뛰고</text>
-  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">왜 바로 빠질까?</text>
+  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">하루 700% 상승</text>
+  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">병합계획 대체?</text>
   <rect x="760" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
 
   <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
@@ -37,7 +37,7 @@
   <text x="944" y="794" text-anchor="end" font-size="26" font-weight="700" fill="#5A8FD6">-12.18%</text>
   <line x1="136" y1="832" x2="944" y2="832" stroke="#F1EDFA" stroke-width="3"/>
   <text x="136" y="890" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">말레이시아에서 양식장을 짓는 회사예요</text>
-  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">거래정지가 풀린 날 175% 뛰었습니다</text>
+  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">전일 0.10달러가 장중 0.83달러까지 갔어요</text>
 
   <text x="80" y="1046" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#B9B3D6">밀어서 보기 →</text>
   <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
