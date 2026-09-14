@@ -20,13 +20,13 @@ LAV = (239, 234, 252)          # #EFEAFC
 # 크롭은 원본 픽셀 기준 (left, top, right, bottom). 안 쓰면 None.
 # 스톡 이미지에 오탈자·워터마크·엉뚱한 축 라벨이 박혀 있으면 여기서 잘라낸다.
 JOBS = [
-    ("bdrx-news.jpg", 1000, 290, "photo-company.jpg", (0,  0, 1206, 330)),  # 2번 · MTX110 기사 헤드라인
-    ("bdrx-ced.webp", 1000, 372, "photo-reason.jpg",  (0, 40,  850, 430)),  # 3번 · CED 카테터 전달
-    # 기사 사진을 3번(급등 이유)에서 2번(회사 소개)으로 옮겼다. 기사 날짜가
-    # 2024년 10월이고 내용도 MTX110(뇌종양)이라, 2026년 9월 FAP 3상을 설명하는
-    # 3번에 두면 그게 이번 뉴스로 읽힌다. 파이프라인 소개인 2번이 제자리다.
-    # 기사는 헤드라인만 남겨 비를 3.65 로 올렸다 (슬롯 3.45).
-    # 4번 · 일봉 캡처 자리. 봉 데이터가 있으면 안 쓴다.
+    ("scni-banner.jpeg", 1000, 290, "photo-company.jpg", None),                   # 2번 · 사명 배너
+    ("scni-cdmo.webp",   1000, 372, "photo-reason.jpg",  (0, 280, 1200, 900)),    # 3번 · CDMO 충전·마감
+    ("scni-chart.png",   1000, 500, "photo-chart.jpg",   None),                   # 4번 · 토스 일봉 캡처
+    # 3번 원본은 정사각(1200x1200)이라 그대로면 전경이 328px 로 쪼그라든다.
+    # 작업자 머리부터 장갑까지만 가로로 잘라 비를 1.94 로 올렸다.
+    # 4번 캡처는 비 2.75 로 슬롯(2.0)보다 납작하다 — build() 가 위아래 흰 여백을
+    # 채워 맞춘다.
 ]
 
 # 1번 카드 표지 원형 로고 (config 의 logo). 셋 중 하나로 쓴다.
@@ -41,9 +41,7 @@ JOBS = [
 # **색 배경이 통째로 로고인 경우**(빨간 사각형에 흰 글자) 그 처리를 하면
 # 흰 글자가 라벤더로 바뀌어 브랜드가 망가진다. bleed 는 자르지도 물들이지도
 # 않고 정사각형으로만 맞춰, generate.py 의 원형 클립이 그대로 원을 채운다.
-CHIP = {"src": "logo.png", "out": "logo-chip.png", "fill": 0.85}
-#   이 로고는 흰 바탕에 마크만 있는 형태라 bleed 를 쓰지 않는다.
-#   점선 원이 마크 자체라 원형 클립과 겹쳐도 모서리가 비어 안 잘린다.
+CHIP = {"src": "logo.jpeg", "out": "logo-chip.png", "bleed": True}
 #   fill — 마크가 원 안에서 차지할 가로 비율. 가로로 넓은 마크는 키워야 읽힌다
 CHIP_PX, CHIP_FILL = 240, 0.60                 # 캔버스 크기 · 마크가 차지할 가로 비율
 PURPLE = (139, 91, 214)                        # #8B5BD6
@@ -133,6 +131,15 @@ def build(src, w, h, dst, crop=None, margin=22, rad=26):
     im = Image.open(src).convert("RGB")
     if crop:
         im = im.crop(crop)
+
+    # 원본이 슬롯보다 가로로 납작하면(비가 더 크면) 전경 폭이 슬롯을 넘어
+    # 붙일 자리가 음수가 된다. 위아래에 흰 여백을 채워 비를 맞춘다.
+    # 일봉 캡처처럼 잘라낼 수 없는 그림에 필요하다.
+    if im.width / im.height > w / h:
+        nh = round(im.width * h / w)
+        pad = Image.new("RGB", (im.width, nh), (255, 255, 255))
+        pad.paste(im, (0, (nh - im.height) // 2))
+        im = pad
 
     bg = cover(im, w, h).filter(ImageFilter.GaussianBlur(30))
     bg = Image.blend(bg, Image.new("RGB", (w, h), LAV), 0.52)
