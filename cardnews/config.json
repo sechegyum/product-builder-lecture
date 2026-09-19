@@ -1,0 +1,52 @@
+{
+  "date": "09.17",
+  "year": 2026,
+  "ticker": "RETO",
+  "exchange": "NASDAQ",
+  "company_ko": "리토에코",
+  "company_en": "ReTo Eco-Solutions",
+  "price": "$0.20",
+  "change": "-88.85%",
+  "logo": "assets/logo-chip.png",
+  "cover_line1": "리토에코",
+  "cover_line2": "급등 뒤 증자 발표",
+  "cover_line3": "하루 -89%?",
+  "cover_fact1": "폐기물로 친환경 건자재를 만드는 회사예요",
+  "cover_fact2": "9월 15일 공시 없이 676% 올랐습니다",
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "폐기물로 건축자재를",
+  "desc_lead2": "만드는 회사예요",
+  "desc_sub": "중국 베이징 소재 · 고형 폐기물이 원료예요",
+  "desc_sub2": "지능형 설비 제조와 유지보수도 함께 합니다",
+  "desc_sub3": "2026년 3월 공급망 회사를 인수해 사업을 넓혔어요",
+  "segments": [
+    "친환경 건자재",
+    "지능형 설비",
+    "공급망"
+  ],
+  "market_cap": "약 520만 달러",
+  "volume": "1억 3,850만주",
+  "week52": "고점 대비 -99%",
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "회사가 낸 공시가",
+  "reason_lead2": "없었어요",
+  "reason_body": [
+    "9월 15일 새 공시도 사업 발표도 없었어요.",
+    "유통 주식이 적은데 숏커버가 한쪽으로 몰렸습니다.",
+    "같은 업종도 지수도 따라 오르지 않았어요."
+  ],
+  "reason_source": "출처 · 9/17 6-K · 시세는 9/17 장중",
+  "photo_chart": "assets/photo-chart.jpg",
+  "chart_stats": [
+    ["9/16 장중 고가", "$20.85"],
+    ["현재가", "$0.20"],
+    ["고점 대비", "-99.0%"]
+  ],
+  "chart_note": "9/17 증자 발표 뒤 $0.20 · 마지막 봉은 장중이에요",
+  "cta_items": [
+    "신주 1,000만주 · 발행가 $1.50",
+    "워런트 무현금 행사 1주 → 최대 9주",
+    "5월 4대1 병합 넉 달 만에 $0.20"
+  ]
+}

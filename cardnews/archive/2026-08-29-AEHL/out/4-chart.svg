@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>안텔로페 · 지표</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<rect x="-200" y="-160" width="900" height="900" fill="url(#m1)"/>
+<rect x="440" y="500" width="940" height="940" fill="url(#m2)"/>
+<rect x="52" y="288" width="976" height="400" rx="52" fill="#FFFFFF"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="92" y="326" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">AEHL 일봉</text>
+  <text x="988" y="326" text-anchor="end" font-size="22" font-weight="600" fill="#B9B3D6">최근 16일</text>
+</g>
+<line x1="92" y1="568.0" x2="988" y2="568.0" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="494.7" x2="988" y2="494.7" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="421.5" x2="988" y2="421.5" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="346.0" x2="988" y2="346.0" stroke="#F1EDFA" stroke-width="2"/><line x1="120.0" y1="356.2" x2="120.0" y2="399.7" stroke="#5A8FD6" stroke-width="2"/><rect x="104.3" y="373.6" width="31.4" height="16.9" rx="1.4" fill="#5A8FD6"/><rect x="104.3" y="646.3" width="31.4" height="1.7" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="176.0" y1="380.1" x2="176.0" y2="430.2" stroke="#5A8FD6" stroke-width="2"/><rect x="160.3" y="386.7" width="31.4" height="39.2" rx="1.4" fill="#5A8FD6"/><rect x="160.3" y="643.9" width="31.4" height="4.1" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="232.0" y1="405.2" x2="232.0" y2="438.9" stroke="#E0568A" stroke-width="2"/><rect x="216.3" y="413.9" width="31.4" height="15.2" rx="1.4" fill="#E0568A"/><rect x="216.3" y="645.1" width="31.4" height="2.9" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="288.0" y1="409.5" x2="288.0" y2="455.8" stroke="#5A8FD6" stroke-width="2"/><rect x="272.3" y="412.8" width="31.4" height="37.0" rx="1.4" fill="#5A8FD6"/><rect x="272.3" y="644.6" width="31.4" height="3.4" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="344.0" y1="431.3" x2="344.0" y2="456.3" stroke="#E0568A" stroke-width="2"/><rect x="328.3" y="435.1" width="31.4" height="16.9" rx="1.4" fill="#E0568A"/><rect x="328.3" y="645.9" width="31.4" height="2.1" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="400.0" y1="437.3" x2="400.0" y2="477.0" stroke="#5A8FD6" stroke-width="2"/><rect x="384.3" y="438.9" width="31.4" height="33.7" rx="1.4" fill="#5A8FD6"/><rect x="384.3" y="644.9" width="31.4" height="3.1" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="456.0" y1="459.6" x2="456.0" y2="484.6" stroke="#E0568A" stroke-width="2"/><rect x="440.3" y="463.9" width="31.4" height="7.6" rx="1.4" fill="#E0568A"/><rect x="440.3" y="646.2" width="31.4" height="1.8" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="512.0" y1="465.0" x2="512.0" y2="502.6" stroke="#5A8FD6" stroke-width="2"/><rect x="496.3" y="467.2" width="31.4" height="32.1" rx="1.4" fill="#5A8FD6"/><rect x="496.3" y="644.2" width="31.4" height="3.8" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="568.0" y1="481.3" x2="568.0" y2="500.9" stroke="#E0568A" stroke-width="2"/><rect x="552.3" y="485.7" width="31.4" height="12.0" rx="1.4" fill="#E0568A"/><rect x="552.3" y="645.8" width="31.4" height="2.2" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="624.0" y1="487.3" x2="624.0" y2="522.2" stroke="#5A8FD6" stroke-width="2"/><rect x="608.3" y="489.0" width="31.4" height="30.5" rx="1.4" fill="#5A8FD6"/><rect x="608.3" y="644.0" width="31.4" height="4.0" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="680.0" y1="504.2" x2="680.0" y2="521.6" stroke="#E0568A" stroke-width="2"/><rect x="664.3" y="507.5" width="31.4" height="10.9" rx="1.4" fill="#E0568A"/><rect x="664.3" y="646.0" width="31.4" height="2.0" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="736.0" y1="508.5" x2="736.0" y2="540.1" stroke="#5A8FD6" stroke-width="2"/><rect x="720.3" y="509.6" width="31.4" height="27.2" rx="1.4" fill="#5A8FD6"/><rect x="720.3" y="643.4" width="31.4" height="4.6" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="792.0" y1="524.9" x2="792.0" y2="537.9" stroke="#E0568A" stroke-width="2"/><rect x="776.3" y="528.1" width="31.4" height="7.6" rx="1.4" fill="#E0568A"/><rect x="776.3" y="645.9" width="31.4" height="2.1" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="848.0" y1="529.2" x2="848.0" y2="557.0" stroke="#5A8FD6" stroke-width="2"/><rect x="832.3" y="530.3" width="31.4" height="23.9" rx="1.4" fill="#5A8FD6"/><rect x="832.3" y="643.6" width="31.4" height="4.4" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="904.0" y1="543.4" x2="904.0" y2="559.2" stroke="#E0568A" stroke-width="2"/><rect x="888.3" y="546.6" width="31.4" height="6.5" rx="1.4" fill="#E0568A"/><rect x="888.3" y="645.5" width="31.4" height="2.5" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="960.0" y1="496.6" x2="960.0" y2="564.0" stroke="#E0568A" stroke-width="2"/><rect x="944.3" y="508.5" width="31.4" height="48.4" rx="1.4" fill="#E0568A"/><rect x="944.3" y="592.0" width="31.4" height="56.0" rx="1.4" fill="#E0568A" opacity="0.3"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">08.29</text>
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">지표는 <tspan fill="#B455C4">지금 어디쯤</tspan>일까?</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+
+  <text x="80" y="754" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">MFI</text>
+  <text x="166" y="754" font-size="27" font-weight="700" fill="#E0568A">55</text>
+  <text x="1000" y="754" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">유입·유출 균형</text>
+  <rect x="80" y="772" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="772" width="506" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="586" cy="786" r="21" fill="#FFFFFF" stroke="#E0568A" stroke-width="6"/>
+  <text x="80" y="856" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">RSI</text>
+  <text x="160" y="856" font-size="27" font-weight="700" fill="#B455C4">37</text>
+  <text x="1000" y="856" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">중립 구간</text>
+  <rect x="80" y="874" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="874" width="340" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="420" cy="888" r="21" fill="#FFFFFF" stroke="#B455C4" stroke-width="6"/>
+  <text x="80" y="958" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">볼린저밴드</text>
+  <text x="264" y="958" font-size="27" font-weight="700" fill="#E0568A">0.41</text>
+  <text x="1000" y="958" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">밴드 중앙 부근</text>
+  <rect x="80" y="976" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="976" width="377" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="457" cy="990" r="21" fill="#FFFFFF" stroke="#E0568A" stroke-width="6"/>
+
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">8/28 봉만 확정 시세예요 · 앞 구간은 재구성이라 지표는 참고용입니다</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>

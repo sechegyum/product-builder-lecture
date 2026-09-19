@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>우리기술투자 · 지표</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<circle cx="920" cy="180" r="200" fill="#B455C4" opacity="0.06"/>
+<rect x="52" y="288" width="976" height="400" rx="52" fill="#FFFFFF"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="92" y="326" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">041190 일봉</text>
+  <text x="988" y="326" text-anchor="end" font-size="22" font-weight="600" fill="#B9B3D6">최근 16일</text>
+</g>
+<line x1="92" y1="568.0" x2="988" y2="568.0" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="494.7" x2="988" y2="494.7" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="421.5" x2="988" y2="421.5" stroke="#F1EDFA" stroke-width="2"/><line x1="92" y1="346.0" x2="988" y2="346.0" stroke="#F1EDFA" stroke-width="2"/><line x1="120.0" y1="550.7" x2="120.0" y2="556.5" stroke="#5A8FD6" stroke-width="2"/><rect x="104.3" y="550.7" width="31.4" height="5.8" rx="1.4" fill="#5A8FD6"/><rect x="104.3" y="646.7" width="31.4" height="1.3" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="176.0" y1="516.2" x2="176.0" y2="556.5" stroke="#E0568A" stroke-width="2"/><rect x="160.3" y="516.2" width="31.4" height="40.3" rx="1.4" fill="#E0568A"/><rect x="160.3" y="646.3" width="31.4" height="1.7" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="232.0" y1="516.2" x2="232.0" y2="517.2" stroke="#5A8FD6" stroke-width="2"/><rect x="216.3" y="516.2" width="31.4" height="2.0" rx="1.4" fill="#5A8FD6"/><rect x="216.3" y="647.3" width="31.4" height="0.7" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="288.0" y1="497.3" x2="288.0" y2="517.2" stroke="#E0568A" stroke-width="2"/><rect x="272.3" y="497.3" width="31.4" height="19.9" rx="1.4" fill="#E0568A"/><rect x="272.3" y="647.0" width="31.4" height="1.0" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="344.0" y1="488.1" x2="344.0" y2="497.3" stroke="#E0568A" stroke-width="2"/><rect x="328.3" y="488.1" width="31.4" height="9.2" rx="1.4" fill="#E0568A"/><rect x="328.3" y="647.0" width="31.4" height="1.0" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="400.0" y1="486.1" x2="400.0" y2="488.1" stroke="#E0568A" stroke-width="2"/><rect x="384.3" y="486.1" width="31.4" height="2.0" rx="1.4" fill="#E0568A"/><rect x="384.3" y="647.3" width="31.4" height="0.7" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="456.0" y1="486.1" x2="456.0" y2="493.4" stroke="#5A8FD6" stroke-width="2"/><rect x="440.3" y="486.1" width="31.4" height="7.3" rx="1.4" fill="#5A8FD6"/><rect x="440.3" y="647.1" width="31.4" height="0.9" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="512.0" y1="477.4" x2="512.0" y2="493.4" stroke="#E0568A" stroke-width="2"/><rect x="496.3" y="477.4" width="31.4" height="16.0" rx="1.4" fill="#E0568A"/><rect x="496.3" y="647.2" width="31.4" height="0.8" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="568.0" y1="469.6" x2="568.0" y2="477.4" stroke="#E0568A" stroke-width="2"/><rect x="552.3" y="469.6" width="31.4" height="7.8" rx="1.4" fill="#E0568A"/><rect x="552.3" y="647.0" width="31.4" height="1.0" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="624.0" y1="466.2" x2="624.0" y2="469.6" stroke="#E0568A" stroke-width="2"/><rect x="608.3" y="466.2" width="31.4" height="3.4" rx="1.4" fill="#E0568A"/><rect x="608.3" y="647.3" width="31.4" height="0.7" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="680.0" y1="466.2" x2="680.0" y2="466.7" stroke="#5A8FD6" stroke-width="2"/><rect x="664.3" y="466.2" width="31.4" height="2.0" rx="1.4" fill="#5A8FD6"/><rect x="664.3" y="647.3" width="31.4" height="0.7" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="736.0" y1="460.9" x2="736.0" y2="466.7" stroke="#E0568A" stroke-width="2"/><rect x="720.3" y="460.9" width="31.4" height="5.8" rx="1.4" fill="#E0568A"/><rect x="720.3" y="646.1" width="31.4" height="1.9" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="792.0" y1="460.9" x2="792.0" y2="492.9" stroke="#5A8FD6" stroke-width="2"/><rect x="776.3" y="460.9" width="31.4" height="32.1" rx="1.4" fill="#5A8FD6"/><rect x="776.3" y="646.4" width="31.4" height="1.6" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="848.0" y1="492.9" x2="848.0" y2="509.0" stroke="#5A8FD6" stroke-width="2"/><rect x="832.3" y="492.9" width="31.4" height="16.0" rx="1.4" fill="#5A8FD6"/><rect x="832.3" y="647.1" width="31.4" height="0.9" rx="1.4" fill="#5A8FD6" opacity="0.3"/><line x1="904.0" y1="458.9" x2="904.0" y2="509.0" stroke="#E0568A" stroke-width="2"/><rect x="888.3" y="458.9" width="31.4" height="50.0" rx="1.4" fill="#E0568A"/><rect x="888.3" y="642.3" width="31.4" height="5.7" rx="1.4" fill="#E0568A" opacity="0.3"/><line x1="960.0" y1="363.3" x2="960.0" y2="458.9" stroke="#E0568A" stroke-width="2"/><rect x="944.3" y="363.3" width="31.4" height="95.7" rx="1.4" fill="#E0568A"/><rect x="944.3" y="592.0" width="31.4" height="56.0" rx="1.4" fill="#E0568A" opacity="0.3"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">08.22</text>
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">지표는 <tspan fill="#B455C4">지금 어디쯤</tspan>일까?</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+
+  <text x="80" y="754" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">MFI</text>
+  <text x="166" y="754" font-size="27" font-weight="700" fill="#E0568A">94</text>
+  <text x="1000" y="754" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">거래량 41배 · 과열</text>
+  <rect x="80" y="772" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="772" width="865" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="945" cy="786" r="21" fill="#FFFFFF" stroke="#E0568A" stroke-width="6"/>
+  <text x="80" y="856" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">RSI</text>
+  <text x="160" y="856" font-size="27" font-weight="700" fill="#B455C4">70</text>
+  <text x="1000" y="856" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">과매수 진입선</text>
+  <rect x="80" y="874" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="874" width="644" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="724" cy="888" r="21" fill="#FFFFFF" stroke="#B455C4" stroke-width="6"/>
+  <text x="80" y="958" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#2B2B3A">볼린저밴드</text>
+  <text x="264" y="958" font-size="27" font-weight="700" fill="#E0568A">1.25</text>
+  <text x="1000" y="958" text-anchor="end" font-size="25" font-weight="600" fill="#8B85A8">상단 밴드 돌파</text>
+  <rect x="80" y="976" width="920" height="28" rx="14" fill="#E7E1F7"/>
+  <rect x="80" y="976" width="920" height="28" rx="14" fill="url(#line)"/>
+  <circle cx="1000" cy="990" r="21" fill="#FFFFFF" stroke="#E0568A" stroke-width="6"/>
+
+  <text x="80" y="1046" font-size="25" font-weight="600" fill="#B9B3D6">8/21 종가 기준 · RSI 는 토스 지표값, MFI·%B 는 종가로 계산했어요</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>

@@ -1,0 +1,61 @@
+{
+  "date": "09.14",
+  "year": 2026,
+  "ticker": "SCNI",
+  "exchange": "NASDAQ",
+  "company_ko": "사이나이",
+  "company_en": "Scinai Immunotherapeutics",
+  "price": "$2.40",
+  "change": "+44.57%",
+  "logo": "assets/logo-chip.png",
+  "cover_line1": "사이나이",
+  "cover_line2": "44% 올랐는데",
+  "cover_line3": "왜 공시가 없을까?",
+  "cover_fact1": "이스라엘 예루살렘의 바이오텍이에요",
+  "cover_fact2": "8월에 ADS 비율을 바꿔 주가가 10배로 표시됩니다",
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "신약 개발과 위탁생산을",
+  "desc_lead2": "같이 하는 바이오텍이에요",
+  "desc_sub": "이스라엘 예루살렘 소재 · 구 사명은 바이온드백스예요",
+  "desc_sub2": "자회사가 위탁개발생산으로 실제 매출을 냅니다",
+  "desc_sub3": "2026년 1분기에 흑자로 돌아섰어요",
+  "segments": [
+    "위탁개발생산",
+    "나노항체",
+    "건선 치료제"
+  ],
+  "market_cap": "약 95만 달러",
+  "volume": "527만주",
+  "week52": "고점 대비 -85%",
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "회사 발표가",
+  "reason_lead2": "확인되지 않습니다",
+  "reason_body": [
+    "가장 최근 공시는 9월 8일 PC111 종료예요.",
+    "악재였고 그날 주가는 2.15% 내렸습니다.",
+    "시가총액 13억원이라 소액에도 크게 흔들려요."
+  ],
+  "reason_source": "출처 · 회사 공시 · 9/14 는 프리마켓 기준",
+  "cta_items": [
+    "ADS 비율 변경 · 주가 10배 표시",
+    "PC111 권리 8월 31일 소멸",
+    "시가총액 약 13억원"
+  ],
+  "photo_chart": "assets/photo-chart.jpg",
+  "chart_stats": [
+    [
+      "9/14 장중고가",
+      "$3.33"
+    ],
+    [
+      "9/14 저가",
+      "$2.11"
+    ],
+    [
+      "전일 종가",
+      "$1.66"
+    ]
+  ],
+  "chart_note": "일봉 · 9월 14일은 프리마켓이라 아직 안 끝났어요"
+}
