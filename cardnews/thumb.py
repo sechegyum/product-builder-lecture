@@ -180,7 +180,13 @@ def shot(svg_path, png_path, w, h):
     from PIL import Image
     im = Image.open(png_path)
     if im.size != (w, h):
-        im.crop((0, 0, w, h)).save(png_path)
+        im = im.crop((0, 0, w, h))
+        im.save(png_path)
+    # 네이버 업로드용 JPG 를 같이 뽑는다. 배경이 매끄러운 그라데이션이라
+    # PNG 는 압축이 거의 안 먹는다 (1080 기준 PNG 430KB vs JPG 61KB).
+    # subsampling=0 (4:4:4) 로 저장해야 글자 가장자리에 색이 안 번진다.
+    im.convert("RGB").save(png_path.with_suffix(".jpg"), "JPEG",
+                           quality=90, subsampling=0, optimize=True)
 
 
 def main():
@@ -195,7 +201,8 @@ def main():
             svg.write_text(build(c, w, h), encoding="utf-8")
             png = out / f"{stem}.png"
             shot(svg, png, w, h)
-            print(f"  ✓ {png.relative_to(HERE)}  {w}x{h}  [{c['layout']}]")
+            kb = png.with_suffix(".jpg").stat().st_size / 1024
+            print(f"  ✓ {png.relative_to(HERE)}  {w}x{h}  [{c['layout']}]  · jpg {kb:,.0f}KB")
 
 
 if __name__ == "__main__":
