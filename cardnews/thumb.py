@@ -349,16 +349,40 @@ def lay_table(c, w, h):
               f'letter-spacing="-0.6" fill="{DIM}">{esc(c["note"])}</text>\n')
     return s
 
+# ── band — 글 맨 끝에 붙이는 띠 ──────────────────────
+# 블로그 모든 글의 마지막에 같은 모양으로 들어간다. 매번 새로 만들지 않는다.
+# 가로 1080 x 세로 440 고정. 본문 폭에 그대로 맞는 띠 비율이다.
+def band_size(c):
+    return 1080, 440
+
+
+def lay_band(c, w, h):
+    x, pad = 64, 64
+    s = (f'  <text x="{x}" y="96" font-size="27" font-weight="700" letter-spacing="3" '
+         f'fill="{PURPLE}">{esc(c.get("tag", "SNAPVEST"))}</text>\n')
+    for i, t in enumerate(c["lines"][:2]):
+        col = ACCENT if i == 1 and c.get("accent_last") else INK
+        s += (f'  <text x="{x}" y="{172 + i*64}" font-size="52" font-weight="700" '
+              f'letter-spacing="-2.5" fill="{col}">{esc(t)}</text>\n')
+    if c.get("sub"):
+        s += (f'  <text x="{x}" y="292" font-size="28" font-weight="600" letter-spacing="-1" '
+              f'fill="{SUB}">{esc(c["sub"])}</text>\n')
+    bw, by, bh = w - pad * 2, 334, 82
+    s += f'  <rect x="{pad}" y="{by}" width="{bw}" height="{bh}" rx="{bh//2}" fill="url(#line)"/>\n'
+    s += (f'  <text x="{w//2}" y="{by + 54}" text-anchor="middle" font-size="36" '
+          f'font-weight="700" letter-spacing="-0.8" fill="#FFFFFF">{esc(c["button"])}</text>\n')
+    return s
+
 LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list,
            "photo": lay_photo, "split": lay_split,
-           "table": lay_table}
+           "table": lay_table, "band": lay_band}
 
 
 def build(c, w, h):
     body = LAYOUTS[c["layout"]](c, w, h)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" '
             f'viewBox="0 0 {w} {h}" role="img">\n<title>{esc(c.get("alt", c.get("name","")))}</title>\n'
-            f'{defs(w, h)}\n<g {FONT}>\n{body}{"" if c["layout"] == "table" else foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
+            f'{defs(w, h)}\n<g {FONT}>\n{body}{"" if c["layout"] in ("table", "band") else foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
 
 
 def shot(svg_path, png_path, w, h):
@@ -389,7 +413,9 @@ def main():
     out = HERE / (sys.argv[2] if len(sys.argv) > 2 else "thumbs")
     (out / "svg").mkdir(parents=True, exist_ok=True)
     for c in cfg["thumbs"]:
-        sizes = {"": table_size(c)} if c["layout"] == "table" else SIZES
+        sizes = ({"": table_size(c)} if c["layout"] == "table"
+                 else {"": band_size(c)} if c["layout"] == "band"
+                 else SIZES)
         for key, (w, h) in sizes.items():
             stem = f'{c["name"]}-{key}' if key else c["name"]
             svg = out / "svg" / f"{stem}.svg"
