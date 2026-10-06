@@ -27,11 +27,11 @@
   <rect x="0" y="0" width="1200" height="630" fill="url(#scL)"/>
     <defs><linearGradient id="scB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B0A18" stop-opacity="0"/><stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/><stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>
   <rect x="0" y="391" width="1200" height="239" fill="url(#scB)"/>
-  <text x="89" y="96" font-size="17" font-weight="700" letter-spacing="3" fill="#CDBDF7">스냅베스트 Hotpick</text>
+  <text x="89" y="96" font-size="17" font-weight="700" letter-spacing="3" fill="#CDBDF7">앱스토어 '스냅베스트'</text>
   <text x="89" y="170" font-size="68" font-weight="700" letter-spacing="-3.5" fill="#FFFFFF">우주항공 관련 주식</text>
   <text x="89" y="254" font-size="68" font-weight="700" letter-spacing="-3.5" fill="#FFFFFF">내가 정말 사도되는걸까</text>
   <rect x="89" y="275" width="240" height="13" rx="6" fill="url(#line)"/>
   <text x="89" y="324" font-size="23" font-weight="600" letter-spacing="-1" fill="#E2DBF5">미국 우주항공 ETF 뜯어보기</text>
-  <text x="1111" y="578" text-anchor="end" font-size="17" font-weight="700" letter-spacing="-0.5" fill="#FFFFFF">앱스토어 '스냅베스트'</text>
+
 </g>
 </svg>

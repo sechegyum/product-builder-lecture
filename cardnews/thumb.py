@@ -59,9 +59,11 @@ def foot(w, h, note, dark=False, dom_x=None, cta=None):
     if note:
         s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.026)}" font-weight="600" '
               f'letter-spacing="-0.3" fill="{"#A9A0C8" if dark else DIM}">{esc(note)}</text>\n')
-    s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
-          f'font-weight="700" letter-spacing="-0.5" fill="{"#FFFFFF" if dark else "url(#line)"}">{esc(cta or "snapvestai.com")}</text>')
-    return s
+    label = "snapvestai.com" if cta is None else cta
+    if label:
+        s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
+              f'font-weight="700" letter-spacing="-0.5" fill="{"#FFFFFF" if dark else "url(#line)"}">{esc(label)}</text>')
+    return s.rstrip("\n")
 
 
 def bar(x, y, w, h=13):
