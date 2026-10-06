@@ -60,7 +60,7 @@ def foot(w, h, note, dark=False, dom_x=None, cta=None):
         s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.026)}" font-weight="600" '
               f'letter-spacing="-0.3" fill="{"#A9A0C8" if dark else DIM}">{esc(note)}</text>\n')
     s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
-          f'font-weight="700" letter-spacing="-0.5" fill="url(#line)">{esc(cta or "snapvestai.com")}</text>')
+          f'font-weight="700" letter-spacing="-0.5" fill="{"#FFFFFF" if dark else "url(#line)"}">{esc(cta or "snapvestai.com")}</text>')
     return s
 
 
@@ -211,8 +211,9 @@ def lay_photo(c, w, h):
     s += _scrim(int(h * 0.74), w, 0, 0, "_x", [])[:0]
     s += ('    <defs><linearGradient id="scB" x1="0" y1="0" x2="0" y2="1">'
           '<stop offset="0" stop-color="#0B0A18" stop-opacity="0"/>'
-          '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.72"/></linearGradient></defs>\n'
-          f'  <rect x="0" y="{h*0.70:.0f}" width="{w}" height="{h*0.30:.0f}" fill="url(#scB)"/>\n')
+          '<stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/>'
+          '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>\n'
+          f'  <rect x="0" y="{h*0.62:.0f}" width="{w}" height="{h*0.38:.0f}" fill="url(#scB)"/>\n')
     s += (f'  <text x="{x:.0f}" y="{top - int(h*0.118)}" font-size="{int(h*0.027)}" font-weight="700" '
           f'letter-spacing="3" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
     for i, t in enumerate(ls):
