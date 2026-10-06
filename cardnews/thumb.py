@@ -218,7 +218,7 @@ def lay_photo(c, w, h):
           '<stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/>'
           '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>\n'
           f'  <rect x="0" y="{h*0.62:.0f}" width="{w}" height="{h*0.38:.0f}" fill="url(#scB)"/>\n')
-    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.125)}" font-size="{int(h*0.034)}" font-weight="700" '
+    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.092)}" font-size="{int(h*0.026)}" font-weight="700" '
           f'letter-spacing="2.5" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
     for i, t in enumerate(ls):
         s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
