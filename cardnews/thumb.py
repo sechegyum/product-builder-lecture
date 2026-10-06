@@ -195,11 +195,13 @@ def lay_photo(c, w, h):
     """
     b64 = _embed(c["photo"], w, h)
     ls = c["lines"][:3]
-    x = w * 0.074
+    # 여백을 줄이고 자간을 더 좁혀 같은 캔버스에서 글자를 키운다.
+    # 사진 포스터는 검색 결과에서 작게 보이므로 글자가 클수록 유리하다.
+    x = w * 0.058
     n = max(len(t) for t in ls)
-    # 한글은 글자폭이 대략 1em. letter-spacing -3.5 만큼 되돌려 받는다.
-    fs = int(min(h * 0.108, ((w - 2 * x) + 3.5 * n) / n))
-    gap = int(fs * 1.24)
+    LS = 5.0                      # letter-spacing. 음수만큼 폭을 되돌려 받는다
+    fs = int(min(h * 0.118, ((w - 2 * x) + LS * n) / n))
+    gap = int(fs * 1.22)
     top = int(h * 0.27)
     s = f'  <image href="data:image/jpeg;base64,{b64}" x="0" y="0" width="{w}" height="{h}"/>\n'
     s += '  <defs>\n'
@@ -216,15 +218,15 @@ def lay_photo(c, w, h):
           '<stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/>'
           '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>\n'
           f'  <rect x="0" y="{h*0.62:.0f}" width="{w}" height="{h*0.38:.0f}" fill="url(#scB)"/>\n')
-    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.118)}" font-size="{int(h*0.027)}" font-weight="700" '
-          f'letter-spacing="3" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
+    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.125)}" font-size="{int(h*0.034)}" font-weight="700" '
+          f'letter-spacing="2.5" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
     for i, t in enumerate(ls):
         s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
-              f'letter-spacing="-3.5" fill="#FFFFFF">{esc(t)}</text>\n')
-    s += "  " + bar(x, top + (len(ls)-1)*gap + int(h*0.034), w * 0.20) + "\n"
+              f'letter-spacing="-5" fill="#FFFFFF">{esc(t)}</text>\n')
+    s += "  " + bar(x, top + (len(ls)-1)*gap + int(h*0.036), w * 0.22, int(h*0.015)) + "\n"
     if c.get("sub"):
-        s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.112)}" '
-              f'font-size="{int(h*0.037)}" font-weight="600" letter-spacing="-1" '
+        s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.125)}" '
+              f'font-size="{int(h*0.046)}" font-weight="600" letter-spacing="-1" '
               f'fill="#E2DBF5">{esc(c["sub"])}</text>\n')
     return s
 
