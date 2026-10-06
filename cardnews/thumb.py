@@ -351,27 +351,52 @@ def lay_table(c, w, h):
 
 # ── band — 글 맨 끝에 붙이는 띠 ──────────────────────
 # 블로그 모든 글의 마지막에 같은 모양으로 들어간다. 매번 새로 만들지 않는다.
-# 가로 1080 x 세로 440 고정. 본문 폭에 그대로 맞는 띠 비율이다.
+#   shot 없음 — 1080x440, 그라데이션 버튼
+#   shot 있음 — 1080x700, 앱스토어 검색 화면을 그대로 보여준다
 def band_size(c):
-    return 1080, 440
+    return (1080, 700) if c.get("shot") else (1080, 440)
 
 
 def lay_band(c, w, h):
     x, pad = 64, 64
-    s = (f'  <text x="{x}" y="96" font-size="27" font-weight="700" letter-spacing="3" '
-         f'fill="{PURPLE}">{esc(c.get("tag", "SNAPVEST"))}</text>\n')
+    shot = c.get("shot")
+    s = (f'  <text x="{x}" y="{88 if shot else 96}" font-size="27" font-weight="700" '
+         f'letter-spacing="3" fill="{PURPLE}">{esc(c.get("tag", "SNAPVEST"))}</text>\n')
+    top = 158 if shot else 172
     for i, t in enumerate(c["lines"][:2]):
         col = ACCENT if i == 1 and c.get("accent_last") else INK
-        s += (f'  <text x="{x}" y="{172 + i*64}" font-size="52" font-weight="700" '
-              f'letter-spacing="-2.5" fill="{col}">{esc(t)}</text>\n')
+        s += (f'  <text x="{x}" y="{top + i*62}" font-size="{50 if shot else 52}" '
+              f'font-weight="700" letter-spacing="-2.5" fill="{col}">{esc(t)}</text>\n')
     if c.get("sub"):
-        s += (f'  <text x="{x}" y="292" font-size="28" font-weight="600" letter-spacing="-1" '
-              f'fill="{SUB}">{esc(c["sub"])}</text>\n')
+        s += (f'  <text x="{x}" y="{268 if shot else 292}" font-size="28" font-weight="600" '
+              f'letter-spacing="-1" fill="{SUB}">{esc(c["sub"])}</text>\n')
+
+    if shot:
+        # 앱스토어 화면을 그대로 띄운다. 말보다 이게 빠르다.
+        iw = w - pad * 2
+        from PIL import Image as _I
+        src = _I.open(HERE / "photos" / shot)
+        ih = round(iw * src.height / src.width)
+        iy = 300
+        b64 = _embed(shot, iw, ih, sharpen=False)
+        s += ('  <defs>\n'
+              f'    <clipPath id="shotclip"><rect x="{pad}" y="{iy}" width="{iw}" '
+              f'height="{ih}" rx="28"/></clipPath>\n'
+              '    <filter id="shotsh" x="-20%" y="-20%" width="140%" height="140%">\n'
+              '      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#5B4B8A" flood-opacity="0.16"/>\n'
+              '    </filter>\n  </defs>\n')
+        s += (f'  <rect x="{pad}" y="{iy}" width="{iw}" height="{ih}" rx="28" '
+              f'fill="#FFFFFF" filter="url(#shotsh)"/>\n')
+        s += (f'  <image href="data:image/jpeg;base64,{b64}" x="{pad}" y="{iy}" '
+              f'width="{iw}" height="{ih}" clip-path="url(#shotclip)"/>\n')
+        return s
+
     bw, by, bh = w - pad * 2, 334, 82
     s += f'  <rect x="{pad}" y="{by}" width="{bw}" height="{bh}" rx="{bh//2}" fill="url(#line)"/>\n'
     s += (f'  <text x="{w//2}" y="{by + 54}" text-anchor="middle" font-size="36" '
           f'font-weight="700" letter-spacing="-0.8" fill="#FFFFFF">{esc(c["button"])}</text>\n')
     return s
+
 
 LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list,
            "photo": lay_photo, "split": lay_split,

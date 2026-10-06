@@ -7,6 +7,16 @@
       "tag": "SNAPVEST",
       "lines": ["종목 하나로", "시세 · 공시 · 공매도까지"],
       "accent_last": true,
+      "sub": "앱스토어에 '스냅베스트' 를 검색하세요",
+      "shot": "appstore.png",
+      "alt": "앱스토어에서 스냅베스트 검색 - 모든 주식 정보를 검색 한번에"
+    },
+    {
+      "name": "band-app-plain",
+      "layout": "band",
+      "tag": "SNAPVEST",
+      "lines": ["종목 하나로", "시세 · 공시 · 공매도까지"],
+      "accent_last": true,
       "sub": "국내 주식과 해외 주식을 같은 화면에서 봅니다",
       "button": "앱스토어 '스냅베스트'",
       "alt": "스냅베스트 앱 - 앱스토어에서 스냅베스트 검색"
