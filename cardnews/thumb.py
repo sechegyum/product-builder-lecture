@@ -52,7 +52,7 @@ def defs(w, h):
 <rect x="{w*0.41:.0f}" y="{h*0.46:.0f}" width="{w*0.87:.0f}" height="{w*0.87:.0f}" fill="url(#m2)"/>'''
 
 
-def foot(w, h, note, dark=False, dom_x=None):
+def foot(w, h, note, dark=False, dom_x=None, cta=None):
     """좌하단 한 줄 + 우하단 도메인. 카드뉴스의 '밀어서 보기' 같은 인스타 장치는 뺀다."""
     y = h - 52
     s = ""
@@ -60,7 +60,7 @@ def foot(w, h, note, dark=False, dom_x=None):
         s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.026)}" font-weight="600" '
               f'letter-spacing="-0.3" fill="{"#A9A0C8" if dark else DIM}">{esc(note)}</text>\n')
     s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
-          f'font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>')
+          f'font-weight="700" letter-spacing="-0.5" fill="url(#line)">{esc(cta or "snapvestai.com")}</text>')
     return s
 
 
@@ -193,9 +193,11 @@ def lay_photo(c, w, h):
     """
     b64 = _embed(c["photo"], w, h)
     ls = c["lines"][:3]
-    fs = int(h * (0.108 if max(len(t) for t in ls) <= 8 else 0.088))
-    gap = int(fs * 1.24)
     x = w * 0.074
+    n = max(len(t) for t in ls)
+    # 한글은 글자폭이 대략 1em. letter-spacing -3.5 만큼 되돌려 받는다.
+    fs = int(min(h * 0.108, ((w - 2 * x) + 3.5 * n) / n))
+    gap = int(fs * 1.24)
     top = int(h * 0.27)
     s = f'  <image href="data:image/jpeg;base64,{b64}" x="0" y="0" width="{w}" height="{h}"/>\n'
     s += '  <defs>\n'
@@ -263,7 +265,7 @@ def build(c, w, h):
     body = LAYOUTS[c["layout"]](c, w, h)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" '
             f'viewBox="0 0 {w} {h}" role="img">\n<title>{esc(c.get("alt", c.get("name","")))}</title>\n'
-            f'{defs(w, h)}\n<g {FONT}>\n{body}{foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None)}\n</g>\n</svg>\n')
+            f'{defs(w, h)}\n<g {FONT}>\n{body}{foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
 
 
 def shot(svg_path, png_path, w, h):
