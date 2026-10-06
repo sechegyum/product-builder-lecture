@@ -52,14 +52,14 @@ def defs(w, h):
 <rect x="{w*0.41:.0f}" y="{h*0.46:.0f}" width="{w*0.87:.0f}" height="{w*0.87:.0f}" fill="url(#m2)"/>'''
 
 
-def foot(w, h, note):
+def foot(w, h, note, dark=False, dom_x=None):
     """좌하단 한 줄 + 우하단 도메인. 카드뉴스의 '밀어서 보기' 같은 인스타 장치는 뺀다."""
     y = h - 52
     s = ""
     if note:
         s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.026)}" font-weight="600" '
-              f'letter-spacing="-0.3" fill="{DIM}">{esc(note)}</text>\n')
-    s += (f'  <text x="{w - w*0.074:.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
+              f'letter-spacing="-0.3" fill="{"#A9A0C8" if dark else DIM}">{esc(note)}</text>\n')
+    s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
           f'font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>')
     return s
 
@@ -157,14 +157,113 @@ def lay_list(c, w, h):
     return s
 
 
-LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list}
+# ── 사진 심기 ───────────────────────────────────────
+def _embed(src, w, h, sharpen=True):
+    """사진을 슬롯에 꽉 채워 자르고 base64 로 심는다.
+
+    원본이 작으면 늘린 만큼 흐려진다. LANCZOS 로 키우고 언샵으로 윤곽만 살린다.
+    그래도 2배 넘게 늘려야 하면 split 레이아웃을 쓰는 게 낫다 — 사진 칸이
+    작아서 확대 배율이 그만큼 내려간다.
+    """
+    import base64, io
+    from PIL import Image, ImageFilter
+    im = Image.open(HERE / "photos" / src).convert("RGB")
+    r = max(w / im.width, h / im.height)
+    im = im.resize((max(w, round(im.width * r)), max(h, round(im.height * r))), Image.LANCZOS)
+    x, y = (im.width - w) // 2, (im.height - h) // 2
+    im = im.crop((x, y, x + w, y + h))
+    if sharpen and r > 1.2:
+        im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=int(min(r, 3) * 42), threshold=3))
+    b = io.BytesIO(); im.save(b, "JPEG", quality=92, subsampling=0)
+    return base64.b64encode(b.getvalue()).decode()
+
+
+def _scrim(x, y, w, h, gid, stops):
+    g = "".join(f'<stop offset="{o}" stop-color="#0B0A18" stop-opacity="{a}"/>' for o, a in stops)
+    return (f'  <linearGradient id="{gid}" x1="0" y1="0" x2="0" y2="1">{g}</linearGradient>\n'
+            f'  <rect x="{x}" y="{y}" width="{w}" height="{h}" fill="url(#{gid})"/>\n')
+
+
+# ── photo — 사진 전면 + 어둠막 ──────────────────────
+def lay_photo(c, w, h):
+    """사진을 꽉 채우고 어둠을 깔아 흰 글자를 올린다.
+
+    막을 두 겹 깐다. 위에서 내려오는 막 하나, 왼쪽에서 오는 막 하나.
+    사진 위의 글자는 대비가 전부라, 한 겹만으로는 밝은 구름 위에서 묻힌다.
+    """
+    b64 = _embed(c["photo"], w, h)
+    ls = c["lines"][:3]
+    fs = int(h * (0.108 if max(len(t) for t in ls) <= 8 else 0.088))
+    gap = int(fs * 1.24)
+    x = w * 0.074
+    top = int(h * 0.27)
+    s = f'  <image href="data:image/jpeg;base64,{b64}" x="0" y="0" width="{w}" height="{h}"/>\n'
+    s += '  <defs>\n'
+    s += ('    <linearGradient id="scL" x1="0" y1="0" x2="1" y2="0">'
+          '<stop offset="0" stop-color="#0B0A18" stop-opacity="0.80"/>'
+          '<stop offset="0.52" stop-color="#0B0A18" stop-opacity="0.42"/>'
+          '<stop offset="1" stop-color="#0B0A18" stop-opacity="0"/></linearGradient>\n')
+    s += '  </defs>\n'
+    s += _scrim(0, 0, w, h * 0.74, "scT", [(0, 0.72), (0.5, 0.34), (1, 0)])
+    s += f'  <rect x="0" y="0" width="{w}" height="{h}" fill="url(#scL)"/>\n'
+    s += _scrim(int(h * 0.74), w, 0, 0, "_x", [])[:0]
+    s += ('    <defs><linearGradient id="scB" x1="0" y1="0" x2="0" y2="1">'
+          '<stop offset="0" stop-color="#0B0A18" stop-opacity="0"/>'
+          '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.72"/></linearGradient></defs>\n'
+          f'  <rect x="0" y="{h*0.70:.0f}" width="{w}" height="{h*0.30:.0f}" fill="url(#scB)"/>\n')
+    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.118)}" font-size="{int(h*0.027)}" font-weight="700" '
+          f'letter-spacing="3" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
+    for i, t in enumerate(ls):
+        s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
+              f'letter-spacing="-3.5" fill="#FFFFFF">{esc(t)}</text>\n')
+    s += "  " + bar(x, top + (len(ls)-1)*gap + int(h*0.034), w * 0.20) + "\n"
+    if c.get("sub"):
+        s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.112)}" '
+              f'font-size="{int(h*0.037)}" font-weight="600" letter-spacing="-1" '
+              f'fill="#E2DBF5">{esc(c["sub"])}</text>\n')
+    return s
+
+
+# ── split — 글자 칸 + 사진 칸 ───────────────────────
+def lay_split(c, w, h):
+    """왼쪽은 브랜드 배경에 글자, 오른쪽은 사진. 원본이 작을 때 이쪽이 낫다.
+    사진 칸이 좁아 확대 배율이 절반으로 떨어진다."""
+    pw = int(w * (0.50 if (w, h) == (1080, 1080) else 0.42))
+    px = w - pw
+    b64 = _embed(c["photo"], pw, h)
+    ls = c["lines"][:3]
+    avail = px - w * 0.074 * 2
+    fs = int(min(h * 0.100, avail / max(len(t) for t in ls) * 1.16))
+    gap = int(fs * 1.30)
+    x = w * 0.074
+    top = (h - gap * (len(ls) - 1)) // 2 - int(h * 0.02)
+    s = f'  <image href="data:image/jpeg;base64,{b64}" x="{px}" y="0" width="{pw}" height="{h}"/>\n'
+    s += ('  <defs><linearGradient id="seam" x1="0" y1="0" x2="1" y2="0">'
+          '<stop offset="0" stop-color="#F3EFFC" stop-opacity="1"/>'
+          '<stop offset="1" stop-color="#F3EFFC" stop-opacity="0"/></linearGradient></defs>\n'
+          f'  <rect x="{px}" y="0" width="{int(w*0.035)}" height="{h}" fill="url(#seam)"/>\n')
+    s += (f'  <text x="{x:.0f}" y="{top - gap + int(h*0.012)}" font-size="{int(h*0.027)}" '
+          f'font-weight="700" letter-spacing="3" fill="{PURPLE}">{esc(c.get("tag","SNAPVEST"))}</text>\n')
+    for i, t in enumerate(ls):
+        col = ACCENT if i == len(ls) - 1 and c.get("accent_last", True) else INK
+        s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
+              f'letter-spacing="-3" fill="{col}">{esc(t)}</text>\n')
+    s += "  " + bar(x, top + (len(ls)-1)*gap + int(h*0.030), w * 0.16) + "\n"
+    if c.get("sub"):
+        s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.098)}" '
+              f'font-size="{int(h*0.034)}" font-weight="600" letter-spacing="-1" '
+              f'fill="{SUB}">{esc(c["sub"])}</text>\n')
+    return s
+
+LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list,
+           "photo": lay_photo, "split": lay_split}
 
 
 def build(c, w, h):
     body = LAYOUTS[c["layout"]](c, w, h)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" '
             f'viewBox="0 0 {w} {h}" role="img">\n<title>{esc(c.get("alt", c.get("name","")))}</title>\n'
-            f'{defs(w, h)}\n<g {FONT}>\n{body}{foot(w, h, c.get("note",""))}\n</g>\n</svg>\n')
+            f'{defs(w, h)}\n<g {FONT}>\n{body}{foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None)}\n</g>\n</svg>\n')
 
 
 def shot(svg_path, png_path, w, h):

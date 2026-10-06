@@ -1,0 +1,47 @@
+{
+  "_note": "미국 우주항공 ETF 메인 포스터 후보. photo 는 사진 전면, split 은 글자칸+사진칸.",
+  "thumbs": [
+    {
+      "name": "space-1-photo",
+      "layout": "photo",
+      "photo": "rocket.jpg",
+      "tag": "미국 ETF",
+      "lines": [
+        "우주로 간 돈",
+        "어디에",
+        "담기고 있나"
+      ],
+      "sub": "미국 우주항공 ETF 뜯어보기",
+      "note": "ARKX · UFO · ROKT · XAR",
+      "alt": "미국 우주항공 ETF 구성 종목 분석 포스터"
+    },
+    {
+      "name": "space-2-split",
+      "layout": "split",
+      "photo": "rocket.jpg",
+      "tag": "미국 ETF",
+      "lines": [
+        "미국 우주항공",
+        "ETF",
+        "뭘 담고 있나"
+      ],
+      "sub": "구성 종목 · 비중 · 보수 정리",
+      "note": "구성 종목 기준 · 미국 상장",
+      "alt": "미국 우주항공 ETF 구성 종목과 비중 정리"
+    },
+    {
+      "name": "space-3-photo",
+      "layout": "photo",
+      "photo": "rocket.jpg",
+      "tag": "우주항공",
+      "lines": [
+        "ETF 하나로",
+        "우주에",
+        "투자한다면"
+      ],
+      "sub": "무엇을 먼저 봐야 할까",
+      "note": "미국 상장 ETF · 구성 종목 기준",
+      "alt": "우주항공 ETF 투자 전 확인할 것"
+    }
+  ]
+}
