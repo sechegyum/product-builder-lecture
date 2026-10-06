@@ -266,7 +266,7 @@ def lay_split(c, w, h):
 # ── table — 비교표 ──────────────────────────────────
 # 표는 캔버스가 고정이 아니다. 줄 수에 맞춰 높이를 계산해 세로로 늘린다.
 # 블로그 본문에 넣는 그림이라 가로 1080 에 세로는 내용만큼이면 된다.
-TB = dict(pad=64, title=58, sub=30, head=86, gap_t=34, note=28)
+TB = dict(pad=64, title=58, sub=30, head=94, gap_t=34, note=28)
 
 
 def _row_h(n):
@@ -278,7 +278,7 @@ def table_size(c):
     rh = _row_h(len(rows))
     body = sum(int(rh * 0.88) if _is_div(r) else rh for r in rows)
     h = (TB["pad"] + TB["title"] + (TB["sub"] + 14 if c.get("sub") else 0) + TB["gap_t"]
-         + TB["head"] + body + (TB["note"] + 30 if c.get("note") else 0) + TB["pad"])
+         + TB["head"] + body + (TB["note"] + 30 if c.get("note") else -18) + TB["pad"])
     return 1080, int(h)
 
 
@@ -309,10 +309,10 @@ def lay_table(c, w, h):
           f'fill="{LAV}"/>\n')
     for i, col in enumerate(cols):
         a, _, b = col.partition("|")
-        s += (f'  <text x="{cx[i]:.0f}" y="{y + 38}" text-anchor="middle" font-size="31" '
+        s += (f'  <text x="{cx[i]:.0f}" y="{y + 42}" text-anchor="middle" font-size="38" '
               f'font-weight="700" letter-spacing="-1" fill="{INK}">{esc(a)}</text>\n')
         if b:
-            s += (f'  <text x="{cx[i]:.0f}" y="{y + 68}" text-anchor="middle" font-size="22" '
+            s += (f'  <text x="{cx[i]:.0f}" y="{y + 74}" text-anchor="middle" font-size="24" '
                   f'font-weight="600" letter-spacing="-0.5" fill="{FAINT}">{esc(b)}</text>\n')
     y += TB["head"]
 
@@ -342,9 +342,9 @@ def lay_table(c, w, h):
         y += rh
         band += 1
 
-    s += (f'  <line x1="{pad}" y1="{y + 6}" x2="{w - pad}" y2="{y + 6}" '
-          f'stroke="{LINE_SOFT}" stroke-width="3"/>\n')
     if c.get("note"):
+        s += (f'  <line x1="{pad}" y1="{y + 6}" x2="{w - pad}" y2="{y + 6}" '
+              f'stroke="{LINE_SOFT}" stroke-width="3"/>\n')
         s += (f'  <text x="{pad}" y="{y + 54}" font-size="{TB["note"]}" font-weight="600" '
               f'letter-spacing="-0.6" fill="{DIM}">{esc(c["note"])}</text>\n')
     return s
