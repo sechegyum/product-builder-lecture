@@ -24,7 +24,8 @@ generate.py 는 건드리지 않는다. 디자인 토큰(색·폰트·그라데�
 """
 import json, pathlib, subprocess, sys
 
-from generate import INK, SUB, FAINT, DIM, ACCENT, PURPLE, UP, DOWN, LAV, FONT, esc
+from generate import (INK, SUB, FAINT, DIM, ACCENT, PURPLE, UP, DOWN,
+                      LINE_SOFT, LAV, FONT, esc)
 
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 HERE = pathlib.Path(__file__).parent
@@ -262,15 +263,102 @@ def lay_split(c, w, h):
               f'fill="{SUB}">{esc(c["sub"])}</text>\n')
     return s
 
+# ── table — 비교표 ──────────────────────────────────
+# 표는 캔버스가 고정이 아니다. 줄 수에 맞춰 높이를 계산해 세로로 늘린다.
+# 블로그 본문에 넣는 그림이라 가로 1080 에 세로는 내용만큼이면 된다.
+TB = dict(pad=64, title=58, sub=30, head=86, gap_t=34, note=28)
+
+
+def _row_h(n):
+    return 64 if n <= 12 else 56 if n <= 20 else 48
+
+
+def table_size(c):
+    rows = c["rows"]
+    rh = _row_h(len(rows))
+    body = sum(int(rh * 0.88) if _is_div(r) else rh for r in rows)
+    h = (TB["pad"] + TB["title"] + (TB["sub"] + 14 if c.get("sub") else 0) + TB["gap_t"]
+         + TB["head"] + body + (TB["note"] + 30 if c.get("note") else 0) + TB["pad"])
+    return 1080, int(h)
+
+
+def _is_div(r):
+    return len(r) == 1
+
+
+def lay_table(c, w, h):
+    rows, cols = c["rows"], c["cols"]
+    pad = TB["pad"]
+    rh = _row_h(len(rows))
+    # 라벨 칸은 넓게, 값 칸 셋은 똑같이 나눈다
+    lab_w = int((w - pad * 2) * 0.355)
+    cw = (w - pad * 2 - lab_w) / 3
+    cx = [pad + lab_w + cw * (i + 0.5) for i in range(3)]
+
+    s = f'  <text x="{pad}" y="{pad + 54}" font-size="{TB["title"]}" font-weight="700" ' \
+        f'letter-spacing="-2.5" fill="{INK}">{esc(c["title"])}</text>\n'
+    y = pad + 54
+    if c.get("sub"):
+        y += TB["sub"] + 14
+        s += (f'  <text x="{pad}" y="{y}" font-size="{TB["sub"]}" font-weight="600" '
+              f'letter-spacing="-1" fill="{SUB}">{esc(c["sub"])}</text>\n')
+    y += TB["gap_t"]
+
+    # 머리줄 — 상품 이름 두 줄 (티커행 / 설명행)
+    s += (f'  <rect x="{pad}" y="{y}" width="{w - pad*2}" height="{TB["head"]}" rx="20" '
+          f'fill="{LAV}"/>\n')
+    for i, col in enumerate(cols):
+        a, _, b = col.partition("|")
+        s += (f'  <text x="{cx[i]:.0f}" y="{y + 38}" text-anchor="middle" font-size="31" '
+              f'font-weight="700" letter-spacing="-1" fill="{INK}">{esc(a)}</text>\n')
+        if b:
+            s += (f'  <text x="{cx[i]:.0f}" y="{y + 68}" text-anchor="middle" font-size="22" '
+                  f'font-weight="600" letter-spacing="-0.5" fill="{FAINT}">{esc(b)}</text>\n')
+    y += TB["head"]
+
+    band = 0
+    for r in rows:
+        if _is_div(r):                      # 구분 머리 — 묶음 이름
+            dh = int(rh * 0.88)
+            s += (f'  <text x="{pad}" y="{y + dh*0.78:.0f}" font-size="23" font-weight="700" '
+                  f'letter-spacing="1.5" fill="{PURPLE}">{esc(r[0])}</text>\n')
+            y += dh
+            band = 0
+            continue
+        if band % 2 == 1:
+            s += (f'  <rect x="{pad}" y="{y}" width="{w - pad*2}" height="{rh}" '
+                  f'fill="#FFFFFF" opacity="0.62"/>\n')
+        s += (f'  <text x="{pad + 16}" y="{y + rh*0.66:.0f}" font-size="27" font-weight="600" '
+              f'letter-spacing="-0.8" fill="{SUB}">{esc(r[0])}</text>\n')
+        for i, v in enumerate(r[1:4]):
+            v = str(v)
+            hl = v.startswith("*")
+            if hl:
+                v = v[1:]
+            col = ACCENT if hl else (DIM if v in ("-", "—", "") else INK)
+            s += (f'  <text x="{cx[i]:.0f}" y="{y + rh*0.66:.0f}" text-anchor="middle" '
+                  f'font-size="{29 if hl else 28}" font-weight="700" letter-spacing="-0.8" '
+                  f'fill="{col}">{esc(v)}</text>\n')
+        y += rh
+        band += 1
+
+    s += (f'  <line x1="{pad}" y1="{y + 6}" x2="{w - pad}" y2="{y + 6}" '
+          f'stroke="{LINE_SOFT}" stroke-width="3"/>\n')
+    if c.get("note"):
+        s += (f'  <text x="{pad}" y="{y + 54}" font-size="{TB["note"]}" font-weight="600" '
+              f'letter-spacing="-0.6" fill="{DIM}">{esc(c["note"])}</text>\n')
+    return s
+
 LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list,
-           "photo": lay_photo, "split": lay_split}
+           "photo": lay_photo, "split": lay_split,
+           "table": lay_table}
 
 
 def build(c, w, h):
     body = LAYOUTS[c["layout"]](c, w, h)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" '
             f'viewBox="0 0 {w} {h}" role="img">\n<title>{esc(c.get("alt", c.get("name","")))}</title>\n'
-            f'{defs(w, h)}\n<g {FONT}>\n{body}{foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
+            f'{defs(w, h)}\n<g {FONT}>\n{body}{"" if c["layout"] == "table" else foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
 
 
 def shot(svg_path, png_path, w, h):
@@ -301,8 +389,9 @@ def main():
     out = HERE / (sys.argv[2] if len(sys.argv) > 2 else "thumbs")
     (out / "svg").mkdir(parents=True, exist_ok=True)
     for c in cfg["thumbs"]:
-        for key, (w, h) in SIZES.items():
-            stem = f'{c["name"]}-{key}'
+        sizes = {"": table_size(c)} if c["layout"] == "table" else SIZES
+        for key, (w, h) in sizes.items():
+            stem = f'{c["name"]}-{key}' if key else c["name"]
             svg = out / "svg" / f"{stem}.svg"
             svg.write_text(build(c, w, h), encoding="utf-8")
             png = out / f"{stem}.png"

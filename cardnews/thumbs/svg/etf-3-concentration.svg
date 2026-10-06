@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="792" viewBox="0 0 1080 792" role="img">
+<title>미국 우주항공 ETF 3종 집중도 비교표</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="792" fill="url(#bg)"/>
+<rect x="-205" y="-119" width="907" height="907" fill="url(#m1)"/>
+<rect x="443" y="364" width="940" height="940" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="64" y="118" font-size="58" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">집중도 비교</text>
+  <text x="64" y="162" font-size="30" font-weight="600" letter-spacing="-1" fill="#8B85A8">상위 종목이 차지하는 비중 · 2026.10.02</text>
+  <rect x="64" y="196" width="952" height="86" rx="20" fill="#EFEAFC"/>
+  <text x="504" y="234" text-anchor="middle" font-size="31" font-weight="700" letter-spacing="-1" fill="#2B2B3A">TIGER</text>
+  <text x="504" y="264" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="-0.5" fill="#9691B8">미국우주테크</text>
+  <text x="708" y="234" text-anchor="middle" font-size="31" font-weight="700" letter-spacing="-1" fill="#2B2B3A">KODEX</text>
+  <text x="708" y="264" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="-0.5" fill="#9691B8">미국우주항공</text>
+  <text x="914" y="234" text-anchor="middle" font-size="31" font-weight="700" letter-spacing="-1" fill="#2B2B3A">1Q</text>
+  <text x="914" y="264" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="-0.5" fill="#9691B8">미국우주항공테크</text>
+  <text x="80" y="324" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">상위 1종목</text>
+  <text x="504" y="324" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.8" fill="#B455C4">28.4%</text>
+  <text x="708" y="324" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">24.5%</text>
+  <text x="914" y="324" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">15.7%</text>
+  <rect x="64" y="346" width="952" height="64" fill="#FFFFFF" opacity="0.62"/>
+  <text x="80" y="388" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">상위 3종목</text>
+  <text x="504" y="388" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">59.0%</text>
+  <text x="708" y="388" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.8" fill="#B455C4">61.7%</text>
+  <text x="914" y="388" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">40.2%</text>
+  <text x="80" y="452" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">상위 5종목</text>
+  <text x="504" y="452" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.8" fill="#B455C4">79.9%</text>
+  <text x="708" y="452" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">78.5%</text>
+  <text x="914" y="452" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">58.3%</text>
+  <rect x="64" y="474" width="952" height="64" fill="#FFFFFF" opacity="0.62"/>
+  <text x="80" y="516" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">상위 10종목</text>
+  <text x="504" y="516" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.8" fill="#B455C4">99.6%</text>
+  <text x="708" y="516" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">96.8%</text>
+  <text x="914" y="516" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">94.0%</text>
+  <text x="80" y="580" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">하위 5종목 합계</text>
+  <text x="504" y="580" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#B9B3D6">-</text>
+  <text x="708" y="580" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">6.5%</text>
+  <text x="914" y="580" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.8" fill="#B455C4">17.8%</text>
+  <rect x="64" y="602" width="952" height="64" fill="#FFFFFF" opacity="0.62"/>
+  <text x="80" y="644" font-size="27" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">보유종목 수</text>
+  <text x="504" y="644" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">10개</text>
+  <text x="708" y="644" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">14개</text>
+  <text x="914" y="644" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">14개</text>
+  <line x1="64" y1="672" x2="1016" y2="672" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="64" y="720" font-size="28" font-weight="600" letter-spacing="-0.6" fill="#B9B3D6">TIGER는 10종목에서 딱 끊고, KODEX는 꼬리에 소형주를 달아 섹터를 넓혔습니다.</text>
+
+</g>
+</svg>
