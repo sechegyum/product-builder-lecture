@@ -27,7 +27,7 @@
   <rect x="0" y="0" width="1080" height="1080" fill="url(#scL)"/>
     <defs><linearGradient id="scB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B0A18" stop-opacity="0"/><stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/><stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>
   <rect x="0" y="670" width="1080" height="410" fill="url(#scB)"/>
-  <text x="63" y="192" font-size="28" font-weight="700" letter-spacing="2.5" fill="#CDBDF7">앱스토어 '스냅베스트'</text>
+  <text x="63" y="192" font-size="38" font-weight="700" letter-spacing="2.5" fill="#CDBDF7">앱스토어 '스냅베스트'</text>
   <text x="63" y="291" font-size="84" font-weight="700" letter-spacing="-5" fill="#FFFFFF">우주항공 관련 주식</text>
   <text x="63" y="393" font-size="84" font-weight="700" letter-spacing="-5" fill="#FFFFFF">내가 정말 사도되는걸까</text>
   <rect x="63" y="431" width="238" height="16" rx="8" fill="url(#line)"/>

@@ -219,7 +219,7 @@ def lay_photo(c, w, h):
           '<stop offset="0.55" stop-color="#0B0A18" stop-opacity="0.45"/>'
           '<stop offset="1" stop-color="#0B0A18" stop-opacity="0.88"/></linearGradient></defs>\n'
           f'  <rect x="0" y="{h*0.62:.0f}" width="{w}" height="{h*0.38:.0f}" fill="url(#scB)"/>\n')
-    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.092)}" font-size="{int(h*0.026)}" font-weight="700" '
+    s += (f'  <text x="{x:.0f}" y="{top - int(h*0.092)}" font-size="{int(h*0.036)}" font-weight="700" '
           f'letter-spacing="2.5" fill="#CDBDF7">{esc(c.get("tag","SNAPVEST"))}</text>\n')
     for i, t in enumerate(ls):
         s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
@@ -266,11 +266,11 @@ def lay_split(c, w, h):
 # ── table — 비교표 ──────────────────────────────────
 # 표는 캔버스가 고정이 아니다. 줄 수에 맞춰 높이를 계산해 세로로 늘린다.
 # 블로그 본문에 넣는 그림이라 가로 1080 에 세로는 내용만큼이면 된다.
-TB = dict(pad=64, title=58, sub=30, head=94, gap_t=34, note=28)
+TB = dict(pad=64, title=72, sub=34, head=104, gap_t=36, note=32)
 
 
 def _row_h(n):
-    return 64 if n <= 12 else 56 if n <= 20 else 48
+    return 76 if n <= 12 else 68 if n <= 20 else 62
 
 
 def table_size(c):
@@ -309,10 +309,10 @@ def lay_table(c, w, h):
           f'fill="{LAV}"/>\n')
     for i, col in enumerate(cols):
         a, _, b = col.partition("|")
-        s += (f'  <text x="{cx[i]:.0f}" y="{y + 42}" text-anchor="middle" font-size="38" '
+        s += (f'  <text x="{cx[i]:.0f}" y="{y + 42}" text-anchor="middle" font-size="44" '
               f'font-weight="700" letter-spacing="-1" fill="{INK}">{esc(a)}</text>\n')
         if b:
-            s += (f'  <text x="{cx[i]:.0f}" y="{y + 74}" text-anchor="middle" font-size="24" '
+            s += (f'  <text x="{cx[i]:.0f}" y="{y + 80}" text-anchor="middle" font-size="27" '
                   f'font-weight="600" letter-spacing="-0.5" fill="{FAINT}">{esc(b)}</text>\n')
     y += TB["head"]
 
@@ -320,7 +320,7 @@ def lay_table(c, w, h):
     for r in rows:
         if _is_div(r):                      # 구분 머리 — 묶음 이름
             dh = int(rh * 0.88)
-            s += (f'  <text x="{pad}" y="{y + dh*0.78:.0f}" font-size="23" font-weight="700" '
+            s += (f'  <text x="{pad}" y="{y + dh*0.78:.0f}" font-size="30" font-weight="700" '
                   f'letter-spacing="1.5" fill="{PURPLE}">{esc(r[0])}</text>\n')
             y += dh
             band = 0
@@ -328,7 +328,7 @@ def lay_table(c, w, h):
         if band % 2 == 1:
             s += (f'  <rect x="{pad}" y="{y}" width="{w - pad*2}" height="{rh}" '
                   f'fill="#FFFFFF" opacity="0.62"/>\n')
-        s += (f'  <text x="{pad + 16}" y="{y + rh*0.66:.0f}" font-size="27" font-weight="600" '
+        s += (f'  <text x="{pad + 16}" y="{y + rh*0.66:.0f}" font-size="36" font-weight="600" '
               f'letter-spacing="-0.8" fill="{SUB}">{esc(r[0])}</text>\n')
         for i, v in enumerate(r[1:4]):
             v = str(v)
@@ -336,8 +336,13 @@ def lay_table(c, w, h):
             if hl:
                 v = v[1:]
             col = ACCENT if hl else (DIM if v in ("-", "—", "") else INK)
+            # 칸을 넘치면 그 칸만 글자를 줄인다. 이웃 칸과 붙는 것보다 낫다.
+            fs = 40 if hl else 38
+            wide = sum(1.0 if ord(ch) > 0x2000 else 0.56 for ch in v)   # 한글은 한 칸
+            if wide * fs > cw - 16:
+                fs = max(26, int((cw - 16) / wide))
             s += (f'  <text x="{cx[i]:.0f}" y="{y + rh*0.66:.0f}" text-anchor="middle" '
-                  f'font-size="{29 if hl else 28}" font-weight="700" letter-spacing="-0.8" '
+                  f'font-size="{fs}" font-weight="700" letter-spacing="-0.8" '
                   f'fill="{col}">{esc(v)}</text>\n')
         y += rh
         band += 1
@@ -368,7 +373,7 @@ def lay_band(c, w, h):
         s += (f'  <text x="{x}" y="{top + i*62}" font-size="{50 if shot else 52}" '
               f'font-weight="700" letter-spacing="-2.5" fill="{col}">{esc(t)}</text>\n')
     if c.get("sub"):
-        s += (f'  <text x="{x}" y="{268 if shot else 292}" font-size="28" font-weight="600" '
+        s += (f'  <text x="{x}" y="{268 if shot else 292}" font-size="38" font-weight="600" '
               f'letter-spacing="-1" fill="{SUB}">{esc(c["sub"])}</text>\n')
 
     if shot:
@@ -410,7 +415,7 @@ def build(c, w, h):
             f'{defs(w, h)}\n<g {FONT}>\n{body}{"" if c["layout"] in ("table", "band") else foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
 
 
-def shot(svg_path, png_path, w, h):
+def shot(svg_path, png_path, w, h, photo=False):
     html = svg_path.with_suffix(".html")
     html.write_text('<!doctype html><meta charset="utf-8">'
                     '<style>html,body{margin:0;padding:0;background:#fff}'
@@ -425,11 +430,18 @@ def shot(svg_path, png_path, w, h):
     if im.size != (w, h):
         im = im.crop((0, 0, w, h))
         im.save(png_path)
-    # 네이버 업로드용 JPG 를 같이 뽑는다. 배경이 매끄러운 그라데이션이라
-    # PNG 는 압축이 거의 안 먹는다 (1080 기준 PNG 430KB vs JPG 61KB).
-    # subsampling=0 (4:4:4) 로 저장해야 글자 가장자리에 색이 안 번진다.
-    im.convert("RGB").save(png_path.with_suffix(".jpg"), "JPEG",
-                           quality=90, subsampling=0, optimize=True)
+    # 저장 규칙 — 글자·그래프는 PNG, 사진은 JPG.
+    # JPG 는 글자 테두리를 뭉갠다. 그런데 우리 배경이 매끄러운 그라데이션이라
+    # 그냥 PNG 로 두면 용량이 안 줄어든다 (1080 정사각 기준 455KB).
+    # 색수를 128 로 줄이고 디더링을 걸면 131KB 로 내려가면서 글자는 그대로다.
+    im = im.convert("RGB")
+    if photo:
+        im.save(png_path.with_suffix(".jpg"), "JPEG", quality=90,
+                subsampling=0, optimize=True)
+        png_path.unlink(missing_ok=True)
+    else:
+        im.quantize(colors=128, method=Image.MEDIANCUT,
+                    dither=Image.FLOYDSTEINBERG).save(png_path, "PNG", optimize=True)
 
 
 def main():
@@ -446,9 +458,10 @@ def main():
             svg = out / "svg" / f"{stem}.svg"
             svg.write_text(build(c, w, h), encoding="utf-8")
             png = out / f"{stem}.png"
-            shot(svg, png, w, h)
-            kb = png.with_suffix(".jpg").stat().st_size / 1024
-            print(f"  ✓ {png.relative_to(HERE)}  {w}x{h}  [{c['layout']}]  · jpg {kb:,.0f}KB")
+            shot(svg, png, w, h, c["layout"] in ("photo", "split"))
+            final = png.with_suffix(".jpg") if c["layout"] in ("photo", "split") else png
+            print(f"  ✓ {final.relative_to(HERE)}  {w}x{h}  [{c['layout']}]"
+                  f"  {final.stat().st_size/1024:,.0f}KB")
 
 
 if __name__ == "__main__":
