@@ -18,7 +18,8 @@
 <rect x="-205" y="-162" width="907" height="907" fill="url(#m1)"/>
 <rect x="443" y="497" width="940" height="940" fill="url(#m2)"/>
 <g font-family="Pretendard, Poppins, Arial, sans-serif">
-  <text x="80" y="170" font-size="28" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">3배 ETF</text>
+  <rect x="80" y="134" width="172" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
+  <text x="100" y="170" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">3배 ETF</text>
   <text x="80" y="430" font-size="156" font-weight="700" letter-spacing="-5" fill="#E0568A">+20%</text>
   <text x="80" y="492" font-size="41" font-weight="600" letter-spacing="-1" fill="#8B85A8">반도체 지수 · 1년</text>
   <text x="80" y="578" font-size="59" font-weight="700" fill="#9691B8">↓</text>
@@ -26,7 +27,7 @@
   <text x="80" y="792" font-size="41" font-weight="600" letter-spacing="-1" fill="#8B85A8">3배 상품 · 같은 1년</text>
   <rect x="80" y="852" width="238" height="13" rx="6" fill="url(#line)"/>
   <text x="80" y="912" font-size="54" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">같은 해입니다</text>
-  <text x="80" y="1028" font-size="28" font-weight="600" letter-spacing="-0.3" fill="#B9B3D6">변동성 55% 가정 · 직접 계산</text>
-  <text x="1000" y="1028" text-anchor="end" font-size="30" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
+  <text x="80" y="1028" font-size="32" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">변동성 55% 가정 · 직접 계산</text>
+  <text x="1000" y="1028" text-anchor="end" font-size="32" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
 </g>
 </svg>

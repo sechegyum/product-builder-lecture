@@ -1,0 +1,75 @@
+{
+  "thumbs": [
+    {
+      "name": "f-num",
+      "layout": "num",
+      "tag": "실적리뷰 #3",
+      "big": "+32%",
+      "tone": "up",
+      "lines": [
+        "엔비디아 3분기",
+        "영업이익 증가율"
+      ],
+      "alt": "엔비디아 3분기 영업이익 +32%"
+    },
+    {
+      "name": "f-num-dark",
+      "layout": "num",
+      "theme": "dark",
+      "tag": "실적리뷰 #3",
+      "big": "-15%",
+      "tone": "down",
+      "lines": [
+        "테슬라 3분기",
+        "영업이익 감소율"
+      ],
+      "alt": "테슬라 3분기 영업이익 -15%"
+    },
+    {
+      "name": "f-ask",
+      "layout": "ask",
+      "tag": "종목분석",
+      "lines": [
+        "지금 비쌀까?"
+      ],
+      "alt": "지금 비쌀까",
+      "sub": "PER · 목표가로 따져봤습니다"
+    },
+    {
+      "name": "f-ask-dark",
+      "layout": "ask",
+      "theme": "dark",
+      "tag": "종목분석",
+      "lines": [
+        "아직 쌀까?"
+      ],
+      "alt": "아직 쌀까",
+      "sub": "PER · 목표가로 따져봤습니다"
+    },
+    {
+      "name": "f-vs",
+      "layout": "vs",
+      "tag": "비교",
+      "left": "A사",
+      "left_note": "PER 12배",
+      "right": "B사",
+      "right_note": "PER 31배",
+      "caption": "누가 더 쌀까",
+      "alt": "A사 vs B사 누가 더 쌀까"
+    },
+    {
+      "name": "f-list-dark",
+      "layout": "list",
+      "theme": "dark",
+      "tag": "이슈정리",
+      "badge": "3가지",
+      "title": "급락한 이유",
+      "items": [
+        "급등 직후 증자",
+        "실적 가이던스 하향",
+        "최대주주 지분 매각"
+      ],
+      "alt": "급락한 이유 3가지"
+    }
+  ]
+}

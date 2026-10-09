@@ -15,6 +15,8 @@ cardnews/
 ├── svg_outline.py     글자를 패스로 변환 (Canva 업로드용)
 ├── make_chart.py      candles -> 사진 슬롯용 일봉 차트
 ├── make_graphic.py    쓸 사진이 없을 때 브랜드 톤 추상 그래픽
+├── thumb.py          블로그 썸네일 · 포스터 · 비교표 · 끝 띠
+│                     문구는 blog/BLOG-TEMPLATE.md 「썸네일 문구 공식」 대로
 ├── fonts/             Pretendard 4종 (렌더 · Canva 업로드)
 ├── archive.py         회차 보관. 새 회차 시작 전에 먼저 실행
 ├── pack.py            회차를 dist/TICKER-날짜.zip 으로 묶음 (대표님 PC 로 보낼 것)
@@ -65,3 +67,23 @@ mkdir -p ~/.fonts && cp cardnews/fonts/*.otf ~/.fonts/ && fc-cache -f
 ### 커밋
 
 컨테이너는 세션이 끝나면 회수된다. **매 회차 커밋·푸시할 것.**
+
+---
+
+## blog/ — 네이버 블로그 글
+
+```
+blog/
+├── BLOG-TEMPLATE.md       글 뼈대 · 체크리스트 · 이미지 규칙 · 썸네일 문구 공식
+└── YYYY-MM-DD-주제.txt     그 글의 본문 (+ -sns.md 는 토스·인스타·쓰레드)
+```
+
+**글을 쓰기 전에 `blog/BLOG-TEMPLATE.md` 를 먼저 읽는다.** 거기에 네 가지가 고정돼 있다.
+
+- 제목 · 대표사진 · 본문 ①~⑪ 순서 · 끝인사 · 맨 끝 띠
+- 발행 전 10줄 / 발행 후 3줄 체크리스트
+- 이미지 만들 때 — 그래프 규칙, 폰 기준 글자 크기, PNG · JPG 기준
+- **썸네일 문구 공식** — 숫자형 · 질문형 · 비교형 · 이유형
+
+이미지는 `cardnews/thumb.py` 로 만든다. 본문의 표는 **네이버 에디터 표 기능**을
+쓴다 (이미지로 만들지 않는다 — 글자라야 검색에 걸린다).

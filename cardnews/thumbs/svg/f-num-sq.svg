@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
-<title>SOXL 매수 전 확인할 세 가지 질문</title>
+<title>엔비디아 3분기 영업이익 +32%</title>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
     <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
@@ -18,17 +18,13 @@
 <rect x="-205" y="-162" width="907" height="907" fill="url(#m1)"/>
 <rect x="443" y="497" width="940" height="940" fill="url(#m2)"/>
 <g font-family="Pretendard, Poppins, Arial, sans-serif">
-  <rect x="80" y="164" width="186" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
-  <text x="100" y="200" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">사기 전에</text>
-  <text x="80" y="330" font-size="100" font-weight="700" letter-spacing="-3.5" fill="#2B2B3A">확인할 것 셋</text>
-  <rect x="80" y="360" width="238" height="13" rx="6" fill="url(#line)"/>
-  <circle cx="94" cy="508" r="9" fill="#B455C4"/>
-  <text x="128" y="520" font-size="51" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">며칠 들고 있을 것인가</text>
-  <circle cx="94" cy="626" r="9" fill="#B455C4"/>
-  <text x="128" y="638" font-size="51" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">변동성은 얼마로 볼 것인가</text>
-  <circle cx="94" cy="744" r="9" fill="#B455C4"/>
-  <text x="128" y="756" font-size="51" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">-80%를 버틸 금액인가</text>
-  <text x="80" y="1028" font-size="32" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">SOXL · 3배 레버리지</text>
+  <rect x="80" y="134" width="228" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
+  <text x="100" y="170" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">실적리뷰 #3</text>
+  <text x="80" y="560" font-size="253" font-weight="700" letter-spacing="-6" fill="#E0568A">+32%</text>
+  <rect x="80" y="597" width="238" height="13" rx="6" fill="url(#line)"/>
+  <text x="80" y="700" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">엔비디아 3분기</text>
+  <text x="80" y="777" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">영업이익 증가율</text>
+  <text x="80" y="1028" font-size="32" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">스냅베스트</text>
   <text x="1000" y="1028" text-anchor="end" font-size="32" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
 </g>
 </svg>

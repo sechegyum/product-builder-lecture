@@ -15,6 +15,21 @@ generate.py 는 건드리지 않는다. 디자인 토큰(색·폰트·그라데�
   ask   질문 두세 줄                     예) 지수는 올랐는데 / 나는 왜 잃을까
   list  제목 + 항목 셋                   예) 급등 직후 증자 / 세 건
 
+문구는 공식대로 넣는다 (blog/BLOG-TEMPLATE.md 「썸네일 문구 공식」).
+
+  숫자형  실적리뷰 #N   +32%          -> num    메인은 숫자 하나
+  질문형  종목분석      지금 비쌀까?  -> ask    보조에 무엇으로 따졌는지
+  비교형  (라벨 없음)   A사 vs B사    -> vs     보조에 누가 더 쌀까
+  이유형  이슈정리      급락한 이유   -> list   badge 로 "N가지"
+
+큰 글씨 하나 · 10자 안팎 · 좌상단 시리즈 라벨 · 하단 블로그명. 넷 다 코드가 지킨다.
+10자를 넘기면 만들 때 경고가 뜬다 — 잘라서 다시 넣으라는 뜻이다.
+
+판은 두 벌. 같은 뼈대라도 밝은 판과 어두운 판을 번갈아 쓰면 목록에서 덜 지친다.
+
+  theme 없음      밝은 라벤더
+  theme "dark"    어두운 남보라
+
 크기는 두 벌이 같이 나온다.
   1080x1080  정사각 — 네이버 대표이미지 · 인스타
   1200x630   가로  — 오픈그래프 · 카카오/페북 공유 카드
@@ -30,22 +45,42 @@ from generate import (INK, SUB, FAINT, DIM, ACCENT, PURPLE, UP, DOWN,
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 HERE = pathlib.Path(__file__).parent
 SIZES = {"sq": (1080, 1080), "wide": (1200, 630)}
+BRAND = "스냅베스트"
+
+# 색은 두 벌뿐이다. 공식의 "컬러 2~3개 고정" 을 코드로 묶어 둔 것 —
+# 레이아웃마다 색을 새로 고르기 시작하면 블로그가 흩어진다.
+PAL = {
+    "light": dict(ink=INK, sub=SUB, faint=FAINT, dim=DIM, lav=LAV, soft=LINE_SOFT,
+                  accent=ACCENT, purple=PURPLE, up=UP, down=DOWN,
+                  pill_bg="#FFFFFF", pill_op="0.82", pill_fg=PURPLE,
+                  band="#FFFFFF", band_op="0.62", foot="#8B85A8", dom="url(#line)"),
+    "dark":  dict(ink="#F6F3FF", sub="#ADA2D2", faint="#8A7FB4", dim="#8E84B2",
+                  lav="#241D40", soft="#342C58",
+                  accent="#D07BE4", purple="#CDBDF7", up="#F2719C", down="#7FADEA",
+                  pill_bg="#2E2552", pill_op="1", pill_fg="#CDBDF7",
+                  band="#FFFFFF", band_op="0.05", foot="#A79BCB", dom="#FFFFFF"),
+}
+P = PAL["light"]
 
 
-def defs(w, h):
-    """generate.py 의 DEFS 는 1080 고정이라 크기를 받게 다시 쓴다. 색은 그대로."""
+def defs(w, h, dark=False):
+    """generate.py 의 DEFS 는 1080 고정이라 크기를 받게 다시 쓴다. 색은 그대로.
+
+    어두운 판은 배경 두 색과 번짐 세기만 바꾼다. 그래야 밝은 판과 형제로 보인다.
+    """
+    c0, c1, glow = ("#171130", "#0B0918", "0.30") if dark else ("#FBF9FF", "#EFEAFC", "0.13")
     return f'''<defs>
   <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
-    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+    <stop offset="0" stop-color="{c0}"/><stop offset="1" stop-color="{c1}"/>
   </linearGradient>
   <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
   </linearGradient>
   <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
-    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="{glow}"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
-    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E0568A" stop-opacity="{glow}"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
   </radialGradient>
 </defs>
 <rect width="{w}" height="{h}" fill="url(#bg)"/>
@@ -54,16 +89,22 @@ def defs(w, h):
 
 
 def foot(w, h, note, dark=False, dom_x=None, cta=None):
-    """좌하단 한 줄 + 우하단 도메인. 카드뉴스의 '밀어서 보기' 같은 인스타 장치는 뺀다."""
+    """좌하단 블로그명 + 우하단 한마디.
+
+    공식의 '하단 블로그명' 자리다. note 를 비워 두면 블로그명이 들어간다 —
+    포맷이 달라도 아래쪽에 같은 이름이 박혀 있어야 한 블로그로 읽힌다.
+    카드뉴스의 '밀어서 보기' 같은 인스타 장치는 여기 넣지 않는다.
+    """
     y = h - 52
     s = ""
-    if note:
-        s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.026)}" font-weight="600" '
-              f'letter-spacing="-0.3" fill="{"#A9A0C8" if dark else DIM}">{esc(note)}</text>\n')
+    left = BRAND if note is None else note
+    if left:
+        s += (f'  <text x="{w*0.074:.0f}" y="{y}" font-size="{int(h*0.030)}" font-weight="700" '
+              f'letter-spacing="-0.3" fill="{"#CFC6E8" if dark else P["foot"]}">{esc(left)}</text>\n')
     label = "snapvestai.com" if cta is None else cta
     if label:
-        s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.028)}" '
-              f'font-weight="700" letter-spacing="-0.5" fill="{"#FFFFFF" if dark else "url(#line)"}">{esc(label)}</text>')
+        s += (f'  <text x="{(dom_x if dom_x else w - w*0.074):.0f}" y="{y}" text-anchor="end" font-size="{int(h*0.030)}" '
+              f'font-weight="700" letter-spacing="-0.5" fill="{"#FFFFFF" if dark else P["dom"]}">{esc(label)}</text>')
     return s.rstrip("\n")
 
 
@@ -71,16 +112,50 @@ def bar(x, y, w, h=13):
     return f'<rect x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h}" rx="{h//2}" fill="url(#line)"/>'
 
 
+def _tw(text, size, ls):
+    """글자 폭 어림. 한글은 한 칸, 로마자·숫자는 0.58 칸으로 센다."""
+    return sum(1.0 if ord(c) > 0x2000 else 0.58 for c in text) * size + ls * max(len(text) - 1, 0)
+
+
+def pill_w(text, size):
+    return _tw(text, size, size * 0.16) + int(size * 0.72) * 2
+
+
+def pill(x, y, text, size, bg=None, fg=None):
+    """좌상단 시리즈 라벨. 글자만 두면 꼬리표로 안 읽혀서 알약을 깐다.
+
+    '실적리뷰 #3' 처럼 시리즈 이름을 넣는 자리다. 같은 라벨이 반복되면
+    독자가 글 하나가 아니라 연재로 받아들인다 — 공식이 이걸 노린다.
+    """
+    if not text:
+        return ""
+    size = max(size, 28)
+    ls = size * 0.16
+    px, ph = int(size * 0.72), int(size * 1.85)
+    return (f'  <rect x="{x:.0f}" y="{y - ph*0.70:.0f}" width="{_tw(text, size, ls) + px*2:.0f}" '
+            f'height="{ph}" rx="{ph//2}" fill="{bg or P["pill_bg"]}" opacity="{P["pill_op"]}"/>\n'
+            f'  <text x="{x + px:.0f}" y="{y:.0f}" font-size="{size}" font-weight="700" '
+            f'letter-spacing="{ls:.1f}" fill="{fg or P["pill_fg"]}">{esc(text)}</text>')
+
+
 def tag(x, y, text, size):
-    """좌상단 분류 꼬리표. 포맷이 달라도 같은 블로그로 읽히게 하는 장치."""
-    return (f'  <text x="{x:.0f}" y="{y:.0f}" font-size="{size}" font-weight="700" '
-            f'letter-spacing="2.5" fill="{PURPLE}">{esc(text)}</text>')
+    return pill(x, y, text, size)
+
+
+def badge(x, y, text, size):
+    """숫자 배지 — "3가지". 라벨 옆에 붙여 몇 개를 다루는 글인지 먼저 알린다."""
+    ls = size * 0.1
+    px, ph = int(size * 0.72), int(size * 1.85)
+    return (f'  <rect x="{x:.0f}" y="{y - ph*0.70:.0f}" width="{_tw(text, size, ls) + px*2:.0f}" '
+            f'height="{ph}" rx="{ph//2}" fill="url(#line)"/>\n'
+            f'  <text x="{x + px:.0f}" y="{y:.0f}" font-size="{size}" font-weight="700" '
+            f'letter-spacing="{ls:.1f}" fill="#FFFFFF">{esc(text)}</text>')
 
 
 # ── num — 숫자 하나 ─────────────────────────────────
 def lay_num(c, w, h):
     big = c["big"]
-    col = {"up": UP, "down": DOWN, "accent": ACCENT}.get(c.get("tone", "accent"), ACCENT)
+    col = {"up": P["up"], "down": P["down"], "accent": P["accent"]}.get(c.get("tone", "accent"), ACCENT)
     fs = int(h * (0.235 if len(big) <= 7 else 0.185))
     x = w * 0.074
     if (w, h) == (1080, 1080):
@@ -93,7 +168,7 @@ def lay_num(c, w, h):
     s += "  " + bar(x, by + int(h * 0.035), w * 0.22) + "\n"
     for i, t in enumerate(c["lines"][:2]):
         s += (f'  <text x="{x:.0f}" y="{sy + i * int(h*0.072)}" font-size="{int(h*0.052)}" '
-              f'font-weight="700" letter-spacing="-2" fill="{INK}">{esc(t)}</text>\n')
+              f'font-weight="700" letter-spacing="-2" fill="{P["ink"]}">{esc(t)}</text>\n')
     return s
 
 
@@ -109,20 +184,20 @@ def lay_vs(c, w, h):
         tag_y, ay, lny, arw, by, rny, bry, capy = 95, 235, 278, 330, 420, 463, None, 512
     s = tag(x, tag_y, c.get("tag", "SNAPVEST"), int(h * 0.026)) + "\n"
     s += (f'  <text x="{x:.0f}" y="{ay}" font-size="{fs}" font-weight="700" '
-          f'letter-spacing="-5" fill="{UP}">{esc(a)}</text>\n')
+          f'letter-spacing="-5" fill="{P["up"]}">{esc(a)}</text>\n')
     s += (f'  <text x="{x:.0f}" y="{lny}" font-size="{int(h*0.038)}" font-weight="600" '
-          f'letter-spacing="-1" fill="{SUB}">{esc(c.get("left_note",""))}</text>\n')
+          f'letter-spacing="-1" fill="{P["sub"]}">{esc(c.get("left_note",""))}</text>\n')
     s += (f'  <text x="{x:.0f}" y="{arw}" font-size="{int(h*0.055)}" font-weight="700" '
-          f'fill="{FAINT}">\u2193</text>\n')
+          f'fill="{P["faint"]}">\u2193</text>\n')
     s += (f'  <text x="{x:.0f}" y="{by}" font-size="{fs}" font-weight="700" '
-          f'letter-spacing="-5" fill="{DOWN}">{esc(b)}</text>\n')
+          f'letter-spacing="-5" fill="{P["down"]}">{esc(b)}</text>\n')
     s += (f'  <text x="{x:.0f}" y="{rny}" font-size="{int(h*0.038)}" font-weight="600" '
-          f'letter-spacing="-1" fill="{SUB}">{esc(c.get("right_note",""))}</text>\n')
+          f'letter-spacing="-1" fill="{P["sub"]}">{esc(c.get("right_note",""))}</text>\n')
     if bry:
         s += "  " + bar(x, bry, w * 0.22) + "\n"
     if c.get("caption"):
         s += (f'  <text x="{x:.0f}" y="{capy}" font-size="{int(h*0.05)}" font-weight="700" '
-              f'letter-spacing="-1.5" fill="{INK}">{esc(c["caption"])}</text>\n')
+              f'letter-spacing="-1.5" fill="{P["ink"]}">{esc(c["caption"])}</text>\n')
     return s
 
 
@@ -135,10 +210,15 @@ def lay_ask(c, w, h):
     top = (h - gap * len(ls)) // 2 + int(fs * 0.85) + (20 if (w, h) == (1080, 1080) else 0)
     s = tag(x, top - gap - int(h * 0.03), c.get("tag", "SNAPVEST"), int(h * 0.026)) + "\n"
     for i, t in enumerate(ls):
-        col = ACCENT if i == len(ls) - 1 else INK
+        col = P["accent"] if i == len(ls) - 1 else P["ink"]
         s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
               f'letter-spacing="-4" fill="{col}">{esc(t)}</text>\n')
     s += "  " + bar(x, top + (len(ls) - 1) * gap + int(h * 0.035), w * 0.22) + "\n"
+    if c.get("sub"):
+        # 보조 한 줄 — 무엇으로 따졌는지. 질문만 던지고 끝내면 낚시처럼 읽힌다.
+        s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.115)}" '
+              f'font-size="{int(h*0.042)}" font-weight="600" letter-spacing="-1" '
+              f'fill="{P["sub"]}">{esc(c["sub"])}</text>\n')
     return s
 
 
@@ -149,14 +229,17 @@ def lay_list(c, w, h):
         ty, iy, step = 330, 520, 118
     else:
         ty, iy, step = 210, 330, 82
-    s = tag(x, ty - 130, c.get("tag", "SNAPVEST"), int(h * 0.026)) + "\n"
+    lab, lsz = c.get("tag", "SNAPVEST"), int(h * 0.026)
+    s = tag(x, ty - 130, lab, lsz) + "\n"
+    if c.get("badge"):
+        s += badge(x + pill_w(lab, max(lsz, 28)) + 14, ty - 130, c["badge"], max(lsz, 28)) + "\n"
     s += (f'  <text x="{x:.0f}" y="{ty}" font-size="{int(h*0.093)}" font-weight="700" '
-          f'letter-spacing="-3.5" fill="{INK}">{esc(c["title"])}</text>\n')
+          f'letter-spacing="-3.5" fill="{P["ink"]}">{esc(c["title"])}</text>\n')
     s += "  " + bar(x, ty + int(h * 0.028), w * 0.22) + "\n"
     for i, t in enumerate(c["items"][:3]):
-        s += (f'  <circle cx="{x + 14:.0f}" cy="{iy + i*step - 12}" r="9" fill="{ACCENT}"/>\n'
+        s += (f'  <circle cx="{x + 14:.0f}" cy="{iy + i*step - 12}" r="9" fill="{P["accent"]}"/>\n'
               f'  <text x="{x + 48:.0f}" y="{iy + i*step}" font-size="{int(h*0.048)}" '
-              f'font-weight="700" letter-spacing="-1.5" fill="{INK}">{esc(t)}</text>\n')
+              f'font-weight="700" letter-spacing="-1.5" fill="{P["ink"]}">{esc(t)}</text>\n')
     return s
 
 
@@ -251,16 +334,16 @@ def lay_split(c, w, h):
           '<stop offset="1" stop-color="#F3EFFC" stop-opacity="0"/></linearGradient></defs>\n'
           f'  <rect x="{px}" y="0" width="{int(w*0.035)}" height="{h}" fill="url(#seam)"/>\n')
     s += (f'  <text x="{x:.0f}" y="{top - gap + int(h*0.012)}" font-size="{int(h*0.027)}" '
-          f'font-weight="700" letter-spacing="3" fill="{PURPLE}">{esc(c.get("tag","SNAPVEST"))}</text>\n')
+          f'font-weight="700" letter-spacing="3" fill="{P["purple"]}">{esc(c.get("tag","SNAPVEST"))}</text>\n')
     for i, t in enumerate(ls):
-        col = ACCENT if i == len(ls) - 1 and c.get("accent_last", True) else INK
+        col = P["accent"] if i == len(ls) - 1 and c.get("accent_last", True) else P["ink"]
         s += (f'  <text x="{x:.0f}" y="{top + i*gap}" font-size="{fs}" font-weight="700" '
               f'letter-spacing="-3" fill="{col}">{esc(t)}</text>\n')
     s += "  " + bar(x, top + (len(ls)-1)*gap + int(h*0.030), w * 0.16) + "\n"
     if c.get("sub"):
         s += (f'  <text x="{x:.0f}" y="{top + (len(ls)-1)*gap + int(h*0.098)}" '
               f'font-size="{int(h*0.034)}" font-weight="600" letter-spacing="-1" '
-              f'fill="{SUB}">{esc(c["sub"])}</text>\n')
+              f'fill="{P["sub"]}">{esc(c["sub"])}</text>\n')
     return s
 
 # ── table — 비교표 ──────────────────────────────────
@@ -296,24 +379,24 @@ def lay_table(c, w, h):
     cx = [pad + lab_w + cw * (i + 0.5) for i in range(3)]
 
     s = f'  <text x="{pad}" y="{pad + 54}" font-size="{TB["title"]}" font-weight="700" ' \
-        f'letter-spacing="-2.5" fill="{INK}">{esc(c["title"])}</text>\n'
+        f'letter-spacing="-2.5" fill="{P["ink"]}">{esc(c["title"])}</text>\n'
     y = pad + 54
     if c.get("sub"):
         y += TB["sub"] + 14
         s += (f'  <text x="{pad}" y="{y}" font-size="{TB["sub"]}" font-weight="600" '
-              f'letter-spacing="-1" fill="{SUB}">{esc(c["sub"])}</text>\n')
+              f'letter-spacing="-1" fill="{P["sub"]}">{esc(c["sub"])}</text>\n')
     y += TB["gap_t"]
 
     # 머리줄 — 상품 이름 두 줄 (티커행 / 설명행)
     s += (f'  <rect x="{pad}" y="{y}" width="{w - pad*2}" height="{TB["head"]}" rx="20" '
-          f'fill="{LAV}"/>\n')
+          f'fill="{P["lav"]}"/>\n')
     for i, col in enumerate(cols):
         a, _, b = col.partition("|")
         s += (f'  <text x="{cx[i]:.0f}" y="{y + 42}" text-anchor="middle" font-size="44" '
-              f'font-weight="700" letter-spacing="-1" fill="{INK}">{esc(a)}</text>\n')
+              f'font-weight="700" letter-spacing="-1" fill="{P["ink"]}">{esc(a)}</text>\n')
         if b:
             s += (f'  <text x="{cx[i]:.0f}" y="{y + 80}" text-anchor="middle" font-size="27" '
-                  f'font-weight="600" letter-spacing="-0.5" fill="{FAINT}">{esc(b)}</text>\n')
+                  f'font-weight="600" letter-spacing="-0.5" fill="{P["faint"]}">{esc(b)}</text>\n')
     y += TB["head"]
 
     band = 0
@@ -321,21 +404,21 @@ def lay_table(c, w, h):
         if _is_div(r):                      # 구분 머리 — 묶음 이름
             dh = int(rh * 0.88)
             s += (f'  <text x="{pad}" y="{y + dh*0.78:.0f}" font-size="30" font-weight="700" '
-                  f'letter-spacing="1.5" fill="{PURPLE}">{esc(r[0])}</text>\n')
+                  f'letter-spacing="1.5" fill="{P["purple"]}">{esc(r[0])}</text>\n')
             y += dh
             band = 0
             continue
         if band % 2 == 1:
             s += (f'  <rect x="{pad}" y="{y}" width="{w - pad*2}" height="{rh}" '
-                  f'fill="#FFFFFF" opacity="0.62"/>\n')
+                  f'fill="{P["band"]}" opacity="{P["band_op"]}"/>\n')
         s += (f'  <text x="{pad + 16}" y="{y + rh*0.66:.0f}" font-size="36" font-weight="600" '
-              f'letter-spacing="-0.8" fill="{SUB}">{esc(r[0])}</text>\n')
+              f'letter-spacing="-0.8" fill="{P["sub"]}">{esc(r[0])}</text>\n')
         for i, v in enumerate(r[1:4]):
             v = str(v)
             hl = v.startswith("*")
             if hl:
                 v = v[1:]
-            col = ACCENT if hl else (DIM if v in ("-", "—", "") else INK)
+            col = P["accent"] if hl else (P["dim"] if v in ("-", "—", "") else P["ink"])
             # 칸을 넘치면 그 칸만 글자를 줄인다. 이웃 칸과 붙는 것보다 낫다.
             fs = 40 if hl else 38
             wide = sum(1.0 if ord(ch) > 0x2000 else 0.56 for ch in v)   # 한글은 한 칸
@@ -349,9 +432,9 @@ def lay_table(c, w, h):
 
     if c.get("note"):
         s += (f'  <line x1="{pad}" y1="{y + 6}" x2="{w - pad}" y2="{y + 6}" '
-              f'stroke="{LINE_SOFT}" stroke-width="3"/>\n')
+              f'stroke="{P["soft"]}" stroke-width="3"/>\n')
         s += (f'  <text x="{pad}" y="{y + 54}" font-size="{TB["note"]}" font-weight="600" '
-              f'letter-spacing="-0.6" fill="{DIM}">{esc(c["note"])}</text>\n')
+              f'letter-spacing="-0.6" fill="{P["dim"]}">{esc(c["note"])}</text>\n')
     return s
 
 # ── band — 글 맨 끝에 붙이는 띠 ──────────────────────
@@ -366,15 +449,15 @@ def lay_band(c, w, h):
     x, pad = 64, 64
     shot = c.get("shot")
     s = (f'  <text x="{x}" y="{88 if shot else 96}" font-size="27" font-weight="700" '
-         f'letter-spacing="3" fill="{PURPLE}">{esc(c.get("tag", "SNAPVEST"))}</text>\n')
+         f'letter-spacing="3" fill="{P["purple"]}">{esc(c.get("tag", "SNAPVEST"))}</text>\n')
     top = 158 if shot else 172
     for i, t in enumerate(c["lines"][:2]):
-        col = ACCENT if i == 1 and c.get("accent_last") else INK
+        col = P["accent"] if i == 1 and c.get("accent_last") else P["ink"]
         s += (f'  <text x="{x}" y="{top + i*62}" font-size="{50 if shot else 52}" '
               f'font-weight="700" letter-spacing="-2.5" fill="{col}">{esc(t)}</text>\n')
     if c.get("sub"):
         s += (f'  <text x="{x}" y="{268 if shot else 292}" font-size="38" font-weight="600" '
-              f'letter-spacing="-1" fill="{SUB}">{esc(c["sub"])}</text>\n')
+              f'letter-spacing="-1" fill="{P["sub"]}">{esc(c["sub"])}</text>\n')
 
     if shot:
         # 앱스토어 화면을 그대로 띄운다. 말보다 이게 빠르다.
@@ -409,10 +492,17 @@ LAYOUTS = {"num": lay_num, "vs": lay_vs, "ask": lay_ask, "list": lay_list,
 
 
 def build(c, w, h):
+    global P
+    dark = c.get("theme") == "dark"
+    P = PAL["dark" if dark else "light"]
     body = LAYOUTS[c["layout"]](c, w, h)
+    tail = "" if c["layout"] in ("table", "band") else foot(
+        w, h, c.get("note"), dark or c["layout"] == "photo",
+        (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None,
+        c.get("cta"))
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" '
             f'viewBox="0 0 {w} {h}" role="img">\n<title>{esc(c.get("alt", c.get("name","")))}</title>\n'
-            f'{defs(w, h)}\n<g {FONT}>\n{body}{"" if c["layout"] in ("table", "band") else foot(w, h, c.get("note",""), c["layout"] == "photo", (w * (0.50 if (w, h) == (1080, 1080) else 0.42) - w*0.045) if c["layout"] == "split" else None, c.get("cta"))}\n</g>\n</svg>\n')
+            f'{defs(w, h, dark)}\n<g {FONT}>\n{body}{tail}\n</g>\n</svg>\n')
 
 
 def shot(svg_path, png_path, w, h, photo=False):
@@ -444,6 +534,14 @@ def shot(svg_path, png_path, w, h, photo=False):
                     dither=Image.FLOYDSTEINBERG).save(png_path, "PNG", optimize=True)
 
 
+def over10(c):
+    """공식의 '전체 10자 안팎'. 넘기면 알려 준다 — 썸네일은 글이 아니라 간판이다."""
+    big = {"num": [c.get("big", "")], "vs": [c.get("left", ""), c.get("right", "")],
+           "ask": c.get("lines", []), "list": [c.get("title", "")],
+           "photo": c.get("lines", []), "split": c.get("lines", [])}.get(c["layout"], [])
+    return [t for t in big if len(t) > 11]
+
+
 def main():
     cfg = json.loads(pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "thumbs.json")
                      .read_text(encoding="utf-8"))
@@ -460,8 +558,11 @@ def main():
             png = out / f"{stem}.png"
             shot(svg, png, w, h, c["layout"] in ("photo", "split"))
             final = png.with_suffix(".jpg") if c["layout"] in ("photo", "split") else png
-            print(f"  ✓ {final.relative_to(HERE)}  {w}x{h}  [{c['layout']}]"
+            print(f"  ✓ {final.relative_to(HERE)}  {w}x{h}  [{c['layout']}"
+                  f"{'·dark' if c.get('theme') == 'dark' else ''}]"
                   f"  {final.stat().st_size/1024:,.0f}KB")
+        for t in over10(c):
+            print(f"    ⚠ 10자 넘음 ({len(t)}자) — \"{t}\"")
 
 
 if __name__ == "__main__":

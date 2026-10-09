@@ -32,20 +32,20 @@
   <text x="914" y="308" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">10,705원</text>
   <rect x="64" y="334" width="952" height="76" fill="#FFFFFF" opacity="0.62"/>
   <text x="80" y="384" font-size="36" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">iNAV</text>
-  <text x="504" y="384" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">7,307.43원</text>
-  <text x="708" y="384" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">7,278.39원</text>
-  <text x="914" y="384" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">10,635.36원</text>
+  <text x="504" y="384" text-anchor="middle" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">7,307.43원</text>
+  <text x="708" y="384" text-anchor="middle" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">7,278.39원</text>
+  <text x="914" y="384" text-anchor="middle" font-size="31" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">10,635.36원</text>
   <text x="80" y="460" font-size="36" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">괴리율</text>
   <text x="504" y="460" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">+0.72%</text>
   <text x="708" y="460" text-anchor="middle" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#B455C4">+0.43%</text>
   <text x="914" y="460" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">+0.65%</text>
   <rect x="64" y="486" width="952" height="76" fill="#FFFFFF" opacity="0.62"/>
   <text x="80" y="536" font-size="36" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">거래량 (주)</text>
-  <text x="504" y="536" text-anchor="middle" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#B455C4">1,549,937</text>
+  <text x="504" y="536" text-anchor="middle" font-size="37" font-weight="700" letter-spacing="-0.8" fill="#B455C4">1,549,937</text>
   <text x="708" y="536" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">803,675</text>
   <text x="914" y="536" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">72,675</text>
   <text x="80" y="612" font-size="36" font-weight="600" letter-spacing="-0.8" fill="#8B85A8">순자산</text>
-  <text x="504" y="612" text-anchor="middle" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#B455C4">10,735억원</text>
+  <text x="504" y="612" text-anchor="middle" font-size="35" font-weight="700" letter-spacing="-0.8" fill="#B455C4">10,735억원</text>
   <text x="708" y="612" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">3,328억원</text>
   <text x="914" y="612" text-anchor="middle" font-size="38" font-weight="700" letter-spacing="-0.8" fill="#2B2B3A">3,420억원</text>
 

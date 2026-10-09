@@ -18,12 +18,13 @@
 <rect x="-205" y="-162" width="907" height="907" fill="url(#m1)"/>
 <rect x="443" y="497" width="940" height="940" fill="url(#m2)"/>
 <g font-family="Pretendard, Poppins, Arial, sans-serif">
-  <text x="80" y="170" font-size="28" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">3배 ETF</text>
+  <rect x="80" y="134" width="172" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
+  <text x="100" y="170" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">3배 ETF</text>
   <text x="80" y="560" font-size="253" font-weight="700" letter-spacing="-6" fill="#5A8FD6">-30.3%</text>
   <rect x="80" y="597" width="238" height="13" rx="6" fill="url(#line)"/>
   <text x="80" y="700" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">지수가 +20% 오른 해에</text>
   <text x="80" y="777" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">3배 상품이 받은 성적</text>
-  <text x="80" y="1028" font-size="28" font-weight="600" letter-spacing="-0.3" fill="#B9B3D6">변동성 55% · 252거래일 1,000회 시뮬레이션</text>
-  <text x="1000" y="1028" text-anchor="end" font-size="30" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
+  <text x="80" y="1028" font-size="32" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">변동성 55% · 252거래일 1,000회 시뮬레이션</text>
+  <text x="1000" y="1028" text-anchor="end" font-size="32" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
 </g>
 </svg>

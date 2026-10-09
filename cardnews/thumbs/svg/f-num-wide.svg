@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
-<title>SOXL 3배 ETF에서 지수가 올라도 손실이 나는 이유</title>
+<title>엔비디아 3분기 영업이익 +32%</title>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
     <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
@@ -18,13 +18,13 @@
 <rect x="-228" y="-94" width="1008" height="1008" fill="url(#m1)"/>
 <rect x="492" y="290" width="1044" height="1044" fill="url(#m2)"/>
 <g font-family="Pretendard, Poppins, Arial, sans-serif">
-  <rect x="89" y="107" width="118" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
-  <text x="109" y="143" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">SOXL</text>
-  <text x="89" y="245" font-size="66" font-weight="700" letter-spacing="-4" fill="#2B2B3A">지수는 올랐는데</text>
-  <text x="89" y="329" font-size="66" font-weight="700" letter-spacing="-4" fill="#2B2B3A">나는 왜</text>
-  <text x="89" y="413" font-size="66" font-weight="700" letter-spacing="-4" fill="#B455C4">잃을까</text>
-  <rect x="89" y="435" width="264" height="13" rx="6" fill="url(#line)"/>
-  <text x="89" y="578" font-size="18" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">3배 ETF · 변동성 끌림</text>
+  <rect x="89" y="24" width="228" height="51" rx="25" fill="#FFFFFF" opacity="0.82"/>
+  <text x="109" y="60" font-size="28" font-weight="700" letter-spacing="4.5" fill="#8B5BD6">실적리뷰 #3</text>
+  <text x="89" y="370" font-size="148" font-weight="700" letter-spacing="-6" fill="#E0568A">+32%</text>
+  <rect x="89" y="392" width="264" height="13" rx="6" fill="url(#line)"/>
+  <text x="89" y="470" font-size="32" font-weight="700" letter-spacing="-2" fill="#2B2B3A">엔비디아 3분기</text>
+  <text x="89" y="515" font-size="32" font-weight="700" letter-spacing="-2" fill="#2B2B3A">영업이익 증가율</text>
+  <text x="89" y="578" font-size="18" font-weight="700" letter-spacing="-0.3" fill="#8B85A8">스냅베스트</text>
   <text x="1111" y="578" text-anchor="end" font-size="18" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
 </g>
 </svg>
