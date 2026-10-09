@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
+<title>SOXL 3배 ETF에서 지수가 올라도 손실이 나는 이유</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect x="-228" y="-94" width="1008" height="1008" fill="url(#m1)"/>
+<rect x="492" y="290" width="1044" height="1044" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="89" y="143" font-size="16" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SOXL</text>
+  <text x="89" y="245" font-size="66" font-weight="700" letter-spacing="-4" fill="#2B2B3A">지수는 올랐는데</text>
+  <text x="89" y="329" font-size="66" font-weight="700" letter-spacing="-4" fill="#2B2B3A">나는 왜</text>
+  <text x="89" y="413" font-size="66" font-weight="700" letter-spacing="-4" fill="#B455C4">잃을까</text>
+  <rect x="89" y="435" width="264" height="13" rx="6" fill="url(#line)"/>
+  <text x="89" y="578" font-size="16" font-weight="600" letter-spacing="-0.3" fill="#B9B3D6">3배 ETF · 변동성 끌림</text>
+  <text x="1111" y="578" text-anchor="end" font-size="17" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
+</g>
+</svg>

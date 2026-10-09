@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>CID 홀드코 · 표지</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<circle cx="1080" cy="0" r="300" fill="none" stroke="#B455C4" stroke-width="2" opacity="0.10"/><circle cx="1080" cy="0" r="420" fill="none" stroke="#B455C4" stroke-width="2" opacity="0.10"/><circle cx="1080" cy="0" r="540" fill="none" stroke="#B455C4" stroke-width="2" opacity="0.10"/><circle cx="1080" cy="0" r="660" fill="none" stroke="#B455C4" stroke-width="2" opacity="0.10"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">08.26</text>
+  <text x="1000" y="338" text-anchor="end" font-size="88" letter-spacing="-3" fill="#2B2B3A"><tspan font-weight="900">CID 홀드코</tspan><tspan font-weight="700">는 왜</tspan></text>
+  <text x="1000" y="442" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#2B2B3A">이틀 만에</text>
+  <text x="1000" y="546" text-anchor="end" font-size="88" font-weight="700" letter-spacing="-3" fill="#B455C4">628% 올랐을까?</text>
+  <rect x="760" y="600" width="240" height="14" rx="7" fill="url(#line)"/>
+
+  <rect x="80" y="664" width="920" height="336" rx="52" fill="#FFFFFF"/>
+  <defs><clipPath id="logo"><circle cx="176" cy="760" r="40"/></clipPath></defs><circle cx="176" cy="760" r="40" fill="#EFEAFC"/><image clip-path="url(#logo)" x="136" y="720" width="80" height="80" preserveAspectRatio="xMidYMid slice" href="data:image/png;base64,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"/>
+  <text x="244" y="752" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">CID HoldCo · Dot Ai</text>
+  <text x="244" y="794" font-size="23" font-weight="600" letter-spacing="0.5" fill="#9691B8">DAIC · NASDAQ</text>
+  <text x="944" y="752" text-anchor="end" font-size="40" font-weight="700" letter-spacing="-1" fill="#2B2B3A">$3.10</text>
+  <text x="944" y="794" text-anchor="end" font-size="26" font-weight="700" fill="#E0568A">+628%</text>
+  <line x1="136" y1="832" x2="944" y2="832" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="136" y="890" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">8/21 $0.43에서 이틀 만에 올라왔어요</text>
+  <text x="136" y="932" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">나스닥 상장폐지 심사가 진행 중인 종목이에요</text>
+
+  <text x="80" y="1046" font-size="27" font-weight="700" letter-spacing="-0.5" fill="#B9B3D6">밀어서 보기 →</text>
+  <text x="1000" y="1046" text-anchor="end" font-size="27" font-weight="700" fill="url(#dom)">snapvestai.com</text>
+</g>
+</svg>

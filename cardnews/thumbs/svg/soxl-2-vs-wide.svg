@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
+<title>반도체 지수는 20퍼센트 올랐는데 3배 레버리지 상품은 30퍼센트 하락</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect x="-228" y="-94" width="1008" height="1008" fill="url(#m1)"/>
+<rect x="492" y="290" width="1044" height="1044" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="89" y="95" font-size="16" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">3배 ETF</text>
+  <text x="89" y="235" font-size="91" font-weight="700" letter-spacing="-5" fill="#E0568A">+20%</text>
+  <text x="89" y="278" font-size="23" font-weight="600" letter-spacing="-1" fill="#8B85A8">반도체 지수 · 1년</text>
+  <text x="89" y="330" font-size="34" font-weight="700" fill="#9691B8">↓</text>
+  <text x="89" y="420" font-size="91" font-weight="700" letter-spacing="-5" fill="#5A8FD6">-30%</text>
+  <text x="89" y="463" font-size="23" font-weight="600" letter-spacing="-1" fill="#8B85A8">3배 상품 · 같은 1년</text>
+  <text x="89" y="512" font-size="31" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">같은 해입니다</text>
+  <text x="89" y="578" font-size="16" font-weight="600" letter-spacing="-0.3" fill="#B9B3D6">변동성 55% 가정 · 직접 계산</text>
+  <text x="1111" y="578" text-anchor="end" font-size="17" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
+</g>
+</svg>

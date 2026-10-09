@@ -1,0 +1,60 @@
+{
+  "date": "09.01",
+  "year": 2026,
+  "ticker": "SGLD",
+  "exchange": "NASDAQ",
+  "company_ko": "스코피오골드",
+  "company_en": "Scorpio Gold",
+  "price": "$16.69",
+  "change": "+228.5%",
+  "logo": "assets/logo-chip.png",
+  "cover_line1": "스코피오골드는 왜",
+  "cover_line2": "시간외에서만",
+  "cover_line3": "228% 올랐을까?",
+  "cover_fact1": "네바다에서 금을 찾는 캐나다 탐사기업이에요",
+  "cover_fact2": "정규장은 5.08달러, 변동 없이 마감했습니다",
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "네바다에서 금을 찾는",
+  "desc_lead2": "캐나다 탐사기업이에요",
+  "desc_sub": "밴쿠버 본사 · 워커레인 맨해튼 광구 100% · 약 4,780헥타르",
+  "desc_sub2": "매출이 없는 탐사 단계예요 · 발행주식 3억 4,616만 주",
+  "segments": [
+    "골드웨지 광산",
+    "키스톤",
+    "점보"
+  ],
+  "market_cap": "8,800만 달러",
+  "volume": "자료 없음",
+  "week52": "상장 첫날",
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "올랐을까",
+  "reason_lead1": "주가가 20배로 표시되는",
+  "reason_lead2": "구조가 있어요",
+  "reason_body": [
+    "9월 1일 상장한 ADS 1주는 보통주 20주에 해당합니다.",
+    "정규장 종가 5.08달러를 20으로 나누면 0.25달러예요.",
+    "7월 공모가가 0.25달러였습니다. 정규장엔 프리미엄이 없었어요."
+  ],
+  "reason_source": "출처 · 회사 공시 · SEC 6-K · 정규장 종가 기준",
+  "cta_items": [
+    "ADS 20대 1 환산",
+    "워런트 · 증자 이력",
+    "AI 종합 해석"
+  ],
+  "photo_chart": "assets/photo-chart.jpg",
+  "chart_stats": [
+    [
+      "정규장 종가",
+      "$5.08"
+    ],
+    [
+      "시간외 고점",
+      "$68.57"
+    ],
+    [
+      "고점 대비",
+      "-75%"
+    ]
+  ],
+  "chart_note": "9/2 05시대 시간외 5분봉 · 시세는 계속 바뀝니다"
+}

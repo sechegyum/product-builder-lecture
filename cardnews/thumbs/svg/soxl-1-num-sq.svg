@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>SOXL 3배 ETF, 지수가 20퍼센트 오른 해에 3배 상품은 마이너스 30퍼센트</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<rect x="-205" y="-162" width="907" height="907" fill="url(#m1)"/>
+<rect x="443" y="497" width="940" height="940" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="170" font-size="28" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">3배 ETF</text>
+  <text x="80" y="560" font-size="253" font-weight="700" letter-spacing="-6" fill="#5A8FD6">-30.3%</text>
+  <rect x="80" y="597" width="238" height="13" rx="6" fill="url(#line)"/>
+  <text x="80" y="700" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">지수가 +20% 오른 해에</text>
+  <text x="80" y="777" font-size="56" font-weight="700" letter-spacing="-2" fill="#2B2B3A">3배 상품이 받은 성적</text>
+  <text x="80" y="1028" font-size="28" font-weight="600" letter-spacing="-0.3" fill="#B9B3D6">변동성 55% · 252거래일 1,000회 시뮬레이션</text>
+  <text x="1000" y="1028" text-anchor="end" font-size="30" font-weight="700" letter-spacing="-0.5" fill="url(#line)">snapvestai.com</text>
+</g>
+</svg>
