@@ -1,0 +1,61 @@
+{
+  "date": "09.10",
+  "year": 2026,
+  "ticker": "MGN",
+  "exchange": "NASDAQ",
+  "company_ko": "메건홀딩스",
+  "company_en": "Megan Holdings",
+  "price": "$0.24",
+  "change": "-12.18%",
+  "logo": "assets/logo-chip.png",
+  "cover_line1": "메건홀딩스",
+  "cover_line2": "하루 700% 상승",
+  "cover_line3": "병합계획 때문?",
+  "cover_fact1": "말레이시아에서 양식장을 짓는 회사예요",
+  "cover_fact2": "전일 0.10달러가 장중 0.83달러까지 갔어요",
+  "photo_company": "assets/photo-company.jpg",
+  "desc_lead1": "말레이시아에서 양식장과 농장을",
+  "desc_lead2": "짓고 고쳐주는 회사예요",
+  "desc_sub": "케이맨 제도 지주회사 · 본사는 쿠알라룸푸르예요",
+  "desc_sub2": "2025년 9월 나스닥에 4달러로 상장했습니다",
+  "desc_sub3": "등록 직원은 4명으로 표시돼 있어요",
+  "segments": [
+    "양식장 건설",
+    "농장 개발",
+    "장비 임대"
+  ],
+  "market_cap": "자료 없음",
+  "volume": "2억 8,793만주",
+  "week52": "고점 대비 -97%",
+  "photo_reason": "assets/photo-reason.jpg",
+  "reason_verb": "빠질까",
+  "reason_lead1": "사업 호재가 아니라",
+  "reason_lead2": "거래정지가 풀린 겁니다",
+  "reason_body": [
+    "9월 4일 뉴스 대기로 거래가 멈췄어요.",
+    "9일 재개되자 장중 0.83달러까지 갔다가",
+    "0.275달러로 마감했습니다. 고가 대비 -67%예요."
+  ],
+  "reason_source": "출처 · 회사 공시 · 9/10 은 데이마켓 기준",
+  "cta_items": [
+    "9월 17일 1대30 주식병합",
+    "상장폐지 유예 11월 9일 만료",
+    "증권 집단소송 진행 중"
+  ],
+  "photo_chart": "assets/photo-chart.jpg",
+  "chart_stats": [
+    [
+      "전일 종가",
+      "$0.10"
+    ],
+    [
+      "9/9 장중고가",
+      "$0.83"
+    ],
+    [
+      "9/9 종가",
+      "$0.27"
+    ]
+  ],
+  "chart_note": "일봉 · 9월 9일 거래재개일 하루에 몰린 화면이에요"
+}
