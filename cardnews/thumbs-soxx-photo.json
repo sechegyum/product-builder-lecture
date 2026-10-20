@@ -1,0 +1,23 @@
+{
+  "_note": "SOXX 글 대표 썸네일 — 기판 배경(make_graphic.py circuit) 위에 제목 질문.",
+  "thumbs": [
+    {
+      "name": "soxx-p1-cycle",
+      "layout": "photo",
+      "photo": "circuit-bg.jpg",
+      "tag": "종목분석",
+      "lines": ["반도체 사이클", "끝은 어디일까"],
+      "sub": "심층 분석과 개인적 견해",
+      "alt": "시장주도섹터 반도체, 그 사이클의 끝은 어디일까"
+    },
+    {
+      "name": "soxx-p2-late",
+      "layout": "photo",
+      "photo": "circuit-bg.jpg",
+      "tag": "종목분석",
+      "lines": ["반도체 아직", "늦지 않았을까"],
+      "sub": "SOXX로 사이클을 따져봤어요",
+      "alt": "반도체 아직 늦지 않았을까, SOXX로 사이클을 따져본 분석"
+    }
+  ]
+}
