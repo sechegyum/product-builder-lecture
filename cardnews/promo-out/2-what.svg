@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img">
+<title>스냅베스트 · 어떤 서비스</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#FBF9FF"/><stop offset="1" stop-color="#EFEAFC"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <linearGradient id="dom" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.55" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.13"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.13"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1080" fill="url(#bg)"/>
+<rect x="-200" y="-160" width="900" height="900" fill="url(#m1)"/>
+<rect x="440" y="500" width="940" height="940" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <text x="80" y="118" font-size="30" fill="#B455C4">✦</text>
+  <text x="126" y="118" font-size="25" font-weight="700" letter-spacing="2.5" fill="#8B5BD6">SNAPVEST AI SIGNAL</text>
+  <text x="1000" y="118" text-anchor="end" font-size="25" font-weight="600" fill="#B9B3D6">서비스 소개</text>
+  <text x="80" y="222" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#2B2B3A">스냅베스트는 <tspan fill="#B455C4">뭘 하는 곳</tspan>일까?</text>
+  <rect x="80" y="248" width="220" height="12" rx="6" fill="url(#line)"/>
+
+  <rect x="80" y="300" width="920" height="400" rx="52" fill="#FFFFFF"/>
+  <rect x="140" y="356" width="800" height="72" rx="24" fill="#EFEAFC"/>
+  <text x="176" y="402" font-size="28" fill="#B9B3D6">⌕</text>
+  <text x="222" y="402" font-size="30" font-weight="700" letter-spacing="1" fill="#2B2B3A">MRNA</text>
+  <text x="904" y="402" text-anchor="end" font-size="25" font-weight="700" fill="#B455C4">티커만 입력</text>
+  <rect x="140" y="452" width="800" height="56" rx="18" fill="#EFEAFC"/>
+  <circle cx="176" cy="480" r="7" fill="url(#line)"/>
+  <text x="204" y="490" font-size="25" font-weight="600" fill="#8B85A8">지분 구조 · 내부자 매매 내역</text>
+  <rect x="140" y="524" width="800" height="56" rx="18" fill="#EFEAFC"/>
+  <circle cx="176" cy="552" r="7" fill="url(#line)"/>
+  <text x="204" y="562" font-size="25" font-weight="600" fill="#8B85A8">공매도 잔고 · 유상증자 이력</text>
+  <rect x="140" y="596" width="800" height="56" rx="18" fill="#EFEAFC"/>
+  <circle cx="176" cy="624" r="7" fill="url(#line)"/>
+  <text x="204" y="634" font-size="25" font-weight="600" fill="#8B85A8">AI가 정리한 한 줄 해석</text>
+
+  <text x="80" y="790" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">티커 하나만 넣으면</text>
+  <text x="80" y="840" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#2B2B3A">흩어진 숫자를 모아서 보여줘요</text>
+  <text x="80" y="894" font-size="27" font-weight="500" letter-spacing="-0.5" fill="#8B85A8">공시 사이트 · 증권사 앱 · 뉴스를 오갈 필요가 없어요</text>
+
+  <rect x="80" y="936" width="920" height="112" rx="46" fill="#FFFFFF"/>
+  <text x="233" y="982" text-anchor="middle" font-size="22" font-weight="600" fill="#9691B8">지원 시장</text>
+  <text x="233" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">국내 · 미국</text>
+  <line x1="387" y1="962" x2="387" y2="1022" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="540" y="982" text-anchor="middle" font-size="22" font-weight="600" fill="#9691B8">무료 조회</text>
+  <text x="540" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">하루 10회</text>
+  <line x1="693" y1="962" x2="693" y2="1022" stroke="#F1EDFA" stroke-width="3"/>
+  <text x="847" y="982" text-anchor="middle" font-size="22" font-weight="600" fill="#9691B8">가입</text>
+  <text x="847" y="1022" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="-1" fill="#2B2B3A">필요 없음</text>
+</g>
+</svg>

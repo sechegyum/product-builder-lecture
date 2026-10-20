@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
+<title>급락한 이유 3가지</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#171130"/><stop offset="1" stop-color="#0B0918"/>
+  </linearGradient>
+  <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4A6CF7"/><stop offset="0.5" stop-color="#B455C4"/><stop offset="1" stop-color="#E0568A"/>
+  </linearGradient>
+  <radialGradient id="m1" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#4A6CF7" stop-opacity="0.30"/><stop offset="1" stop-color="#4A6CF7" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="m2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#E0568A" stop-opacity="0.30"/><stop offset="1" stop-color="#E0568A" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect x="-228" y="-94" width="1008" height="1008" fill="url(#m1)"/>
+<rect x="492" y="290" width="1044" height="1044" fill="url(#m2)"/>
+<g font-family="Pretendard, Poppins, Arial, sans-serif">
+  <rect x="89" y="44" width="165" height="51" rx="25" fill="#2E2552" opacity="1"/>
+  <text x="109" y="80" font-size="28" font-weight="700" letter-spacing="4.5" fill="#CDBDF7">이슈정리</text>
+  <rect x="268" y="44" width="118" height="51" rx="25" fill="url(#line)"/>
+  <text x="288" y="80" font-size="28" font-weight="700" letter-spacing="2.8" fill="#FFFFFF">3가지</text>
+  <text x="89" y="210" font-size="58" font-weight="700" letter-spacing="-3.5" fill="#F6F3FF">급락한 이유</text>
+  <rect x="89" y="227" width="264" height="13" rx="6" fill="url(#line)"/>
+  <circle cx="103" cy="318" r="9" fill="#D07BE4"/>
+  <text x="137" y="330" font-size="30" font-weight="700" letter-spacing="-1.5" fill="#F6F3FF">급등 직후 증자</text>
+  <circle cx="103" cy="400" r="9" fill="#D07BE4"/>
+  <text x="137" y="412" font-size="30" font-weight="700" letter-spacing="-1.5" fill="#F6F3FF">실적 가이던스 하향</text>
+  <circle cx="103" cy="482" r="9" fill="#D07BE4"/>
+  <text x="137" y="494" font-size="30" font-weight="700" letter-spacing="-1.5" fill="#F6F3FF">최대주주 지분 매각</text>
+  <text x="89" y="578" font-size="18" font-weight="700" letter-spacing="-0.3" fill="#CFC6E8">스냅베스트</text>
+  <text x="1111" y="578" text-anchor="end" font-size="18" font-weight="700" letter-spacing="-0.5" fill="#FFFFFF">snapvestai.com</text>
+</g>
+</svg>
